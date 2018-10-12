@@ -12,21 +12,29 @@ class BookingListViewController: UITableViewController {
     var roomData : [Room] = []
     var isQuickBook : Bool = false
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-        tableView.estimatedRowHeight = BookingListTableViewCell.DEFAULT_CELL_HEIGHT
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.register(BookingListTableViewCell.self, forCellReuseIdentifier: BookingListTableViewCell.identifier)
-        
+        setUpViews()
         loadData()
 //
 //        btn.addTarget(self, action: #selector(BookingListViewController.goToNextView), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    func setUpViews()
+    {
+        tableView.backgroundColor = UIColor.bookItBlueLight
+        
+        tableView.estimatedRowHeight = BookingListTableViewCell.DEFAULT_CELL_HEIGHT
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
+        tableView.register(BookingListTableViewCell.self, forCellReuseIdentifier: BookingListTableViewCell.identifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         self.title = isQuickBook ?  Titles.quickBookViewControllerTitle : Titles.searchResultsViewControllerTitle
     }
@@ -85,6 +93,8 @@ class BookingListViewController: UITableViewController {
         {
             return UITableViewCell()
         }
+        
+        cell.selectionStyle = .none
         
         let roomInfo = roomData[indexPath.row]
         cell.room = roomInfo

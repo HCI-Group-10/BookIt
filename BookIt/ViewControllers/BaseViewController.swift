@@ -10,6 +10,27 @@
 
 import UIKit
 
+class BookItNavigationController : UINavigationController
+{
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        updateBackgroundView()
+        updateFont()
+    }
+    
+    func updateFont()
+    {
+        navigationBar.titleTextAttributes = [.font: Fonts.openSansLight, NSAttributedStringKey.foregroundColor:UIColor.bookItBlueLight]
+    }
+    
+    func updateBackgroundView()
+    {
+        navigationBar.installBlurEffect()
+    }
+}
+
 class BaseViewController: UITabBarController
 {
     override func viewDidLoad()
@@ -26,28 +47,63 @@ class BaseViewController: UITabBarController
         quickBookViewController.isQuickBook = true
         quickBookViewController.view.backgroundColor = .white
         
-        let navQuickBookViewController = UINavigationController(rootViewController: quickBookViewController)
+        let navQuickBookViewController = BookItNavigationController(rootViewController: quickBookViewController)
         navQuickBookViewController.tabBarItem = UITabBarItem(title: Titles.quickBookViewControllerTitle, image: UIImage(named: Assets.homeIcon), tag: 0)
         
         let roomSearchViewController = RoomSearchViewController()
         roomSearchViewController.view.backgroundColor = .white
         
-        let navRoomSearchViewController = UINavigationController(rootViewController: roomSearchViewController)
+        let navRoomSearchViewController = BookItNavigationController(rootViewController: roomSearchViewController)
         navRoomSearchViewController.tabBarItem = UITabBarItem(title: Titles.roomSearchViewControllerTitle, image: UIImage(named: Assets.searchIcon), tag: 1)
         
         let roomScanViewController = RoomScanViewController()
         roomScanViewController.view.backgroundColor = .white
         
-        let navRoomScanViewController = UINavigationController(rootViewController: roomScanViewController)
+        let navRoomScanViewController = BookItNavigationController(rootViewController: roomScanViewController)
         navRoomScanViewController.tabBarItem = UITabBarItem(title: Titles.roomScanViewControllerTitle, image: UIImage(named: Assets.qrIcon), tag: 2)
         
         let userPageViewController = UserPageViewController()
         userPageViewController.view.backgroundColor = .white
         
-        let navUserPageViewController = UINavigationController(rootViewController: userPageViewController)
+        let navUserPageViewController = BookItNavigationController(rootViewController: userPageViewController)
         navUserPageViewController.tabBarItem = UITabBarItem(title: Titles.userPageViewControllerTitle, image: UIImage(named: Assets.userIcon), tag: 3)
         
         viewControllers = [navQuickBookViewController, navRoomSearchViewController, navRoomScanViewController, navUserPageViewController]
+        
+        updateUniversalAppearances()
+    }
+    
+    func updateUniversalAppearances()
+    {
+        UITabBar.appearance().tintColor = .bookItBlueLight
+        tabBar.installBlurEffect()
+        
+        if let items = tabBar.items
+        {
+            for item in  items {
+                if let selectedImage = item.selectedImage?.with(color: UIColor.bookItBlueDark).withRenderingMode(.alwaysOriginal)
+                {
+                    item.image = selectedImage
+                }
+            }
+        }
+    
+        let normalAttributes =
+        [
+            NSAttributedString.Key.foregroundColor : UIColor.bookItBlueDark,
+            NSAttributedString.Key.font : Fonts.openSansLight.withSize(10.0)
+        ]
+        let selectedAttributes =
+        [
+            NSAttributedString.Key.foregroundColor : UIColor.bookItBlueLight,
+            NSAttributedString.Key.font : Fonts.openSans.withSize(10.0)
+        ]
+        
+        // unselected
+        UITabBarItem.appearance().setTitleTextAttributes(normalAttributes, for: .normal)
+        
+        // selected
+        UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, for: .selected)
     }
     
     override func didReceiveMemoryWarning()

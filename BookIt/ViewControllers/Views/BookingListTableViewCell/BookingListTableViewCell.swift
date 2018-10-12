@@ -11,21 +11,35 @@ import UIKit
 class BookingListTableViewCell: UITableViewCell {
     static let identifier = "BookingListTableViewCellIdentifier"
     static let DEFAULT_CELL_HEIGHT : CGFloat = 64.0
-    let DEFAULT_BUTTON_WIDTH : CGFloat = 164.0
+    let DEFAULT_BUTTON_WIDTH : CGFloat = 148.0
+    let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
     
-    var room : Room? {
-        didSet {
+    var room : Room?
+    {
+        didSet
+        {
             roomLabel.text = room?.room
-            locationLabel.text = room?.location
-            capacityLabel.text = room?.capacity
+            if let location = room?.location, let capacity = room?.capacity
+            {
+                locationLabel.text = "Location: \(location)"
+                capacityLabel.text = "Capacity: \(capacity)"
+                timeLabel.text = "Until 11:30a"
+            }
         }
     }
     
-    private var roomLabel : UILabel = { return UILabel() }()
+    private let container : UIView = { return UIView() }()
     
-    private var locationLabel : UILabel = { return UILabel() }()
+    private let roomLabel : UILabel = { return UILabel() }()
+    
+    private let locationLabel : UILabel = { return UILabel() }()
     
     private let capacityLabel : UILabel = { return UILabel() }()
+    
+    private let timeLabel : UILabel = { return UILabel() }()
+    
+    private let reserveButton : UIButton = { return UIButton() }()
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
@@ -33,56 +47,93 @@ class BookingListTableViewCell: UITableViewCell {
         setUpViews()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
     
     func setUpViews()
     {
-        roomLabel.font = roomLabel.font.withSize(20)
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        contentView.addSubview(container)
+        
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.layer.cornerRadius = 4.0
+        container.backgroundColor = .bookItBlueLight
+        container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
+        container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
+        
+        roomLabel.font = Fonts.openSans
+        roomLabel.textColor = .white
         roomLabel.numberOfLines = 0
         
-        locationLabel.font = locationLabel.font.withSize(16)
+        locationLabel.font = Fonts.openSansLight.withSize(16)
+        locationLabel.textColor = .white
         locationLabel.numberOfLines = 0
         
-        capacityLabel.font = capacityLabel.font.withSize(16)
+        capacityLabel.font = Fonts.openSansLight.withSize(16)
+        capacityLabel.textColor = .white
         capacityLabel.numberOfLines = 0
 
-        contentView.backgroundColor = .white
+        reserveButton.backgroundColor = .clear
+        reserveButton.layer.cornerRadius = 4.0
+        reserveButton.layer.borderColor = UIColor.white.cgColor
+        reserveButton.layer.borderWidth = 1.0
         
-        let reserveButton = UIButton(frame: CGRect.zero)
-        reserveButton.backgroundColor = .green
         reserveButton.setTitleColor(.white, for: .normal)
         reserveButton.setTitle("Reserve Room", for: .normal)
         reserveButton.titleLabel?.numberOfLines = 0
         
-        addSubview(roomLabel)
-        contentView.addSubview(locationLabel)
-        contentView.addSubview(capacityLabel)
-        contentView.addSubview(reserveButton)
+        let timeImageView = UIImageView(image: UIImage(named: "clock"))
+        timeLabel.font = Fonts.openSansLight.withSize(10)
+        timeLabel.textColor = .white
+        timeLabel.numberOfLines = 0
+        
+        container.addSubview(roomLabel)
+        container.addSubview(locationLabel)
+        container.addSubview(capacityLabel)
+        container.addSubview(reserveButton)
+        container.addSubview(timeLabel)
+        container.addSubview(timeImageView)
         
         roomLabel.translatesAutoresizingMaskIntoConstraints = false
-        roomLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
         roomLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
-        roomLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
         
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
-        reserveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        reserveButton.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        reserveButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+        reserveButton.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+        reserveButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
         reserveButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
+        reserveButton.bottomAnchor.constraint(greaterThanOrEqualTo: timeImageView.topAnchor, constant: 8)
         
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        locationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
         locationLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
         locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
         
         capacityLabel.translatesAutoresizingMaskIntoConstraints = false
-        capacityLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
         capacityLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
         capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
-        capacityLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        capacityLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive = true
         
-        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
+        timeImageView.translatesAutoresizingMaskIntoConstraints = false
+        timeImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+        timeImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).isActive = true
+        
+        timeImageView.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        timeImageView.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.trailingAnchor.constraint(equalTo: timeImageView.leadingAnchor, constant: -8).isActive = true
+        timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).isActive = true
+        
+        container.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
