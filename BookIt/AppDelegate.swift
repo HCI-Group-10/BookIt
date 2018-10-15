@@ -14,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
+        UILabel.appearance().defaultFont = Fonts.openSans
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = BaseViewController()
         window?.makeKeyAndVisible()

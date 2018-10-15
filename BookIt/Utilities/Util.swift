@@ -39,6 +39,8 @@ class Fonts
     }
 }
 
+
+
 class Assets
 {
     static let homeIcon = "home"
@@ -144,8 +146,58 @@ extension UITabBar
 
 extension UILabel
 {
+    var defaultFont: UIFont?
+    {
+        get { return self.font }
+        set { self.font = newValue }
+    }
+    
     func updateToStandardFont()
     {
         font = UIFont(name: "OpenSans-Bold", size: 24)
     }
+}
+
+extension String
+{
+    static func getTimeFrom30MinIntervalValue(val: Int) -> Date?
+    {
+        //max of 48 30 minute intervals in a day
+        var minutes = val * 30
+        let hours = minutes / 60
+        minutes = val.remainderReportingOverflow(dividingBy: 2).partialValue * 30//Int(val.truncatingRemainder(dividingBy: 2) * 30)
+        
+        let dateAsString = "\(hours):\(minutes)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        
+        return dateFormatter.date(from: dateAsString)
+    }
+    
+    static func getTimeFormattedFrom30MinIntervalValue(val: Int) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        if let date = getTimeFrom30MinIntervalValue(val: val)
+        {
+            return dateFormatter.string(from: date)
+        }
+        
+        return ""
+    }
+}
+
+func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage
+{
+    let rect = CGRect(x:2, y: 0, width: size.width, height: size.height)
+    let rectLine = CGRect(x: 9, y: size.height-lineSize.height - 8, width: lineSize.width, height: lineSize.height)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    UIColor.clear.setFill()
+    UIRectFill(rect)
+    color.setFill()
+    UIRectFill(rectLine)
+    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return image
 }

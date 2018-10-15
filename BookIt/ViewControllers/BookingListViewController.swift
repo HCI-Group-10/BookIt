@@ -44,21 +44,25 @@ class BookingListViewController: UITableViewController {
         // make a request to server
         let dictArr : [NSDictionary] = [[
             "room" : "Babbage",
+            "roomNumber" : "L113",
             "location" : "Marston",
             "capacity" : "4"
         ],
         [
         "room" : "Carson",
+        "roomNumber" : "L114",
         "location" : "Marston",
         "capacity" : "4"
         ],
         [
         "room" : "Wu",
+        "roomNumber" : "L115",
         "location" : "Marston",
         "capacity" : "4"
         ],
         [
         "room" : "The Long Titled Room",
+        "roomNumber" : "L116",
         "location" : "The library that is far away",
         "capacity" : "245"
         ]]
@@ -95,7 +99,7 @@ class BookingListViewController: UITableViewController {
         }
         
         cell.selectionStyle = .none
-        
+        cell.delegate = self
         let roomInfo = roomData[indexPath.row]
         cell.room = roomInfo
         
@@ -118,4 +122,30 @@ class BookingListViewController: UITableViewController {
     }
     */
 
+}
+
+extension BookingListViewController: BookingListTableViewCellDelegate
+{
+    func reserveButtonPressed(room: Room?)
+    {
+        if let room = room, let nav = navigationController
+        {
+            let reservation = Reservation()
+            reservation.room = room
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "MMM d, yyyy"
+            reservation.date = dateFormatter.string(from: date)
+            
+            dateFormatter.dateFormat = "HH:mm"
+            reservation.startTime = dateFormatter.string(from: date)
+            reservation.endTime = dateFormatter.string(from: date)
+            
+            let roomReservationVC = RoomReservationViewController()
+            roomReservationVC.reservation = reservation
+            
+            nav.pushViewController(roomReservationVC, animated: true)
+        }
+    }
 }

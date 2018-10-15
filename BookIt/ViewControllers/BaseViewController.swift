@@ -27,7 +27,11 @@ class BookItNavigationController : UINavigationController
     
     func updateBackgroundView()
     {
-        navigationBar.installBlurEffect()
+//        navigationBar.installBlurEffect()
+        navigationBar.barTintColor = .white
+        navigationBar.isOpaque = true
+        navigationBar.isTranslucent = false
+        navigationBar.backgroundColor = .white
     }
 }
 
@@ -36,7 +40,7 @@ class BaseViewController: UITabBarController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        User.createUser(firstName: "Steven", lastName: "Hurtado", email: "shurt@gmail.com")
         setUpTabBarController()
     }
     
@@ -75,8 +79,12 @@ class BaseViewController: UITabBarController
     
     func updateUniversalAppearances()
     {
-        UITabBar.appearance().tintColor = .bookItBlueLight
-        tabBar.installBlurEffect()
+        UITabBar.appearance().tintColor = UIColor.bookItBlueLight
+        UITabBar.appearance().isOpaque = true
+        UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().backgroundColor = .white
+        
+        UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor.bookItBlueLight, size: CGSize(width:(self.view.frame.size.width)/4, height: 48.2), lineSize: CGSize(width:(self.view.frame.size.width)/5, height: 2))
         
         if let items = tabBar.items
         {

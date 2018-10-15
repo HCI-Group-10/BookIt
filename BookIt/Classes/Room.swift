@@ -11,10 +11,12 @@ import Foundation
 class Room : NSObject
 {
     static let roomKey = "room"
+    static let roomNumberKey = "roomNumber"
     static let locationKey = "location"
     static let capacityKey = "capacity"
     
     var room : String?
+    var roomNumber : String?
     var location : String?
     var capacity : String?
     
@@ -24,6 +26,11 @@ class Room : NSObject
         if let room = dict[Room.roomKey] as? String
         {
             self.room = room
+        }
+        
+        if let roomNumber = dict[Room.roomNumberKey] as? String
+        {
+            self.roomNumber = roomNumber
         }
         
         if let location = dict[Room.locationKey] as? String

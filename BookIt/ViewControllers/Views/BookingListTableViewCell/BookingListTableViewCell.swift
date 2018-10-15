@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol BookingListTableViewCellDelegate
+{
+    func reserveButtonPressed(room: Room?);
+}
+
 class BookingListTableViewCell: UITableViewCell {
     static let identifier = "BookingListTableViewCellIdentifier"
     static let DEFAULT_CELL_HEIGHT : CGFloat = 64.0
+    
     let DEFAULT_BUTTON_WIDTH : CGFloat = 148.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
+    
+    var delegate : BookingListTableViewCellDelegate!
     
     var room : Room?
     {
@@ -86,6 +94,7 @@ class BookingListTableViewCell: UITableViewCell {
         reserveButton.setTitleColor(.white, for: .normal)
         reserveButton.setTitle("Reserve Room", for: .normal)
         reserveButton.titleLabel?.numberOfLines = 0
+        reserveButton.addTarget(self, action: #selector(reservationButtonPressed), for: .touchUpInside)
         
         let timeImageView = UIImageView(image: UIImage(named: "clock"))
         timeLabel.font = Fonts.openSansLight.withSize(10)
@@ -134,6 +143,11 @@ class BookingListTableViewCell: UITableViewCell {
         timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).isActive = true
         
         container.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
+    }
+    
+    @objc func reservationButtonPressed()
+    {
+        self.delegate.reserveButtonPressed(room: room)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
