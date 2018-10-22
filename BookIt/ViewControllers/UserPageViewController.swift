@@ -22,10 +22,20 @@ class UserPageViewController: UIViewController
     var userEmailTextField : UITextField?
     var textFields : [UITextField] = []
     
-    //reservation
+    //reservation views
     var reservationInfoLabel : UILabel?
     var reservation : Reservation?
+    var reservationContainer : UIView?
+    var emptyReservationLabel : UILabel?
+    var cancelReservationButton : UIButton?
+    var roomLabel : UILabel?
+    var roomLocationLabel : UILabel?
+    var roomCapacityLabel : UILabel?
+    var startTimeLabel : UILabel?
+    var endTimeLabel : UILabel?
+    var dateLabel : UILabel?
     
+    //local constants
     static let DEFAULT_VIEW_HEIGHT : CGFloat = 64.0
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
@@ -60,6 +70,53 @@ class UserPageViewController: UIViewController
         reservation.endTime = dateFormatter.string(from: date)
         
         self.reservation = reservation
+        
+        if let user = User.sharedInstance()
+        {
+            self.userFirstNameTextField?.text = user.firstName
+            self.userLastNameTextField?.text = user.lastName
+            self.userEmailTextField?.text = user.email
+        }
+        
+        if let reservation = self.reservation
+        {
+            emptyReservationLabel?.isHidden = true
+            reservationContainer?.isHidden = false
+            cancelReservationButton?.isHidden = false
+            
+            if let date = reservation.date
+            {
+                //format date
+                dateLabel?.text = date
+            }
+            
+            if let startTime = reservation.startTime
+            {
+                //format time
+                startTimeLabel?.text = startTime
+            }
+            
+            
+            if let endTime = reservation.endTime
+            {
+                //format time
+                endTimeLabel?.text = endTime
+            }
+            
+            if let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
+            {
+                roomLabel?.text = "\(roomName)"
+                roomLocationLabel?.text = "Location: \(roomLocation) \(roomNum)"
+                roomCapacityLabel?.text = "Capacity: \(roomCapacity)"
+            }
+        }
+        else
+        {
+            emptyReservationLabel?.isHidden = false
+            reservationContainer?.isHidden = true
+            cancelReservationButton?.isHidden = true
+            
+        }
     }
     
     @objc func dismissViews()
@@ -176,7 +233,22 @@ class UserPageViewController: UIViewController
         reservationInfoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         reservationInfoLabel.topAnchor.constraint(equalTo: userEmailTextField.bottomAnchor, constant: 16).isActive = true
         
-        let container = UIView()
+        emptyReservationLabel = UILabel()
+        emptyReservationLabel?.font = Fonts.openSansLight
+        emptyReservationLabel?.numberOfLines = 0
+        emptyReservationLabel?.textColor = UIColor.lightGray
+        emptyReservationLabel?.text = "You currently have no pending reservation."
+        emptyReservationLabel?.isHidden = true
+        emptyReservationLabel?.textAlignment = .center
+        guard let emptyReservationLabel = emptyReservationLabel else { return }
+        view.addSubview(emptyReservationLabel)
+        emptyReservationLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyReservationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        emptyReservationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        emptyReservationLabel.topAnchor.constraint(equalTo:reservationInfoLabel.bottomAnchor, constant: 16).isActive = true
+        
+        reservationContainer = UIView()
+        guard let container = reservationContainer else { return }
         view.addSubview(container)
         
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -194,16 +266,11 @@ class UserPageViewController: UIViewController
         dateTemplateLabel.textColor = UIColor.white
         dateTemplateLabel.text = "Date"
         
-        let dateLabel = UILabel()
+        dateLabel = UILabel()
+        guard let dateLabel = dateLabel else { return }
         dateLabel.font = Fonts.openSans
         dateLabel.textColor = UIColor.white
         dateLabel.textAlignment = .right
-        
-        if let date = reservation?.date
-        {
-            //format date
-            dateLabel.text = date
-        }
         
         container.addSubview(dateTemplateLabel)
         container.addSubview(dateLabel)
@@ -213,16 +280,11 @@ class UserPageViewController: UIViewController
         startTemplateLabel.textColor = UIColor.white
         startTemplateLabel.text = "Start Time"
         
-        let startLabel = UILabel()
+        startTimeLabel = UILabel()
+        guard let startLabel = startTimeLabel else { return }
         startLabel.font = Fonts.openSans
         startLabel.textColor = UIColor.white
         startLabel.textAlignment = .right
-        
-        if let startTime = reservation?.startTime
-        {
-            //format time
-            startLabel.text = startTime
-        }
         
         container.addSubview(startTemplateLabel)
         container.addSubview(startLabel)
@@ -232,47 +294,39 @@ class UserPageViewController: UIViewController
         endTemplateLabel.textColor = UIColor.white
         endTemplateLabel.text = "End Time"
         
-        let endLabel = UILabel()
+        endTimeLabel = UILabel()
+        guard let endLabel = endTimeLabel else { return }
         endLabel.font = Fonts.openSans
         endLabel.textColor = UIColor.white
         endLabel.textAlignment = .right
         
-        if let endTime = reservation?.endTime
-        {
-            //format time
-            endLabel.text = endTime
-        }
-        
         container.addSubview(endTemplateLabel)
         container.addSubview(endLabel)
         
-        let roomLabel = UILabel()
+        roomLabel = UILabel()
+        guard let roomLabel = roomLabel else { return }
         roomLabel.font = Fonts.openSans
         roomLabel.textColor = .white
         roomLabel.numberOfLines = 0
         
-        let locationLabel = UILabel()
+        roomLocationLabel = UILabel()
+        guard let locationLabel = roomLocationLabel else { return }
         locationLabel.font = Fonts.openSansLight.withSize(16)
         locationLabel.textColor = .white
         locationLabel.numberOfLines = 0
         
-        let capacityLabel = UILabel()
+        roomCapacityLabel = UILabel()
+        guard let capacityLabel = roomCapacityLabel else { return }
         capacityLabel.font = Fonts.openSansLight.withSize(16)
         capacityLabel.textColor = .white
         capacityLabel.numberOfLines = 0
-        
-        if let reservation = reservation, let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
-        {
-            roomLabel.text = "\(roomName)"
-            locationLabel.text = "Location: \(roomLocation) \(roomNum)"
-            capacityLabel.text = "Capacity: \(roomCapacity)"
-        }
         
         container.addSubview(roomLabel)
         container.addSubview(locationLabel)
         container.addSubview(capacityLabel)
         
-        let cancelButton = UIButton()
+        cancelReservationButton = UIButton()
+        guard let cancelButton = cancelReservationButton else { return }
         cancelButton.backgroundColor = .clear
         cancelButton.layer.cornerRadius = 4.0
         cancelButton.layer.borderColor = UIColor.red.cgColor
