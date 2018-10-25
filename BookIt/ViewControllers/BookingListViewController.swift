@@ -25,6 +25,7 @@ class BookingListViewController: UITableViewController {
 
     func setUpViews()
     {
+        view.backgroundColor = .white
         tableView.backgroundColor = UIColor.bookItBlueLight
         
         tableView.estimatedRowHeight = BookingListTableViewCell.DEFAULT_CELL_HEIGHT
@@ -41,35 +42,38 @@ class BookingListViewController: UITableViewController {
     
     func loadData()
     {
-        // make a request to server
-        let dictArr : [NSDictionary] = [[
-            "room" : "Babbage",
-            "roomNumber" : "L113",
-            "location" : "Marston",
-            "capacity" : "4"
-        ],
-        [
-        "room" : "Carson",
-        "roomNumber" : "L114",
-        "location" : "Marston",
-        "capacity" : "4"
-        ],
-        [
-        "room" : "Wu",
-        "roomNumber" : "L115",
-        "location" : "Marston",
-        "capacity" : "4"
-        ],
-        [
-        "room" : "The Long Titled Room",
-        "roomNumber" : "L116",
-        "location" : "The library that is far away",
-        "capacity" : "245"
-        ]]
-        
-        for dict in dictArr
+        if isQuickBook
         {
-            roomData.append(Room(dict: dict))
+            // make a request to server
+            let dictArr : [NSDictionary] = [[
+                "room" : "Babbage",
+                "roomNumber" : "L113",
+                "location" : "Marston",
+                "capacity" : "4"
+                ],
+                                            [
+                                                "room" : "Carson",
+                                                "roomNumber" : "L114",
+                                                "location" : "Marston",
+                                                "capacity" : "4"
+                ],
+                                            [
+                                                "room" : "Wu",
+                                                "roomNumber" : "L115",
+                                                "location" : "Marston",
+                                                "capacity" : "4"
+                ],
+                                            [
+                                                "room" : "The Long Titled Room",
+                                                "roomNumber" : "L116",
+                                                "location" : "The library that is far away",
+                                                "capacity" : "245"
+                ]]
+            
+            for dict in dictArr
+            {
+                roomData.append(Room(dict: dict))
+            }
         }
         
         tableView.reloadData()
@@ -110,7 +114,7 @@ class BookingListViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

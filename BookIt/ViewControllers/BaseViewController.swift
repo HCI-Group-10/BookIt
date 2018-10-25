@@ -49,7 +49,6 @@ class BaseViewController: UITabBarController
         // QUICK BOOK
         let quickBookViewController = BookingListViewController()
         quickBookViewController.isQuickBook = true
-        quickBookViewController.view.backgroundColor = .white
         
         let navQuickBookViewController = BookItNavigationController(rootViewController: quickBookViewController)
         navQuickBookViewController.tabBarItem = UITabBarItem(title: Titles.quickBookViewControllerTitle, image: UIImage(named: Assets.homeIcon), tag: 0)

@@ -19,7 +19,6 @@ class TimeRangeSlider : RangeSlider
 
 class RoomSearchViewController: UIViewController
 {
-
     var roomDateLabel : UILabel?
     let roomDateString = "I want a room on:"
     
@@ -164,7 +163,7 @@ class RoomSearchViewController: UIViewController
         searchButton.setTitleColor(.bookItBlueLight, for: .normal)
         searchButton.setTitle("Find Available Rooms", for: .normal)
         searchButton.titleLabel?.numberOfLines = 0
-        
+        searchButton.addTarget(self, action: #selector(searchForRoom), for: .touchUpInside)
         view.addSubview(searchButton)
         
         searchButton.translatesAutoresizingMaskIntoConstraints = false
@@ -174,31 +173,85 @@ class RoomSearchViewController: UIViewController
         searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+    @objc func searchForRoom()
+    {
+        // get criteria
+        guard let date = datePicker?.date else { return }
+        guard let startInd = rangeSlider?.lowerValue else { return }
+        guard let endInd = rangeSlider?.upperValue else { return }
+        guard let quantity = quantityTextField?.text else { return }
+        
+        // use these for querying
+        
+        // assign queried result to room data
+        let dictArr : [NSDictionary] = [[
+            "room" : "Babbage",
+            "roomNumber" : "L113",
+            "location" : "Marston",
+            "capacity" : "4"
+            ],
+                                        [
+                                            "room" : "Carson",
+                                            "roomNumber" : "L114",
+                                            "location" : "Marston",
+                                            "capacity" : "4"
+            ],
+                                        [
+                                            "room" : "Wu",
+                                            "roomNumber" : "L115",
+                                            "location" : "Marston",
+                                            "capacity" : "4"
+            ],
+                                        [
+                                            "room" : "Goodall",
+                                            "roomNumber" : "L116",
+                                            "location" : "Marston",
+                                            "capacity" : "6"
+            ],
+                                        [
+                                            "room" : "Goodnone",
+                                            "roomNumber" : "L117",
+                                            "location" : "Library West",
+                                            "capacity" : "6"
+            ],
+                                        [
+                                            "room" : "Goodsome",
+                                            "roomNumber" : "L118",
+                                            "location" : "Library West",
+                                            "capacity" : "2"
+            ],
+                                        [
+                                            "room" : "Goodfew",
+                                            "roomNumber" : "L119",
+                                            "location" : "Marston",
+                                            "capacity" : "4"
+            ]]
+        var roomData = [Room]()
+        for dict in dictArr
+        {
+            roomData.append(Room(dict: dict))
+        }
+        
+        let bookingListResultsViewController = BookingListViewController()
+        bookingListResultsViewController.roomData = roomData
+        
+        navigationController?.pushViewController(bookingListResultsViewController, animated: true)
+    }
+        
     @objc func dismissKeyboard()
     {
         quantityTextField?.resignFirstResponder()
     }
-
+    
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title =  Titles.roomSearchViewControllerTitle
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
