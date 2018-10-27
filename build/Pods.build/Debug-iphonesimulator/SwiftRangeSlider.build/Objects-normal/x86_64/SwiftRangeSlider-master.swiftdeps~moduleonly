@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
+options: "841316986579a193cdf4a4cef464bdad"
+build_time: [1540655701, 710254000]
+inputs:
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/SwiftRangeSlider/SwiftRangeSlider/RangeSlider.swift": [1540350708, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/SwiftRangeSlider/SwiftRangeSlider/RangeSliderKnob.swift": [1540350708, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/SwiftRangeSlider/SwiftRangeSlider/RangeSliderTrack.swift": [1540350708, 0]

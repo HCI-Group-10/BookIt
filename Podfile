@@ -7,4 +7,8 @@ target 'BookIt' do
 
   # Pods for BookIt
   pod 'SwiftRangeSlider'
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
 end

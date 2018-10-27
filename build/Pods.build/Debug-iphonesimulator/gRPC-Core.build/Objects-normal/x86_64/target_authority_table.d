@@ -1,0 +1,43 @@
+dependencies: \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/security/transport/target_authority_table.cc \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Target\ Support\ Files/gRPC-Core/gRPC-Core-prefix.pch \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/port_platform.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/port_platform.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/log.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/log.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/channel/channel_args.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/compression.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/compression_types.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/slice.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/slice.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/gpr_slice.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/sync.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/gpr_types.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/sync.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/sync_generic.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/atm.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/atm_gcc_atomic.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/sync_posix.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/grpc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/byte_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/byte_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/grpc_types.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/slice_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/connectivity_state.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/impl/codegen/propagation_bits.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/time.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/iomgr/socket_mutator.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/security/transport/target_authority_table.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/slice/slice_hash_table.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/alloc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gpr/useful.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gprpp/ref_counted.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/debug/trace.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/include/grpc/support/atm.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gprpp/abstract.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gprpp/debug_location.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gprpp/memory.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/gprpp/ref_counted_ptr.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/gRPC-Core/src/core/lib/slice/slice_internal.h

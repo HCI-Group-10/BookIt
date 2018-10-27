@@ -7,14 +7,58 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseFirestore
 class BookingListViewController: UITableViewController {
     var roomData : [Room] = []
     var isQuickBook : Bool = false
+    var today : Date = Date.init()
+    let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
+    var todaysDate : String = ""
+    
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+//        FirebaseApp.configure()
+//        let db = Firestore.firestore()
+//        db.collection("Rooms").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+//                }
+//            }
+//        }
+//        let docRef = db.collection("Rooms").document("Babbage")
+//
+//        docRef.getDocument { (document, error) in
+//            if let room = document.flatMap({
+//                $0.data().flatMap({ (data) in
+//                    return Room(dict: data as NSDictionary)
+//                })
+//            }) {
+//
+//                print("City: \(room.room)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+        
+//        let query = db.collection("Rooms").whereField("room", isEqualTo: "Cade").getDocuments() { (querySnapshot, err) in
+//                        if let err = err {
+//                            print("Error getting documents: \(err)")
+//                        } else {
+//                            for document in querySnapshot!.documents {
+//                                print("querying document")
+//                                print("\(document.documentID) => \(document.data())")
+//                            }
+//                        }
+//                    }
+//        self.today = Date.init()
+        self.todaysDate = getDate(myDate: today)
         
         setUpViews()
         loadData()
@@ -39,40 +83,96 @@ class BookingListViewController: UITableViewController {
         self.title = isQuickBook ?  Titles.quickBookViewControllerTitle : Titles.searchResultsViewControllerTitle
     }
     
+    func getDate(myDate: Date) -> String{
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+//        let yourDate = formatter.date(from: myString)
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
+        
+        print("converting")
+        print(myStringafd)
+        return myStringafd
+    }
+    
     func loadData()
     {
-        // make a request to server
-        let dictArr : [NSDictionary] = [[
-            "room" : "Babbage",
-            "roomNumber" : "L113",
-            "location" : "Marston",
-            "capacity" : "4"
-        ],
-        [
-        "room" : "Carson",
-        "roomNumber" : "L114",
-        "location" : "Marston",
-        "capacity" : "4"
-        ],
-        [
-        "room" : "Wu",
-        "roomNumber" : "L115",
-        "location" : "Marston",
-        "capacity" : "4"
-        ],
-        [
-        "room" : "The Long Titled Room",
-        "roomNumber" : "L116",
-        "location" : "The library that is far away",
-        "capacity" : "245"
-        ]]
+        var hour = self.calendar.component(.hour, from: self.today)
+        var minute = self.calendar.component(.minute, from: self.today)
+        var currTimeIndex = (hour * 2) + (minute / 30)
+        print("currTimeIndex")
+        print(currTimeIndex)
         
-        for dict in dictArr
-        {
-            roomData.append(Room(dict: dict))
+        // make a request to server
+//        var dictArr : [NSDictionary] = []
+//            "room" : "Babbage",
+//            "roomNumber" : "L113",
+//            "location" : "Marston",
+//            "capacity" : "4"
+//        ],
+//        [
+//        "room" : "Carson",
+//        "roomNumber" : "L114",
+//        "location" : "Marston",
+//        "capacity" : "4"
+//        ],
+//        [
+//        "room" : "Wu",
+//        "roomNumber" : "L115",
+//        "location" : "Marston",
+//        "capacity" : "4"
+//        ],
+//        [
+//        "room" : "The Long Titled Room",
+//        "roomNumber" : "L116",
+//        "location" : "The library that is far away",
+//        "capacity" : "245"
+//        ]]
+        let db = Firestore.firestore()
+        db.collection("Rooms").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+
+                    let room = Room(dict: document.data() as NSDictionary)
+                    print("printing")
+                    
+                    let dictionary = room.times?[0] as! NSDictionary
+                    let reservations = dictionary["timeSlots"] as! [String]
+                    let timestamp: Timestamp = dictionary["date"] as! Timestamp
+                    let myDate: Date = timestamp.dateValue()
+                    let dateString = self.getDate(myDate: myDate)
+                    if(dateString == self.todaysDate && reservations[currTimeIndex] == ""){
+                        
+                        
+                        
+                        
+                        self.roomData.append(room)
+                    }
+                    
+                    print(self.roomData.count)
+                }
+                self.tableView.reloadData()
+            }
         }
         
-        tableView.reloadData()
+//        print("ROOMCOUNT IS")
+//        print(self.roomData.count)
+//        for dict in roomData
+//        {
+//            print(dict)
+//            print("^^^^^^^^")
+//        }
+        
+//        tableView.reloadData()
+        
     }
     
     @objc func goToNextView()

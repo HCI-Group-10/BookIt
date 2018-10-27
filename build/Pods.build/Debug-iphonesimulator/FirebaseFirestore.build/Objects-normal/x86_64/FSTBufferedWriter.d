@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/Source/Remote/FSTBufferedWriter.mm \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBProtocolBuffers.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBBootstrap.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBArray.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBRuntimeTypes.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBCodedInputStream.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBCodedOutputStream.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBWireFormat.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBDescriptor.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBDictionary.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBExtensionRegistry.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBMessage.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBRootObject.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBUnknownField.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBUnknownFieldSet.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBUtilities.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/GPBWellKnownTypes.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Any.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Duration.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Timestamp.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Api.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Empty.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/FieldMask.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/SourceContext.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Struct.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Type.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Protobuf/objectivec/google/protobuf/Wrappers.pbobjc.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/Source/Remote/FSTBufferedWriter.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-RxLibrary/RxLibrary.framework/Headers/GRXWriteable.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-RxLibrary/RxLibrary.framework/Headers/GRXWriter.h

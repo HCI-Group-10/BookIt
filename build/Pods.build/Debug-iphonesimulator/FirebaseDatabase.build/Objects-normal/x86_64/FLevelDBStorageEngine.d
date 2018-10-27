@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FLevelDBStorageEngine.m \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Pods.build/Debug-iphonesimulator/FirebaseDatabase.build/module.modulemap \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FLevelDBStorageEngine.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FStorageEngine.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Snapshot/FNode.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Core/Utilities/FPath.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Api/Private/FTypedefs_Private.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Snapshot/FCompoundWrite.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Core/FQuerySpec.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Core/FQueryParams.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/FIndex.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Pods.build/Debug-iphonesimulator/FirebaseCore.build/module.modulemap \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Private/FIRLogger.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FirebaseCore.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FIRLoggerLevel.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FIRConfiguration.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FIRApp.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseCore/Firebase/Core/Public/FIRAnalyticsConfiguration.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-umbrella.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/third_party/Wrap-leveldb/APLevelDB.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Snapshot/FSnapshotUtilities.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Core/FWriteRecord.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FTrackedQuery.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Snapshot/FEmptyNode.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FPruneForest.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Utilities/FUtilities.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Utilities/FParsedUrl.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Core/FRepoInfo.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseDatabase/Firebase/Database/Persistence/FPendingPut.h
