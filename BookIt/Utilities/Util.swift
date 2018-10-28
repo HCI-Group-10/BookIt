@@ -49,7 +49,22 @@ class Fonts
     }
 }
 
-
+extension UIView
+{
+    static let padding : CGFloat = 16.0
+    
+    func assignUIStyle()
+    {
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 20.0
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: -1, height: 10)
+        self.layer.shadowRadius = 1
+        
+        self.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+    }
+}
 
 class Assets
 {

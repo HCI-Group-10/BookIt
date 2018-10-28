@@ -254,7 +254,7 @@ class RoomSearchViewController: UIViewController
                 
                 if self.roomData.count == 0
                 {
-                    Util.presentAlert(title: "Sorry!", message: "We couldn't find a room for those settings.")
+                    Util.presentAlert(title: "Sorry!", message: "We couldn't find a room for those settings.", viewController: self)
                     return
                 }
                 // reload tableview in BookingListViewController

@@ -67,7 +67,7 @@ class BookingListTableViewCell: UITableViewCell {
         contentView.addSubview(container)
         
         container.translatesAutoresizingMaskIntoConstraints = false
-        container.layer.cornerRadius = 4.0
+        container.assignUIStyle()
         container.backgroundColor = .bookItBlueLight
         container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
@@ -87,7 +87,7 @@ class BookingListTableViewCell: UITableViewCell {
         capacityLabel.numberOfLines = 0
 
         reserveButton.backgroundColor = .clear
-        reserveButton.layer.cornerRadius = 4.0
+        reserveButton.assignUIStyle()
         reserveButton.layer.borderColor = UIColor.white.cgColor
         reserveButton.layer.borderWidth = 1.0
         
@@ -109,38 +109,38 @@ class BookingListTableViewCell: UITableViewCell {
         container.addSubview(timeImageView)
         
         roomLabel.translatesAutoresizingMaskIntoConstraints = false
-        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        roomLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
-        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
+        roomLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
+        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: UIView.padding).isActive = true
         
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
-        reserveButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        reserveButton.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+        reserveButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -UIView.padding).isActive = true
+        reserveButton.topAnchor.constraint(equalTo: container.topAnchor, constant: UIView.padding).isActive = true
         reserveButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
         reserveButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
         reserveButton.bottomAnchor.constraint(greaterThanOrEqualTo: timeImageView.topAnchor, constant: 8)
         
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        locationLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
+        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
+        locationLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
         locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
         
         capacityLabel.translatesAutoresizingMaskIntoConstraints = false
-        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        capacityLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -16).isActive = true
+        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
+        capacityLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
         capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
-        capacityLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive = true
+        capacityLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
         
         timeImageView.translatesAutoresizingMaskIntoConstraints = false
-        timeImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        timeImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).isActive = true
+        timeImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -UIView.padding).isActive = true
+        timeImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
         
         timeImageView.widthAnchor.constraint(equalToConstant: 16).isActive = true
         timeImageView.heightAnchor.constraint(equalToConstant: 16).isActive = true
         
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.trailingAnchor.constraint(equalTo: timeImageView.leadingAnchor, constant: -8).isActive = true
-        timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8).isActive = true
+        timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
         
         container.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
     }
