@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftRangeSlider
+import FirebaseFirestore
+import Firebase
 
 class TimeRangeSlider : RangeSlider
 {
@@ -43,6 +45,8 @@ class RoomSearchViewController: UIViewController
     var searchButton : UIButton?
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
+    
+    var roomData : [Room] = []
     
     override func viewDidLoad()
     {
@@ -163,7 +167,7 @@ class RoomSearchViewController: UIViewController
         searchButton.setTitleColor(.bookItBlueLight, for: .normal)
         searchButton.setTitle("Find Available Rooms", for: .normal)
         searchButton.titleLabel?.numberOfLines = 0
-        searchButton.addTarget(self, action: #selector(searchForRoom), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
         view.addSubview(searchButton)
         
         searchButton.translatesAutoresizingMaskIntoConstraints = false
@@ -173,71 +177,92 @@ class RoomSearchViewController: UIViewController
         searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    @objc func searchForRoom()
+    func getDate(myDate: Date) -> String
     {
-        // get criteria
-        guard let date = datePicker?.date else { return }
-        guard let startInd = rangeSlider?.lowerValue else { return }
-        guard let endInd = rangeSlider?.upperValue else { return }
-        guard let quantity = quantityTextField?.text else { return }
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        // use these for querying
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
         
-        // assign queried result to room data
-        let dictArr : [NSDictionary] = [[
-            "room" : "Babbage",
-            "roomNumber" : "L113",
-            "location" : "Marston",
-            "capacity" : "4"
-            ],
-                                        [
-                                            "room" : "Carson",
-                                            "roomNumber" : "L114",
-                                            "location" : "Marston",
-                                            "capacity" : "4"
-            ],
-                                        [
-                                            "room" : "Wu",
-                                            "roomNumber" : "L115",
-                                            "location" : "Marston",
-                                            "capacity" : "4"
-            ],
-                                        [
-                                            "room" : "Goodall",
-                                            "roomNumber" : "L116",
-                                            "location" : "Marston",
-                                            "capacity" : "6"
-            ],
-                                        [
-                                            "room" : "Goodnone",
-                                            "roomNumber" : "L117",
-                                            "location" : "Library West",
-                                            "capacity" : "6"
-            ],
-                                        [
-                                            "room" : "Goodsome",
-                                            "roomNumber" : "L118",
-                                            "location" : "Library West",
-                                            "capacity" : "2"
-            ],
-                                        [
-                                            "room" : "Goodfew",
-                                            "roomNumber" : "L119",
-                                            "location" : "Marston",
-                                            "capacity" : "4"
-            ]]
-        var roomData = [Room]()
-        for dict in dictArr
-        {
-            roomData.append(Room(dict: dict))
-        }
-        
-        let bookingListResultsViewController = BookingListViewController()
-        bookingListResultsViewController.roomData = roomData
-        
-        navigationController?.pushViewController(bookingListResultsViewController, animated: true)
+//        print("converting")
+//        print(myStringafd)
+        return myStringafd
     }
+    
+    
+    @objc func searchButtonPressed()
+    {
+        self.roomData.removeAll()
         
+        guard let dateRaw = datePicker?.date else { return }
+        let pickedDate = getDate(myDate: dateRaw)
+        
+        guard let lowerValue = rangeSlider?.lowerValue else { return }
+        let lowerBound = Int(lowerValue)
+        guard let upperValue = rangeSlider?.upperValue else { return }
+        let upperBound = Int(upperValue)
+        
+        print(pickedDate)
+        print(lowerBound)
+        print(upperBound)
+        let db = Firestore.firestore()
+        
+        db.collection("Rooms").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                guard let querySnapshot = querySnapshot else { return }
+                for document in querySnapshot.documents {
+                    
+                    let room = Room(dict: document.data() as NSDictionary)
+                    
+                    for i in 0..<(room.times?.count ?? 0){
+                        let dictionary = room.times?[i] as! NSDictionary
+                        guard let reservations = dictionary["timeSlots"] as? [String] else { return }
+                        guard let timestamp: Timestamp = dictionary["date"] as? Timestamp else { return }
+                        let myDate: Date = timestamp.dateValue()
+                        let dateString = self.getDate(myDate: myDate)
+                        if(dateString == pickedDate)
+                        {
+                            var add = true
+                            for j in lowerBound..<upperBound
+                            {
+                                if reservations[j] != ""
+                                {
+                                    add = false
+                                }
+                            }
+                            
+                            if add
+                            {
+                                //add
+                                self.roomData.append(room)
+                            }
+                            
+                            
+                        }
+                    }
+                    
+                    print(self.roomData.count)
+                }
+                
+                // reload tableview in BookingListViewController
+                let view2 = BookingListViewController()
+//                let view2 = self.storyboard?.instantiateViewController(withIdentifier: "view2") as! BookingListViewController
+//                self.navigationController?.pushViewController(view2, animated: true)
+                view2.roomData = self.roomData
+                view2.tableView.reloadData()
+            }
+            
+        }
+    }
+    
     @objc func dismissKeyboard()
     {
         quantityTextField?.resignFirstResponder()

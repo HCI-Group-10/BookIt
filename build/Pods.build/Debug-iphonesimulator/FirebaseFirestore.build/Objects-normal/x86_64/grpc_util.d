@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_util.cc \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_util.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/include/firebase/firestore/firestore_errors.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/hard_assert.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/string_format.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/string_apple.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/strings/string_view.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/config.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/policy_checks.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/internal/throw_delegate.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/macros.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/port.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/attributes.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/base/optimization.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/type_traits.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/strings/str_cat.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/strings/numbers.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/numeric/int128.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/numeric/int128_have_intrinsic.inc \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/config.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status_code_enum.h
