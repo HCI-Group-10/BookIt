@@ -252,15 +252,24 @@ class RoomSearchViewController: UIViewController
                     print(self.roomData.count)
                 }
                 
+                if self.roomData.count == 0
+                {
+                    self.presentAlert(title: "Sorry!", message: "We couldn't find a room for those settings.")
+                    return
+                }
                 // reload tableview in BookingListViewController
-                let view2 = BookingListViewController()
-//                let view2 = self.storyboard?.instantiateViewController(withIdentifier: "view2") as! BookingListViewController
-//                self.navigationController?.pushViewController(view2, animated: true)
-                view2.roomData = self.roomData
-                view2.tableView.reloadData()
+                let bookListViewController = BookingListViewController()
+                bookListViewController.roomData = self.roomData
+                
+                self.navigationController?.pushViewController(bookListViewController, animated: true)
             }
             
         }
+    }
+    
+    func presentAlert(title: String, message: String)
+    {
+        
     }
     
     @objc func dismissKeyboard()

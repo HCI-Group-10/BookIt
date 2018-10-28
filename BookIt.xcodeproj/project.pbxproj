@@ -33,6 +33,7 @@
 		285803482170FAAD00E73AA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285803472170FAAD00E73AA0 /* User.swift */; };
 		2858034A217108B100E73AA0 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28580349217108B100E73AA0 /* Reservation.swift */; };
 		28D1300821861F3D006D9449 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D1300721861F3D006D9449 /* GoogleService-Info.plist */; };
+		28D1300A218624E6006D9449 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D13009218624E6006D9449 /* ScannerViewController.swift */; };
 		34918A740A6572ACF6A3F291 /* Pods_BookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F910400445A40A50493D6 /* Pods_BookIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		285803472170FAAD00E73AA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28580349217108B100E73AA0 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		28D1300721861F3D006D9449 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28D13009218624E6006D9449 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		6AE5D1A7C923FFB1942CEB9A /* Pods-BookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookIt/Pods-BookIt.debug.xcconfig"; sourceTree = "<group>"; };
 		715B264EC0D9F674356B68CD /* Pods-BookIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookIt/Pods-BookIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +105,7 @@
 		280E57D22167F23E0080770D /* BookIt */ = {
 			isa = PBXGroup;
 			children = (
-				28580326216FEB2C00E73AA0 /* ThirdPart */,
+				28580326216FEB2C00E73AA0 /* ThirdParty */,
 				280E57EF2169A0D90080770D /* Utilities */,
 				280E57D32167F23E0080770D /* AppDelegate.swift */,
 				28580321216E5E4600E73AA0 /* Classes */,
@@ -134,6 +136,7 @@
 				280E57EB2167FC550080770D /* RoomScanViewController.swift */,
 				280E57E92167F7560080770D /* RoomSearchViewController.swift */,
 				285803452170F60000E73AA0 /* RoomReservationViewController.swift */,
+				28D13009218624E6006D9449 /* ScannerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,7 +167,7 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		28580326216FEB2C00E73AA0 /* ThirdPart */ = {
+		28580326216FEB2C00E73AA0 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
 				28580329216FEB5300E73AA0 /* LICENSE.txt */,
@@ -179,7 +182,7 @@
 				28580331216FEB5500E73AA0 /* OpenSans-Semibold.ttf */,
 				2858032D216FEB5400E73AA0 /* OpenSans-SemiboldItalic.ttf */,
 			);
-			path = ThirdPart;
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		8958E229ED5438F15414E0B7 /* Frameworks */ = {
@@ -355,6 +358,7 @@
 				2858034A217108B100E73AA0 /* Reservation.swift in Sources */,
 				28580320216E4FC300E73AA0 /* BookingListTableViewCell.swift in Sources */,
 				280E57D62167F23E0080770D /* BaseViewController.swift in Sources */,
+				28D1300A218624E6006D9449 /* ScannerViewController.swift in Sources */,
 				280E57EC2167FC550080770D /* RoomScanViewController.swift in Sources */,
 				280E57E62167F4CD0080770D /* BookingListViewController.swift in Sources */,
 				28580323216E5E8C00E73AA0 /* Room.swift in Sources */,

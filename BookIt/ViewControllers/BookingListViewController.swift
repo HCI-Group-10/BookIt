@@ -62,63 +62,60 @@ class BookingListViewController: UITableViewController {
         return myStringafd
     }
     
-    func loadData()
+    func doQuickBookSearch()
     {
-        self.todaysDate = getDate(myDate: today)
-        
         let hour = self.calendar.component(.hour, from: self.today)
         let minute = self.calendar.component(.minute, from: self.today)
         let currTimeIndex = (hour * 2) + (minute / 30)
-        print("currTimeIndex")
-        print(currTimeIndex)
         
-        // make a request to server
         let db = Firestore.firestore()
         db.collection("Rooms").getDocuments() { (querySnapshot, err) in
+            
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-
+                guard let querySnapshot = querySnapshot else { return }
+                for document in querySnapshot.documents {
+                    
                     let room = Room(dict: document.data() as NSDictionary)
-//                    print("printing")
+                    //                    print("printing")
                     
                     for i in 0..<(room.times?.count ?? 0){
-                        let dictionary = room.times?[i] as! NSDictionary
-                        let reservations = dictionary["timeSlots"] as! [String]
-                        let timestamp: Timestamp = dictionary["date"] as! Timestamp
+                        guard let dictionary = room.times?[i] as? NSDictionary else { return }
+                        guard let reservations = dictionary["timeSlots"] as? [String]
+                            else { return }
+                        guard let timestamp: Timestamp = dictionary["date"] as? Timestamp else { return }
                         let myDate: Date = timestamp.dateValue()
                         let dateString = self.getDate(myDate: myDate)
                         if(dateString == self.todaysDate && reservations[currTimeIndex] == "")
                         {
                             self.roomData.append(room)
-                            
-                            
                         }
                     }
                     
-//                    print(self.roomData.count)
+                    //                    print(self.roomData.count)
+                    self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
             }
         }
-        
-//        print("ROOMCOUNT IS")
-//        print(self.roomData.count)
-//        for dict in roomData
-//        {
-//            print(dict)
-//            print("^^^^^^^^")
-//        }
-        
-//        tableView.reloadData()
-        
     }
     
-    @objc func goToNextView()
+    func loadData()
     {
-        let vc = BookingListViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        self.todaysDate = getDate(myDate: today)
+        
+        // make a request to server
+        if isQuickBook
+        {
+            doQuickBookSearch()
+        }
+        else
+        {
+            print(roomData)
+            self.tableView.reloadData()
+        }
+        
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int

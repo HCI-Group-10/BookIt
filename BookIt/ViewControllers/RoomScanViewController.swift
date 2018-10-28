@@ -8,12 +8,25 @@
 
 import UIKit
 
-class RoomScanViewController: UIViewController {
-
-    override func viewDidLoad() {
+class RoomScanViewController: UIViewController
+{
+    var scannerViewController : ScannerViewController!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpViews()
+    }
+    
+    func setUpViews()
+    {
+        scannerViewController = ScannerViewController()
+        scannerViewController.view.frame = view.frame
+        
+        addChildViewController(scannerViewController)
+        view.addSubview(scannerViewController.view)
+        
+        scannerViewController.didMove(toParentViewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,5 +1,5 @@
 //
-//  QRReaderViewController.swift
+//  ScannerViewController.swift
 //  BookIt
 //
 //  Created by Chris Komarov on 10/28/18.
@@ -12,7 +12,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black
