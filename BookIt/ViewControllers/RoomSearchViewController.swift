@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftRangeSlider
+import FirebaseFirestore
+import Firebase
 
 class TimeRangeSlider : RangeSlider
 {
@@ -44,6 +46,8 @@ class RoomSearchViewController: UIViewController
     var searchButton : UIButton?
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
+    
+    var roomData : [Room] = []
     
     override func viewDidLoad()
     {
@@ -172,7 +176,83 @@ class RoomSearchViewController: UIViewController
         searchButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
         searchButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
         searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
     }
+    func getDate(myDate: Date) -> String{
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
+        
+//        print("converting")
+//        print(myStringafd)
+        return myStringafd
+    }
+    
+    
+    @objc func searchButtonPressed(){
+        self.roomData.removeAll()
+        
+        let pickedDate = getDate(myDate: (datePicker?.date)!)
+        let lowerBound = Int((rangeSlider?.lowerValue)!)
+        let upperBound = Int((rangeSlider?.upperValue)!)
+        print(pickedDate)
+        print(lowerBound)
+        print(upperBound)
+        let db = Firestore.firestore()
+        
+        db.collection("Rooms").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    let room = Room(dict: document.data() as NSDictionary)
+                    
+                    for i in 0..<(room.times?.count ?? 0){
+                        let dictionary = room.times?[i] as! NSDictionary
+                        let reservations = dictionary["timeSlots"] as! [String]
+                        let timestamp: Timestamp = dictionary["date"] as! Timestamp
+                        let myDate: Date = timestamp.dateValue()
+                        let dateString = self.getDate(myDate: myDate)
+                        if(dateString == pickedDate){
+                            var add = true
+                            for j in lowerBound..<upperBound{
+                                if reservations[j] != ""{
+                                    add = false
+                                }
+                            }
+                            if add {
+                                //add
+                                self.roomData.append(room)
+                            }
+                            
+                            
+                        }
+                    }
+                    
+                    
+                    
+                    
+                    print(self.roomData.count)
+                }
+                // reload tableview in BookingListViewController
+                let view2 = BookingListViewController()
+//                let view2 = self.storyboard?.instantiateViewController(withIdentifier: "view2") as! BookingListViewController
+//                self.navigationController?.pushViewController(view2, animated: true)
+                view2.roomData = self.roomData
+                view2.tableView.reloadData()
+            }
+            
+        }
+    }
+    
     
     @objc func dismissKeyboard()
     {

@@ -278,6 +278,7 @@ SWIFT_CLASS("_TtC6BookIt22RoomScanViewController")
 SWIFT_CLASS("_TtC6BookIt24RoomSearchViewController")
 @interface RoomSearchViewController : UIViewController
 - (void)viewDidLoad;
+- (void)searchButtonPressed;
 - (void)dismissKeyboard;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;

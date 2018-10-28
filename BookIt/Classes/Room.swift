@@ -25,7 +25,7 @@ class Room : NSObject
     
     init(dict: NSDictionary)
     {
-        print(dict)
+//        print(dict)
         if let room = dict[Room.roomKey] as? String
         {
             self.room = room
@@ -50,7 +50,7 @@ class Room : NSObject
         if let times = dict[Room.timeKey] as? NSArray
         {
             self.times = times
-            print("assigned times")
+//            print("assigned times")
 //            print((self.times?[0] as! NSDictionary)["date"])
 //            let timestamp: Timestamp = (self.times?[0] as! NSDictionary)["date"] as! Timestamp
 //            let myDate: Date = timestamp.dateValue()

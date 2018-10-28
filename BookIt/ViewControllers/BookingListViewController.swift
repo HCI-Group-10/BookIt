@@ -59,6 +59,7 @@ class BookingListViewController: UITableViewController {
 //                    }
 //        self.today = Date.init()
         self.todaysDate = getDate(myDate: today)
+        print(isQuickBook)
         
         setUpViews()
         loadData()
@@ -96,8 +97,8 @@ class BookingListViewController: UITableViewController {
         // again convert your date to string
         let myStringafd = formatter.string(from: myDate)
         
-        print("converting")
-        print(myStringafd)
+//        print("converting")
+//        print(myStringafd)
         return myStringafd
     }
     
@@ -142,22 +143,22 @@ class BookingListViewController: UITableViewController {
                 for document in querySnapshot!.documents {
 
                     let room = Room(dict: document.data() as NSDictionary)
-                    print("printing")
+//                    print("printing")
                     
-                    let dictionary = room.times?[0] as! NSDictionary
-                    let reservations = dictionary["timeSlots"] as! [String]
-                    let timestamp: Timestamp = dictionary["date"] as! Timestamp
-                    let myDate: Date = timestamp.dateValue()
-                    let dateString = self.getDate(myDate: myDate)
-                    if(dateString == self.todaysDate && reservations[currTimeIndex] == ""){
-                        
-                        
-                        
-                        
-                        self.roomData.append(room)
+                    for i in 0..<(room.times?.count ?? 0){
+                        let dictionary = room.times?[i] as! NSDictionary
+                        let reservations = dictionary["timeSlots"] as! [String]
+                        let timestamp: Timestamp = dictionary["date"] as! Timestamp
+                        let myDate: Date = timestamp.dateValue()
+                        let dateString = self.getDate(myDate: myDate)
+                        if(dateString == self.todaysDate && reservations[currTimeIndex] == ""){
+                            self.roomData.append(room)
+                            
+                            
+                        }
                     }
                     
-                    print(self.roomData.count)
+//                    print(self.roomData.count)
                 }
                 self.tableView.reloadData()
             }
