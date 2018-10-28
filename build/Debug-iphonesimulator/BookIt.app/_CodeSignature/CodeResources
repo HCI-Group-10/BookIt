@@ -136,9 +136,17 @@
 		<data>
 		D09Sdktja4Ie3IJcPyIza0pN848=
 		</data>
+		<key>Frameworks/libswiftAVFoundation.dylib</key>
+		<data>
+		rDHYQKAISJLl0PzyBIZrEhvK7e4=
+		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
 		/V070jhMfG9LOI/oCjb1/xjc0fA=
+		</data>
+		<key>Frameworks/libswiftCoreAudio.dylib</key>
+		<data>
+		0kQib3E3RI0p8UDmjGCIqmJlrH8=
 		</data>
 		<key>Frameworks/libswiftCoreFoundation.dylib</key>
 		<data>
@@ -151,6 +159,10 @@
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
 		JereWsNtD+Y1L9wfV+9m/K5OOpA=
+		</data>
+		<key>Frameworks/libswiftCoreMedia.dylib</key>
+		<data>
+		/35Qb4+LUQIsqHOlSPbrCAzrj0A=
 		</data>
 		<key>Frameworks/libswiftDarwin.dylib</key>
 		<data>
@@ -188,6 +200,10 @@
 		<data>
 		SRyLe2wiFIlcQb4foDZ27lUv0Xo=
 		</data>
+		<key>Frameworks/libswiftsimd.dylib</key>
+		<data>
+		ajnBuliDmEN+Bq1OFd6fcMAuCFQ=
+		</data>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
 		<data>
 		/5cxOirZJCinT8QXywCGipHhHuE=
@@ -218,7 +234,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6yXIcoxuCnHp4zeR0t2eJt+G1GI=
+		1g8y/wk6o5X+11R2xF8kmsctsnA=
 		</data>
 		<key>LICENSE.txt</key>
 		<data>
@@ -506,11 +522,25 @@
 			r2jh+QbX7x2GJRoN4riyVWfhCLi7UfTc/H4PE+rOk9A=
 			</data>
 		</dict>
+		<key>Frameworks/libswiftAVFoundation.dylib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rGqE0Il3hwoO2zItfskKfgJPYsAovSymloL6JaAP3P4=
+			</data>
+		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			NclrHcelKBjWkAN3bRFatUC+CmlURTdElAqJWuEBqlw=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreAudio.dylib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			p2HoKN3eneJhCubEzNHxkwvfB1PURbvjRCF/bGc81w8=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreFoundation.dylib</key>
@@ -532,6 +562,13 @@
 			<key>hash2</key>
 			<data>
 			M1b4RDTvT6ablxikruWLNaBD+cP3GVXtZ6+wE91/Tj0=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreMedia.dylib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7m1pW1HSGvYSF1HUxtOYn6/PiPK1oBWZbgpYUyjhab0=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftDarwin.dylib</key>
@@ -595,6 +632,13 @@
 			<key>hash2</key>
 			<data>
 			t7O8p/CF1O4fSzBd82hHcReM//5TPoMP1tPSPaG23Sw=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftsimd.dylib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MnPLih+wT5CmFHCl39ZbWHJmV5N5baQwii+OwfW6C6k=
 			</data>
 		</dict>
 		<key>Frameworks/nanopb.framework/Info.plist</key>

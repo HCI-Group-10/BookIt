@@ -21,7 +21,7 @@ class Room : NSObject
     var roomNumber : String?
     var location : String?
     var capacity : Int?
-    var times : NSArray?
+    var times : NSMutableArray?
     
     init(dict: NSDictionary)
     {
@@ -47,7 +47,7 @@ class Room : NSObject
         {
             self.capacity = capacity
         }
-        if let times = dict[Room.timeKey] as? NSArray
+        if let times = dict[Room.timeKey] as? NSMutableArray
         {
             self.times = times
 //            print("assigned times")

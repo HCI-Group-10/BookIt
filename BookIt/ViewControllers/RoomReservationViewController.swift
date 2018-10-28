@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class RoomReservationViewController: UIViewController
 {
@@ -153,7 +155,7 @@ class RoomReservationViewController: UIViewController
         reserveButton.titleLabel?.numberOfLines = 0
         
         view.addSubview(reserveButton)
-        
+        reserveButton.addTarget(self, action: #selector(reserveButtonPressed), for: .touchUpInside)
         roomLabel.translatesAutoresizingMaskIntoConstraints = false
         roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
         roomLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
@@ -217,6 +219,72 @@ class RoomReservationViewController: UIViewController
             = true
 
         container.heightAnchor.constraint(greaterThanOrEqualToConstant: RoomReservationViewController.DEFAULT_VIEW_HEIGHT).isActive = true
+    }
+    
+    @objc func reserveButtonPressed(){
+        let db = Firestore.firestore()
+        guard let room = reservation?.room else { return }
+
+//        var timesArray = room?.times
+        
+        let startTimeArr = reservation?.startTime?.split(separator: ":")
+        let endTimeArr = reservation?.endTime?.split(separator: ":")
+        
+        var startTimeIndex = Int(startTimeArr![0])! * 2
+        if Int(startTimeArr![1])! >= 30{
+            startTimeIndex = startTimeIndex + 1
+        }
+        
+        var endTimeIndex = Int(endTimeArr![0])! * 2
+        if Int(endTimeArr![1])! >= 30{
+            endTimeIndex = endTimeIndex + 1
+        }
+        let user = User.sharedInstance()
+//        var indexInTimes = 0
+        for i in 0..<(room.times?.count ?? 0){
+            let dictionary = room.times?[i] as! NSMutableDictionary
+            guard var timeSlots = dictionary["timeSlots"] as? [String] else { return }
+            
+            guard let date: Timestamp = dictionary["date"] as? Timestamp else { return }
+            let myDate: Date = date.dateValue()
+            let dateString = self.getDate(myDate: myDate)
+            if(dateString == reservation?.date)
+            {
+//                indexInTimes = i
+                for j in startTimeIndex..<endTimeIndex
+                {
+                    print(j)
+                    timeSlots[j] =  (user?.email)!
+                }
+//                dictionary["timeSlots"]![i]["times"] = reservations
+                print(timeSlots)
+                dictionary["timeSlots"] = timeSlots
+                room.times?[i] = dictionary
+            }
+        }
+        
+//        print(room?.times)
+        db.collection("Rooms").document(room.room!).updateData([ "times": room.times ])
+        
+        Util.presentAlert(title: "reserve button pressed", message: "hello", viewController: self)
+    }
+    
+    func getDate(myDate: Date) -> String
+    {
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
+        
+        //        print("converting")
+        //        print(myStringafd)
+        return myStringafd
     }
     
     /*

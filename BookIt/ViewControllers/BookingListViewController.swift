@@ -172,12 +172,27 @@ extension BookingListViewController: BookingListTableViewCellDelegate
             let date = Date()
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "MMM d, yyyy"
+            dateFormatter.dateFormat = "dd-MMM-YYYY"
             reservation.date = dateFormatter.string(from: date)
+            
+            var hour = self.calendar.component(.hour, from: self.today)
+            var minute = self.calendar.component(.minute, from: self.today)
+            var endTimeString : String = ""
+            if minute < 30{
+                minute = 30
+                endTimeString = "\(hour):\(minute)"
+            }
+            else{
+                
+                hour = hour + 1
+                endTimeString = "\(hour):00"
+            }
             
             dateFormatter.dateFormat = "HH:mm"
             reservation.startTime = dateFormatter.string(from: date)
-            reservation.endTime = dateFormatter.string(from: date)
+            reservation.endTime = endTimeString
+            
+            
             
             let roomReservationVC = RoomReservationViewController()
             roomReservationVC.reservation = reservation
