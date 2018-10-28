@@ -254,7 +254,7 @@ class RoomSearchViewController: UIViewController
                 
                 if self.roomData.count == 0
                 {
-                    self.presentAlert(title: "Sorry!", message: "We couldn't find a room for those settings.")
+                    Util.presentAlert(title: "Sorry!", message: "We couldn't find a room for those settings.")
                     return
                 }
                 // reload tableview in BookingListViewController
@@ -265,11 +265,6 @@ class RoomSearchViewController: UIViewController
             }
             
         }
-    }
-    
-    func presentAlert(title: String, message: String)
-    {
-        
     }
     
     @objc func dismissKeyboard()

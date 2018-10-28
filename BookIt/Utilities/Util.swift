@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+class Util
+{
+    static func presentAlert(title: String, message: String, viewController: UIViewController)
+    {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        viewController.present(ac, animated: true)
+    }   
+}
+
 class Titles
 {
     static let quickBookViewControllerTitle = "Quick Book"
