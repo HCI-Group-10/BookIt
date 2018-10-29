@@ -37,6 +37,7 @@ class BookItNavigationController : UINavigationController
 
 class BaseViewController: UITabBarController
 {
+    var userPageViewController : UserPageViewController?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -65,7 +66,8 @@ class BaseViewController: UITabBarController
         let navRoomScanViewController = BookItNavigationController(rootViewController: roomScanViewController)
         navRoomScanViewController.tabBarItem = UITabBarItem(title: Titles.roomScanViewControllerTitle, image: UIImage(named: Assets.qrIcon), tag: 2)
         
-        let userPageViewController = UserPageViewController()
+        userPageViewController = UserPageViewController()
+        guard let userPageViewController = userPageViewController else { return }
         userPageViewController.view.backgroundColor = .white
         
         let navUserPageViewController = BookItNavigationController(rootViewController: userPageViewController)
@@ -74,6 +76,25 @@ class BaseViewController: UITabBarController
         viewControllers = [navQuickBookViewController, navRoomSearchViewController, navRoomScanViewController, navUserPageViewController]
         
         updateUniversalAppearances()
+        NotificationCenter.default.addObserver(self, selector: #selector(reservationUpdated), name: NSNotification.Name.init("reservation_update"), object: nil)
+    }
+    
+    @objc func reservationUpdated()
+    {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.selectedIndex = (self.viewControllers?.count ?? 1) - 1
+            if let viewController = self.viewControllers?[self.selectedIndex]
+            {
+                if User.sharedInstance()?.reservation != nil
+                {
+                    Util.presentAlert(title: "Success!", message: "Your reservation has been made.", viewController: viewController)
+                }
+                else
+                {
+                    Util.presentAlert(title: "No Issues", message: "Your reservation has succesfully been cancelled.", viewController: viewController)
+                }
+            }
+        }
     }
     
     func updateUniversalAppearances()
@@ -118,7 +139,4 @@ class BaseViewController: UITabBarController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

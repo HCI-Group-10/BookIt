@@ -7,15 +7,21 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseFirestore
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var originalFrameValue: CGRect?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
         UILabel.appearance().defaultFont = Fonts.openSans
         
         window = UIWindow(frame: UIScreen.main.bounds)

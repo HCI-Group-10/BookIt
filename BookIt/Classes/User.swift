@@ -11,6 +11,7 @@ import Foundation
 class User
 {
     private static var activeUser : User?
+    var reservation : Reservation?
     
     var firstName : String?
     var lastName : String?

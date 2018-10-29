@@ -1,0 +1,423 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RangeSliderTrack"
+provides-nominal:
+- "16SwiftRangeSlider0bC5TrackC"
+provides-member:
+- ["16SwiftRangeSlider0bC5TrackC", ""]
+provides-dynamic-lookup:
+- "draw"
+depends-top-level:
+- !private "*"
+- !private "-"
+- !private "/"
+- "CALayer"
+- "CGContext"
+- !private "CGRect"
+- !private "FloatLiteralType"
+- "RangeSlider"
+- "RangeSliderTrack"
+- !private "UIBezierPath"
+depends-member:
+- ["So7CALayerC", "CGContext"]
+- !private ["So7CALayerC", "CGRect"]
+- ["So7CALayerC", "RangeSlider"]
+- !private ["So7CALayerC", "UIBezierPath"]
+- ["So7CALayerC", ""]
+- !private ["So7CALayerC", "bounds"]
+- ["So7CALayerC", "draw"]
+- ["So7CALayerC", "init"]
+- !private ["So7CALayerC", "init"]
+- ["So7CALayerC", "rangeSlider"]
+- !private ["So15CALayerDelegateP", "curvaceousness"]
+- !private ["So15CALayerDelegateP", "lowerValue"]
+- !private ["So15CALayerDelegateP", "positionForValue"]
+- !private ["So15CALayerDelegateP", "trackHighlightTintColor"]
+- !private ["So15CALayerDelegateP", "trackTintColor"]
+- !private ["So15CALayerDelegateP", "upperValue"]
+- !private ["So13CAMediaTimingP", "CGRect"]
+- !private ["So13CAMediaTimingP", "UIBezierPath"]
+- ["So13CAMediaTimingP", ""]
+- !private ["So13CAMediaTimingP", "bounds"]
+- !private ["So13CAMediaTimingP", "init"]
+- !private ["So13CAMediaTimingP", "init"]
+- !private ["So13CAMediaTimingP", "rangeSlider"]
+- !private ["So12CGContextRefa", "addPath"]
+- !private ["So12CGContextRefa", "fill"]
+- !private ["So12CGContextRefa", "fillPath"]
+- !private ["So12CGContextRefa", "setFillColor"]
+- !private ["So7CGPointV", "x"]
+- !private ["So6CGRectV", "height"]
+- !private ["So6CGRectV", "init"]
+- !private ["s7CVarArgP", "CGRect"]
+- !private ["s7CVarArgP", "UIBezierPath"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "bounds"]
+- !private ["s7CVarArgP", "cgColor"]
+- !private ["s7CVarArgP", "cgPath"]
+- !private ["s7CVarArgP", "curvaceousness"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "lowerValue"]
+- !private ["s7CVarArgP", "positionForValue"]
+- !private ["s7CVarArgP", "rangeSlider"]
+- !private ["s7CVarArgP", "trackHighlightTintColor"]
+- !private ["s7CVarArgP", "trackTintColor"]
+- !private ["s7CVarArgP", "upperValue"]
+- !private ["s28CustomDebugStringConvertibleP", "CGRect"]
+- !private ["s28CustomDebugStringConvertibleP", "UIBezierPath"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "bounds"]
+- !private ["s28CustomDebugStringConvertibleP", "cgColor"]
+- !private ["s28CustomDebugStringConvertibleP", "cgPath"]
+- !private ["s28CustomDebugStringConvertibleP", "curvaceousness"]
+- !private ["s28CustomDebugStringConvertibleP", "height"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lowerValue"]
+- !private ["s28CustomDebugStringConvertibleP", "positionForValue"]
+- !private ["s28CustomDebugStringConvertibleP", "rangeSlider"]
+- !private ["s28CustomDebugStringConvertibleP", "trackHighlightTintColor"]
+- !private ["s28CustomDebugStringConvertibleP", "trackTintColor"]
+- !private ["s28CustomDebugStringConvertibleP", "upperValue"]
+- !private ["s28CustomDebugStringConvertibleP", "x"]
+- !private ["s29CustomPlaygroundQuickLookableP", "height"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "x"]
+- !private ["s17CustomReflectableP", "height"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "x"]
+- !private ["s23CustomStringConvertibleP", "CGRect"]
+- !private ["s23CustomStringConvertibleP", "UIBezierPath"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "bounds"]
+- !private ["s23CustomStringConvertibleP", "cgColor"]
+- !private ["s23CustomStringConvertibleP", "cgPath"]
+- !private ["s23CustomStringConvertibleP", "curvaceousness"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lowerValue"]
+- !private ["s23CustomStringConvertibleP", "positionForValue"]
+- !private ["s23CustomStringConvertibleP", "rangeSlider"]
+- !private ["s23CustomStringConvertibleP", "trackHighlightTintColor"]
+- !private ["s23CustomStringConvertibleP", "trackTintColor"]
+- !private ["s23CustomStringConvertibleP", "upperValue"]
+- !private ["Se", "height"]
+- !private ["Se", "init"]
+- !private ["Se", "x"]
+- !private ["SE", "height"]
+- !private ["SE", "init"]
+- !private ["SE", "x"]
+- !private ["SQ", "CGRect"]
+- !private ["SQ", "UIBezierPath"]
+- ["SQ", ""]
+- !private ["SQ", "addPath"]
+- !private ["SQ", "bounds"]
+- !private ["SQ", "cgColor"]
+- !private ["SQ", "cgPath"]
+- !private ["SQ", "curvaceousness"]
+- !private ["SQ", "fill"]
+- !private ["SQ", "fillPath"]
+- !private ["SQ", "height"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- !private ["SQ", "lowerValue"]
+- !private ["SQ", "positionForValue"]
+- !private ["SQ", "rangeSlider"]
+- !private ["SQ", "setFillColor"]
+- !private ["SQ", "trackHighlightTintColor"]
+- !private ["SQ", "trackTintColor"]
+- !private ["SQ", "upperValue"]
+- !private ["SQ", "x"]
+- !private ["SH", "CGRect"]
+- !private ["SH", "UIBezierPath"]
+- ["SH", ""]
+- !private ["SH", "addPath"]
+- !private ["SH", "bounds"]
+- !private ["SH", "cgColor"]
+- !private ["SH", "cgPath"]
+- !private ["SH", "curvaceousness"]
+- !private ["SH", "fill"]
+- !private ["SH", "fillPath"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- !private ["SH", "lowerValue"]
+- !private ["SH", "positionForValue"]
+- !private ["SH", "rangeSlider"]
+- !private ["SH", "setFillColor"]
+- !private ["SH", "trackHighlightTintColor"]
+- !private ["SH", "trackTintColor"]
+- !private ["SH", "upperValue"]
+- !private ["So8NSCodingP", "CGRect"]
+- !private ["So8NSCodingP", "UIBezierPath"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "bounds"]
+- !private ["So8NSCodingP", "cgColor"]
+- !private ["So8NSCodingP", "cgPath"]
+- !private ["So8NSCodingP", "curvaceousness"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "lowerValue"]
+- !private ["So8NSCodingP", "positionForValue"]
+- !private ["So8NSCodingP", "rangeSlider"]
+- !private ["So8NSCodingP", "trackHighlightTintColor"]
+- !private ["So8NSCodingP", "trackTintColor"]
+- !private ["So8NSCodingP", "upperValue"]
+- !private ["So9NSCopyingP", "cgColor"]
+- !private ["So9NSCopyingP", "cgPath"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So21NSItemProviderReadingP", "cgColor"]
+- !private ["So21NSItemProviderWritingP", "cgColor"]
+- ["So8NSObjectC", "CGContext"]
+- !private ["So8NSObjectC", "CGRect"]
+- ["So8NSObjectC", "RangeSlider"]
+- !private ["So8NSObjectC", "UIBezierPath"]
+- !private ["So8NSObjectC", "bounds"]
+- !private ["So8NSObjectC", "cgColor"]
+- !private ["So8NSObjectC", "cgPath"]
+- !private ["So8NSObjectC", "curvaceousness"]
+- ["So8NSObjectC", "draw"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "lowerValue"]
+- !private ["So8NSObjectC", "positionForValue"]
+- ["So8NSObjectC", "rangeSlider"]
+- !private ["So8NSObjectC", "trackHighlightTintColor"]
+- !private ["So8NSObjectC", "trackTintColor"]
+- !private ["So8NSObjectC", "upperValue"]
+- !private ["So8NSObjectP", "CGRect"]
+- !private ["So8NSObjectP", "UIBezierPath"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "bounds"]
+- !private ["So8NSObjectP", "cgColor"]
+- !private ["So8NSObjectP", "cgPath"]
+- !private ["So8NSObjectP", "curvaceousness"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "lowerValue"]
+- !private ["So8NSObjectP", "positionForValue"]
+- !private ["So8NSObjectP", "rangeSlider"]
+- !private ["So8NSObjectP", "trackHighlightTintColor"]
+- !private ["So8NSObjectP", "trackTintColor"]
+- !private ["So8NSObjectP", "upperValue"]
+- !private ["So14NSSecureCodingP", "CGRect"]
+- !private ["So14NSSecureCodingP", "UIBezierPath"]
+- ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "bounds"]
+- !private ["So14NSSecureCodingP", "cgColor"]
+- !private ["So14NSSecureCodingP", "cgPath"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "rangeSlider"]
+- !private ["16SwiftRangeSlider0bC0C", "curvaceousness"]
+- !private ["16SwiftRangeSlider0bC0C", "lowerValue"]
+- !private ["16SwiftRangeSlider0bC0C", "positionForValue"]
+- !private ["16SwiftRangeSlider0bC0C", "trackHighlightTintColor"]
+- !private ["16SwiftRangeSlider0bC0C", "trackTintColor"]
+- !private ["16SwiftRangeSlider0bC0C", "upperValue"]
+- ["16SwiftRangeSlider0bC5TrackC", "CGContext"]
+- !private ["16SwiftRangeSlider0bC5TrackC", "CGRect"]
+- ["16SwiftRangeSlider0bC5TrackC", "RangeSlider"]
+- !private ["16SwiftRangeSlider0bC5TrackC", "UIBezierPath"]
+- !private ["16SwiftRangeSlider0bC5TrackC", "bounds"]
+- ["16SwiftRangeSlider0bC5TrackC", "draw"]
+- ["16SwiftRangeSlider0bC5TrackC", "init"]
+- ["16SwiftRangeSlider0bC5TrackC", "rangeSlider"]
+- !private ["So29UIAccessibilityIdentificationP", "curvaceousness"]
+- !private ["So29UIAccessibilityIdentificationP", "lowerValue"]
+- !private ["So29UIAccessibilityIdentificationP", "positionForValue"]
+- !private ["So29UIAccessibilityIdentificationP", "trackHighlightTintColor"]
+- !private ["So29UIAccessibilityIdentificationP", "trackTintColor"]
+- !private ["So29UIAccessibilityIdentificationP", "upperValue"]
+- !private ["So12UIAppearanceP", "curvaceousness"]
+- !private ["So12UIAppearanceP", "lowerValue"]
+- !private ["So12UIAppearanceP", "positionForValue"]
+- !private ["So12UIAppearanceP", "trackHighlightTintColor"]
+- !private ["So12UIAppearanceP", "trackTintColor"]
+- !private ["So12UIAppearanceP", "upperValue"]
+- !private ["So21UIAppearanceContainerP", "curvaceousness"]
+- !private ["So21UIAppearanceContainerP", "lowerValue"]
+- !private ["So21UIAppearanceContainerP", "positionForValue"]
+- !private ["So21UIAppearanceContainerP", "trackHighlightTintColor"]
+- !private ["So21UIAppearanceContainerP", "trackTintColor"]
+- !private ["So21UIAppearanceContainerP", "upperValue"]
+- !private ["So12UIBezierPathC", "cgPath"]
+- !private ["So12UIBezierPathC", "init"]
+- !private ["So7UIColorC", "cgColor"]
+- !private ["So9UIControlC", "curvaceousness"]
+- !private ["So9UIControlC", "lowerValue"]
+- !private ["So9UIControlC", "positionForValue"]
+- !private ["So9UIControlC", "trackHighlightTintColor"]
+- !private ["So9UIControlC", "trackTintColor"]
+- !private ["So9UIControlC", "upperValue"]
+- !private ["So17UICoordinateSpaceP", "curvaceousness"]
+- !private ["So17UICoordinateSpaceP", "lowerValue"]
+- !private ["So17UICoordinateSpaceP", "positionForValue"]
+- !private ["So17UICoordinateSpaceP", "trackHighlightTintColor"]
+- !private ["So17UICoordinateSpaceP", "trackTintColor"]
+- !private ["So17UICoordinateSpaceP", "upperValue"]
+- !private ["So13UIDynamicItemP", "curvaceousness"]
+- !private ["So13UIDynamicItemP", "lowerValue"]
+- !private ["So13UIDynamicItemP", "positionForValue"]
+- !private ["So13UIDynamicItemP", "trackHighlightTintColor"]
+- !private ["So13UIDynamicItemP", "trackTintColor"]
+- !private ["So13UIDynamicItemP", "upperValue"]
+- !private ["So18UIFocusEnvironmentP", "curvaceousness"]
+- !private ["So18UIFocusEnvironmentP", "lowerValue"]
+- !private ["So18UIFocusEnvironmentP", "positionForValue"]
+- !private ["So18UIFocusEnvironmentP", "trackHighlightTintColor"]
+- !private ["So18UIFocusEnvironmentP", "trackTintColor"]
+- !private ["So18UIFocusEnvironmentP", "upperValue"]
+- !private ["So11UIFocusItemP", "curvaceousness"]
+- !private ["So11UIFocusItemP", "lowerValue"]
+- !private ["So11UIFocusItemP", "positionForValue"]
+- !private ["So11UIFocusItemP", "trackHighlightTintColor"]
+- !private ["So11UIFocusItemP", "trackTintColor"]
+- !private ["So11UIFocusItemP", "upperValue"]
+- !private ["So20UIFocusItemContainerP", "curvaceousness"]
+- !private ["So20UIFocusItemContainerP", "lowerValue"]
+- !private ["So20UIFocusItemContainerP", "positionForValue"]
+- !private ["So20UIFocusItemContainerP", "trackHighlightTintColor"]
+- !private ["So20UIFocusItemContainerP", "trackTintColor"]
+- !private ["So20UIFocusItemContainerP", "upperValue"]
+- !private ["So30UIPasteConfigurationSupportingP", "curvaceousness"]
+- !private ["So30UIPasteConfigurationSupportingP", "lowerValue"]
+- !private ["So30UIPasteConfigurationSupportingP", "positionForValue"]
+- !private ["So30UIPasteConfigurationSupportingP", "trackHighlightTintColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "trackTintColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "upperValue"]
+- !private ["So11UIResponderC", "curvaceousness"]
+- !private ["So11UIResponderC", "lowerValue"]
+- !private ["So11UIResponderC", "positionForValue"]
+- !private ["So11UIResponderC", "trackHighlightTintColor"]
+- !private ["So11UIResponderC", "trackTintColor"]
+- !private ["So11UIResponderC", "upperValue"]
+- !private ["So30UIResponderStandardEditActionsP", "curvaceousness"]
+- !private ["So30UIResponderStandardEditActionsP", "lowerValue"]
+- !private ["So30UIResponderStandardEditActionsP", "positionForValue"]
+- !private ["So30UIResponderStandardEditActionsP", "trackHighlightTintColor"]
+- !private ["So30UIResponderStandardEditActionsP", "trackTintColor"]
+- !private ["So30UIResponderStandardEditActionsP", "upperValue"]
+- !private ["So18UITraitEnvironmentP", "curvaceousness"]
+- !private ["So18UITraitEnvironmentP", "lowerValue"]
+- !private ["So18UITraitEnvironmentP", "positionForValue"]
+- !private ["So18UITraitEnvironmentP", "trackHighlightTintColor"]
+- !private ["So18UITraitEnvironmentP", "trackTintColor"]
+- !private ["So18UITraitEnvironmentP", "upperValue"]
+- !private ["So23UIUserActivityRestoringP", "curvaceousness"]
+- !private ["So23UIUserActivityRestoringP", "lowerValue"]
+- !private ["So23UIUserActivityRestoringP", "positionForValue"]
+- !private ["So23UIUserActivityRestoringP", "trackHighlightTintColor"]
+- !private ["So23UIUserActivityRestoringP", "trackTintColor"]
+- !private ["So23UIUserActivityRestoringP", "upperValue"]
+- !private ["So6UIViewC", "curvaceousness"]
+- !private ["So6UIViewC", "lowerValue"]
+- !private ["So6UIViewC", "positionForValue"]
+- !private ["So6UIViewC", "trackHighlightTintColor"]
+- !private ["So6UIViewC", "trackTintColor"]
+- !private ["So6UIViewC", "upperValue"]
+- !private ["14CoreFoundation9_CFObjectP", "addPath"]
+- !private ["14CoreFoundation9_CFObjectP", "fill"]
+- !private ["14CoreFoundation9_CFObjectP", "fillPath"]
+- !private ["14CoreFoundation9_CFObjectP", "setFillColor"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "curvaceousness"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "lowerValue"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "positionForValue"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "trackHighlightTintColor"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "trackTintColor"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "upperValue"]
+- !private ["s26_ExpressibleByColorLiteralP", "cgColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CGRect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIBezierPath"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cgColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cgPath"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "curvaceousness"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lowerValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "positionForValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "rangeSlider"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "trackHighlightTintColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "trackTintColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "upperValue"]
+- !private ["s21_ObjectiveCBridgeableP", "height"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "x"]
+depends-nominal:
+- "So7CALayerC"
+- !private "So15CALayerDelegateP"
+- "So13CAMediaTimingP"
+- !private "So12CGContextRefa"
+- !private "So7CGPointV"
+- !private "So6CGRectV"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- "SH"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- !private "16SwiftRangeSlider0bC0C"
+- "16SwiftRangeSlider0bC5TrackC"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
+- !private "So12UIBezierPathC"
+- !private "So7UIColorC"
+- !private "So9UIControlC"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So18UITraitEnvironmentP"
+- !private "So23UIUserActivityRestoringP"
+- !private "So6UIViewC"
+- !private "14CoreFoundation9_CFObjectP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s26_ExpressibleByColorLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Target Support Files/SwiftRangeSlider/SwiftRangeSlider-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Pods.build/Debug-iphonesimulator/SwiftRangeSlider.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "99ad1569c0abed93afce6d452122bb8a"

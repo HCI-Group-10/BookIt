@@ -1,0 +1,353 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Room"
+provides-nominal:
+- "6BookIt4RoomC"
+provides-member:
+- ["6BookIt4RoomC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+- "Int"
+- "NSDictionary"
+- "NSMutableArray"
+- "NSObject"
+- "Room"
+- "String"
+- "StringLiteralType"
+depends-member:
+- ["SK", "init"]
+- ["SK", "init"]
+- !private ["s7CVarArgP", "Room"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "capacity"]
+- !private ["s7CVarArgP", "capacityKey"]
+- ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "location"]
+- !private ["s7CVarArgP", "locationKey"]
+- !private ["s7CVarArgP", "room"]
+- !private ["s7CVarArgP", "roomKey"]
+- !private ["s7CVarArgP", "roomNumber"]
+- !private ["s7CVarArgP", "roomNumberKey"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "timeKey"]
+- !private ["s7CVarArgP", "times"]
+- ["Sl", "init"]
+- ["Sl", "init"]
+- ["SL", "init"]
+- ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Room"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "capacity"]
+- !private ["s28CustomDebugStringConvertibleP", "capacityKey"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "location"]
+- !private ["s28CustomDebugStringConvertibleP", "locationKey"]
+- !private ["s28CustomDebugStringConvertibleP", "room"]
+- !private ["s28CustomDebugStringConvertibleP", "roomKey"]
+- !private ["s28CustomDebugStringConvertibleP", "roomNumber"]
+- !private ["s28CustomDebugStringConvertibleP", "roomNumberKey"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "timeKey"]
+- !private ["s28CustomDebugStringConvertibleP", "times"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "Room"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "capacity"]
+- !private ["s23CustomStringConvertibleP", "capacityKey"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "location"]
+- !private ["s23CustomStringConvertibleP", "locationKey"]
+- !private ["s23CustomStringConvertibleP", "room"]
+- !private ["s23CustomStringConvertibleP", "roomKey"]
+- !private ["s23CustomStringConvertibleP", "roomNumber"]
+- !private ["s23CustomStringConvertibleP", "roomNumberKey"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "timeKey"]
+- !private ["s23CustomStringConvertibleP", "times"]
+- ["Se", "init"]
+- ["Se", "init"]
+- ["SE", "init"]
+- ["SE", "init"]
+- !private ["SQ", "Room"]
+- ["SQ", ""]
+- !private ["SQ", "capacity"]
+- !private ["SQ", "capacityKey"]
+- ["SQ", "init"]
+- ["SQ", "init"]
+- !private ["SQ", "location"]
+- !private ["SQ", "locationKey"]
+- !private ["SQ", "room"]
+- !private ["SQ", "roomKey"]
+- !private ["SQ", "roomNumber"]
+- !private ["SQ", "roomNumberKey"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "timeKey"]
+- !private ["SQ", "times"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "Room"]
+- ["SH", ""]
+- !private ["SH", "capacity"]
+- !private ["SH", "capacityKey"]
+- ["SH", "init"]
+- ["SH", "init"]
+- !private ["SH", "location"]
+- !private ["SH", "locationKey"]
+- !private ["SH", "room"]
+- !private ["SH", "roomKey"]
+- !private ["SH", "roomNumber"]
+- !private ["SH", "roomNumberKey"]
+- !private ["SH", "subscript"]
+- !private ["SH", "timeKey"]
+- !private ["SH", "times"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "subscript"]
+- !private ["So9NSCopyingP", "subscript"]
+- !private ["So12NSDictionaryC", "subscript"]
+- !private ["So17NSFastEnumerationP", "subscript"]
+- !private ["So16NSMutableCopyingP", "subscript"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "NSDictionary"]
+- ["So8NSObjectC", "NSMutableArray"]
+- !private ["So8NSObjectC", "Room"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "capacity"]
+- ["So8NSObjectC", "capacityKey"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "location"]
+- ["So8NSObjectC", "locationKey"]
+- ["So8NSObjectC", "room"]
+- ["So8NSObjectC", "roomKey"]
+- ["So8NSObjectC", "roomNumber"]
+- ["So8NSObjectC", "roomNumberKey"]
+- !private ["So8NSObjectC", "subscript"]
+- ["So8NSObjectC", "timeKey"]
+- ["So8NSObjectC", "times"]
+- !private ["So8NSObjectP", "Room"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "capacity"]
+- !private ["So8NSObjectP", "capacityKey"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "location"]
+- !private ["So8NSObjectP", "locationKey"]
+- !private ["So8NSObjectP", "room"]
+- !private ["So8NSObjectP", "roomKey"]
+- !private ["So8NSObjectP", "roomNumber"]
+- !private ["So8NSObjectP", "roomNumberKey"]
+- !private ["So8NSObjectP", "subscript"]
+- !private ["So8NSObjectP", "timeKey"]
+- !private ["So8NSObjectP", "times"]
+- !private ["So14NSSecureCodingP", "subscript"]
+- ["Sm", "init"]
+- ["Sm", "init"]
+- ["6BookIt4RoomC", "Int"]
+- ["6BookIt4RoomC", "NSDictionary"]
+- ["6BookIt4RoomC", "NSMutableArray"]
+- !private ["6BookIt4RoomC", "Room"]
+- ["6BookIt4RoomC", "String"]
+- ["6BookIt4RoomC", "capacity"]
+- ["6BookIt4RoomC", "capacityKey"]
+- ["6BookIt4RoomC", "init"]
+- ["6BookIt4RoomC", "location"]
+- ["6BookIt4RoomC", "locationKey"]
+- ["6BookIt4RoomC", "room"]
+- ["6BookIt4RoomC", "roomKey"]
+- ["6BookIt4RoomC", "roomNumber"]
+- ["6BookIt4RoomC", "roomNumberKey"]
+- ["6BookIt4RoomC", "timeKey"]
+- ["6BookIt4RoomC", "times"]
+- ["ST", "init"]
+- ["ST", "init"]
+- !private ["ST", "subscript"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s12StaticStringV", "init"]
+- ["SS", "init"]
+- ["SS", "init"]
+- ["Sy", "init"]
+- ["Sy", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Room"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "capacity"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "capacityKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "location"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "locationKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "room"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roomKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roomNumber"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "roomNumberKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "timeKey"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "times"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "SK"
+- "s7CVarArgP"
+- "Sl"
+- "SL"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "Se"
+- "SE"
+- "SQ"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So12NSDictionaryC"
+- !private "So17NSFastEnumerationP"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- "Sm"
+- "6BookIt4RoomC"
+- "ST"
+- !private "s12StaticStringV"
+- "SS"
+- "Sy"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/SwiftRangeSlider.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FirebaseCore-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FirebaseFirestore-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FirebaseDatabase-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRSnapshotMetadata.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRCollectionReference.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRDocumentReference.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestoreSource.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRDocumentChange.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestore.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FirebaseFirestore.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Firebase/CoreOnly/Sources/Firebase.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFieldValue.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRWriteBatch.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFieldPath.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRListenerRegistration.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRTransaction.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRTimestamp.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestoreSettings.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestoreErrors.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-Swift.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRGeoPoint.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRDocumentSnapshot.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRQuerySnapshot.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRQuery.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Firebase/CoreOnly/Sources/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "ab506a523d85cb19a469157b32f31039"
