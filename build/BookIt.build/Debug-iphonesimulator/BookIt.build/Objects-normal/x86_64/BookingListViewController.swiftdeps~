@@ -117,6 +117,7 @@ depends-member:
 - ["6BookIt25BookingListViewControllerC", "deinit"]
 - ["6BookIt25BookingListViewControllerC", "didReceiveMemoryWarning"]
 - ["6BookIt25BookingListViewControllerC", "doQuickBookSearch"]
+- ["6BookIt25BookingListViewControllerC", "endTime"]
 - ["6BookIt25BookingListViewControllerC", "getDate"]
 - ["6BookIt25BookingListViewControllerC", "init"]
 - ["6BookIt25BookingListViewControllerC", "isQuickBook"]
@@ -127,6 +128,7 @@ depends-member:
 - ["6BookIt25BookingListViewControllerC", "reserveButtonPressed"]
 - ["6BookIt25BookingListViewControllerC", "roomData"]
 - ["6BookIt25BookingListViewControllerC", "setUpViews"]
+- ["6BookIt25BookingListViewControllerC", "startTime"]
 - ["6BookIt25BookingListViewControllerC", "tableView"]
 - !private ["6BookIt25BookingListViewControllerC", "title"]
 - ["6BookIt25BookingListViewControllerC", "today"]
@@ -669,6 +671,8 @@ depends-member:
 - !private ["So17NSFastEnumerationP", "subscript"]
 - !private ["So21NSItemProviderReadingP", "white"]
 - !private ["So21NSItemProviderWritingP", "white"]
+- !private ["So14NSMutableArrayC", "count"]
+- !private ["So14NSMutableArrayC", "subscript"]
 - !private ["So16NSMutableCopyingP", "count"]
 - !private ["So16NSMutableCopyingP", "subscript"]
 - !private ["So8NSObjectC", "BookingListTableViewCell"]
@@ -702,6 +706,7 @@ depends-member:
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
 - ["So8NSObjectC", "doQuickBookSearch"]
 - !private ["So8NSObjectC", "documents"]
+- ["So8NSObjectC", "endTime"]
 - !private ["So8NSObjectC", "estimatedRowHeight"]
 - !private ["So8NSObjectC", "firestore"]
 - ["So8NSObjectC", "getDate"]
@@ -725,6 +730,7 @@ depends-member:
 - !private ["So8NSObjectC", "selectionStyle"]
 - !private ["So8NSObjectC", "separatorStyle"]
 - ["So8NSObjectC", "setUpViews"]
+- ["So8NSObjectC", "startTime"]
 - !private ["So8NSObjectC", "string"]
 - !private ["So8NSObjectC", "subscript"]
 - ["So8NSObjectC", "tableView"]
@@ -1146,6 +1152,7 @@ depends-member:
 - !private ["So11UIResponderC", "dequeueReusableCell"]
 - ["So11UIResponderC", "didReceiveMemoryWarning"]
 - ["So11UIResponderC", "doQuickBookSearch"]
+- ["So11UIResponderC", "endTime"]
 - !private ["So11UIResponderC", "estimatedRowHeight"]
 - ["So11UIResponderC", "getDate"]
 - !private ["So11UIResponderC", "identifier"]
@@ -1167,6 +1174,7 @@ depends-member:
 - !private ["So11UIResponderC", "selectionStyle"]
 - !private ["So11UIResponderC", "separatorStyle"]
 - ["So11UIResponderC", "setUpViews"]
+- ["So11UIResponderC", "startTime"]
 - ["So11UIResponderC", "tableView"]
 - !private ["So11UIResponderC", "title"]
 - ["So11UIResponderC", "today"]
@@ -1332,6 +1340,7 @@ depends-member:
 - ["So21UITableViewControllerC", "calendar"]
 - ["So21UITableViewControllerC", "didReceiveMemoryWarning"]
 - ["So21UITableViewControllerC", "doQuickBookSearch"]
+- ["So21UITableViewControllerC", "endTime"]
 - ["So21UITableViewControllerC", "getDate"]
 - ["So21UITableViewControllerC", "init"]
 - !private ["So21UITableViewControllerC", "init"]
@@ -1343,6 +1352,7 @@ depends-member:
 - ["So21UITableViewControllerC", "reserveButtonPressed"]
 - ["So21UITableViewControllerC", "roomData"]
 - ["So21UITableViewControllerC", "setUpViews"]
+- ["So21UITableViewControllerC", "startTime"]
 - ["So21UITableViewControllerC", "tableView"]
 - !private ["So21UITableViewControllerC", "title"]
 - ["So21UITableViewControllerC", "today"]
@@ -1540,6 +1550,7 @@ depends-member:
 - ["So16UIViewControllerC", "calendar"]
 - ["So16UIViewControllerC", "didReceiveMemoryWarning"]
 - ["So16UIViewControllerC", "doQuickBookSearch"]
+- ["So16UIViewControllerC", "endTime"]
 - ["So16UIViewControllerC", "getDate"]
 - ["So16UIViewControllerC", "init"]
 - !private ["So16UIViewControllerC", "init"]
@@ -1553,6 +1564,7 @@ depends-member:
 - ["So16UIViewControllerC", "reserveButtonPressed"]
 - ["So16UIViewControllerC", "roomData"]
 - ["So16UIViewControllerC", "setUpViews"]
+- ["So16UIViewControllerC", "startTime"]
 - ["So16UIViewControllerC", "tableView"]
 - !private ["So16UIViewControllerC", "title"]
 - ["So16UIViewControllerC", "today"]
@@ -1716,6 +1728,7 @@ depends-nominal:
 - !private "So17NSFastEnumerationP"
 - !private "So21NSItemProviderReadingP"
 - !private "So21NSItemProviderWritingP"
+- !private "So14NSMutableArrayC"
 - !private "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
@@ -1874,4 +1887,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "c75114c4414852b1372cad50581d08d3"
+interface-hash: "c77423fdd5a747beaeb0bb5461982ad9"

@@ -15,6 +15,8 @@ class BookingListViewController: UITableViewController {
     var today : Date = Date.init()
     let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
     var todaysDate : String = ""
+    var startTime : String = ""
+    var endTime : String = ""
     
     
     
@@ -163,18 +165,24 @@ class BookingListViewController: UITableViewController {
 
 extension BookingListViewController: BookingListTableViewCellDelegate
 {
+    
     func reserveButtonPressed(room: Room?)
     {
         if let room = room, let nav = navigationController
         {
             let reservation = Reservation()
+            
             reservation.room = room
             let date = Date()
             let dateFormatter = DateFormatter()
             
             dateFormatter.dateFormat = "dd-MMM-YYYY"
             reservation.date = dateFormatter.string(from: date)
-            
+            if startTime != "" && endTime != ""{
+                reservation.startTime = startTime
+                reservation.endTime = endTime
+            }
+            else{
             var hour = self.calendar.component(.hour, from: self.today)
             var minute = self.calendar.component(.minute, from: self.today)
             var endTimeString : String = ""
@@ -192,8 +200,9 @@ extension BookingListViewController: BookingListTableViewCellDelegate
             reservation.startTime = dateFormatter.string(from: date)
             reservation.endTime = endTimeString
             
-            
-            
+            }
+            print(reservation.startTime)
+            print(reservation.endTime)
             let roomReservationVC = RoomReservationViewController()
             roomReservationVC.reservation = reservation
             
