@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let geoFenceEduLib:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(29.646664, -82.337789), radius: 100, identifier: "EduLib")
         
         
-        locationManager.startMonitoring(for: geoFence)
+//        locationManager.startMonitoring(for: geoFence)
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {

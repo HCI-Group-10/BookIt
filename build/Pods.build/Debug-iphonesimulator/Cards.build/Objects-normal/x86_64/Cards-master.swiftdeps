@@ -1,0 +1,13 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
+options: "759ac4198c559e8984f782644627c8b9"
+build_time: [1540838057, 341884000]
+inputs:
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/Assets.xcassets/Animator.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/Card.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/CardArticle.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/CardGroup.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/CardGroupSliding.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/CardHighlight.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/CardPlayer.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/DetailViewController.swift": [1540838049, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Cards/Cards/Sources/LayoutHelper.swift": [1540838049, 0]

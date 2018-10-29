@@ -274,7 +274,8 @@ class RoomSearchViewController: UIViewController
                     bookListViewController.endTime = "\(upperBound / 2):30"
                 }
                 
-                
+                print(bookListViewController.startTime)
+                print(bookListViewController.endTime)
 
                 
                 self.navigationController?.pushViewController(bookListViewController, animated: true)

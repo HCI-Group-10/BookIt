@@ -1,9 +1,12 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "ScannerViewControllerDelegate"
 - "ScannerViewController"
 provides-nominal:
+- "6BookIt29ScannerViewControllerDelegateP"
 - "6BookIt21ScannerViewControllerC"
 provides-member:
+- ["6BookIt29ScannerViewControllerDelegateP", ""]
 - ["6BookIt21ScannerViewControllerC", ""]
 provides-dynamic-lookup:
 - "metadataOutput"
@@ -30,11 +33,11 @@ depends-top-level:
 - "CastingPrecedence"
 - !private "DispatchQueue"
 - "ScannerViewController"
+- "ScannerViewControllerDelegate"
 - "String"
 - !private "UIColor"
 - "UIInterfaceOrientationMask"
 - "UIViewController"
-- !private "print"
 depends-member:
 - !private ["So15AVCaptureDeviceC", "default"]
 - !private ["So20AVCaptureDeviceInputC", "init"]
@@ -52,12 +55,12 @@ depends-member:
 - ["So38AVCaptureMetadataOutputObjectsDelegateP", ""]
 - ["So38AVCaptureMetadataOutputObjectsDelegateP", "captureOutput"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "captureSession"]
+- !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "delegate"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "dismiss"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "failed"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "found"]
 - ["So38AVCaptureMetadataOutputObjectsDelegateP", "metadataOutput"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "previewLayer"]
-- !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "print"]
 - !private ["So38AVCaptureMetadataOutputObjectsDelegateP", "view"]
 - !private ["So15AVCaptureOutputC", "init"]
 - !private ["So15AVCaptureOutputC", "metadataObjectTypes"]
@@ -113,6 +116,7 @@ depends-member:
 - ["s7CVarArgP", "captureOutput"]
 - !private ["s7CVarArgP", "captureSession"]
 - !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "dismiss"]
 - !private ["s7CVarArgP", "failed"]
 - !private ["s7CVarArgP", "first"]
@@ -126,7 +130,6 @@ depends-member:
 - !private ["s7CVarArgP", "metadataObjectTypes"]
 - ["s7CVarArgP", "metadataOutput"]
 - !private ["s7CVarArgP", "previewLayer"]
-- !private ["s7CVarArgP", "print"]
 - !private ["s7CVarArgP", "setMetadataObjectsDelegate"]
 - !private ["s7CVarArgP", "startRunning"]
 - !private ["s7CVarArgP", "stopRunning"]
@@ -156,6 +159,7 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "captureOutput"]
 - !private ["s28CustomDebugStringConvertibleP", "captureSession"]
 - !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "dismiss"]
 - !private ["s28CustomDebugStringConvertibleP", "failed"]
 - !private ["s28CustomDebugStringConvertibleP", "first"]
@@ -168,8 +172,8 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "metadataObjectTypes"]
 - ["s28CustomDebugStringConvertibleP", "metadataOutput"]
+- !private ["s28CustomDebugStringConvertibleP", "outputFromScan"]
 - !private ["s28CustomDebugStringConvertibleP", "previewLayer"]
-- !private ["s28CustomDebugStringConvertibleP", "print"]
 - !private ["s28CustomDebugStringConvertibleP", "setMetadataObjectsDelegate"]
 - !private ["s28CustomDebugStringConvertibleP", "startRunning"]
 - !private ["s28CustomDebugStringConvertibleP", "stopRunning"]
@@ -189,6 +193,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "first"]
 - !private ["s17CustomReflectableP", "frame"]
 - !private ["s17CustomReflectableP", "layer"]
+- !private ["s17CustomReflectableP", "outputFromScan"]
 - !private ["s17CustomReflectableP", "startRunning"]
 - !private ["s17CustomReflectableP", "stopRunning"]
 - !private ["s17CustomReflectableP", "videoGravity"]
@@ -212,6 +217,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", "captureOutput"]
 - !private ["s23CustomStringConvertibleP", "captureSession"]
 - !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "dismiss"]
 - !private ["s23CustomStringConvertibleP", "failed"]
 - !private ["s23CustomStringConvertibleP", "first"]
@@ -225,7 +231,6 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "metadataObjectTypes"]
 - ["s23CustomStringConvertibleP", "metadataOutput"]
 - !private ["s23CustomStringConvertibleP", "previewLayer"]
-- !private ["s23CustomStringConvertibleP", "print"]
 - !private ["s23CustomStringConvertibleP", "setMetadataObjectsDelegate"]
 - !private ["s23CustomStringConvertibleP", "startRunning"]
 - !private ["s23CustomStringConvertibleP", "stopRunning"]
@@ -244,6 +249,7 @@ depends-member:
 - !private ["Se", "first"]
 - !private ["Se", "frame"]
 - !private ["Se", "layer"]
+- !private ["Se", "outputFromScan"]
 - !private ["Se", "startRunning"]
 - !private ["Se", "stopRunning"]
 - !private ["Se", "videoGravity"]
@@ -258,6 +264,7 @@ depends-member:
 - !private ["SE", "first"]
 - !private ["SE", "frame"]
 - !private ["SE", "layer"]
+- !private ["SE", "outputFromScan"]
 - !private ["SE", "startRunning"]
 - !private ["SE", "stopRunning"]
 - !private ["SE", "videoGravity"]
@@ -281,6 +288,7 @@ depends-member:
 - ["SQ", "captureOutput"]
 - !private ["SQ", "captureSession"]
 - !private ["SQ", "default"]
+- !private ["SQ", "delegate"]
 - !private ["SQ", "dismiss"]
 - !private ["SQ", "failed"]
 - !private ["SQ", "first"]
@@ -293,9 +301,9 @@ depends-member:
 - !private ["SQ", "main"]
 - !private ["SQ", "metadataObjectTypes"]
 - ["SQ", "metadataOutput"]
+- !private ["SQ", "outputFromScan"]
 - !private ["SQ", "portrait"]
 - !private ["SQ", "previewLayer"]
-- !private ["SQ", "print"]
 - !private ["SQ", "qr"]
 - !private ["SQ", "resizeAspectFill"]
 - !private ["SQ", "setMetadataObjectsDelegate"]
@@ -318,6 +326,7 @@ depends-member:
 - !private ["s23ExpressibleByNilLiteralP", "canAddOutput"]
 - !private ["s23ExpressibleByNilLiteralP", "frame"]
 - !private ["s23ExpressibleByNilLiteralP", "layer"]
+- !private ["s23ExpressibleByNilLiteralP", "outputFromScan"]
 - !private ["s23ExpressibleByNilLiteralP", "startRunning"]
 - !private ["s23ExpressibleByNilLiteralP", "stopRunning"]
 - !private ["s23ExpressibleByNilLiteralP", "videoGravity"]
@@ -341,6 +350,7 @@ depends-member:
 - ["SH", "captureOutput"]
 - !private ["SH", "captureSession"]
 - !private ["SH", "default"]
+- !private ["SH", "delegate"]
 - !private ["SH", "dismiss"]
 - !private ["SH", "failed"]
 - !private ["SH", "first"]
@@ -353,8 +363,8 @@ depends-member:
 - !private ["SH", "main"]
 - !private ["SH", "metadataObjectTypes"]
 - ["SH", "metadataOutput"]
+- !private ["SH", "outputFromScan"]
 - !private ["SH", "previewLayer"]
-- !private ["SH", "print"]
 - !private ["SH", "qr"]
 - !private ["SH", "resizeAspectFill"]
 - !private ["SH", "setMetadataObjectsDelegate"]
@@ -383,6 +393,7 @@ depends-member:
 - !private ["So8NSCodingP", "bounds"]
 - ["So8NSCodingP", "captureOutput"]
 - !private ["So8NSCodingP", "captureSession"]
+- !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "dismiss"]
 - !private ["So8NSCodingP", "failed"]
 - !private ["So8NSCodingP", "found"]
@@ -392,7 +403,6 @@ depends-member:
 - !private ["So8NSCodingP", "layer"]
 - ["So8NSCodingP", "metadataOutput"]
 - !private ["So8NSCodingP", "previewLayer"]
-- !private ["So8NSCodingP", "print"]
 - !private ["So8NSCodingP", "videoGravity"]
 - !private ["So8NSCodingP", "view"]
 - !private ["So8NSCodingP", "viewDidLoad"]
@@ -409,6 +419,7 @@ depends-member:
 - ["So26NSExtensionRequestHandlingP", ""]
 - ["So26NSExtensionRequestHandlingP", "captureOutput"]
 - !private ["So26NSExtensionRequestHandlingP", "captureSession"]
+- !private ["So26NSExtensionRequestHandlingP", "delegate"]
 - !private ["So26NSExtensionRequestHandlingP", "dismiss"]
 - !private ["So26NSExtensionRequestHandlingP", "failed"]
 - !private ["So26NSExtensionRequestHandlingP", "found"]
@@ -416,7 +427,6 @@ depends-member:
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - ["So26NSExtensionRequestHandlingP", "metadataOutput"]
 - !private ["So26NSExtensionRequestHandlingP", "previewLayer"]
-- !private ["So26NSExtensionRequestHandlingP", "print"]
 - !private ["So26NSExtensionRequestHandlingP", "view"]
 - !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
 - !private ["So26NSExtensionRequestHandlingP", "viewWillAppear"]
@@ -433,6 +443,7 @@ depends-member:
 - ["So8NSObjectC", "AVMetadataObject"]
 - ["So8NSObjectC", "Bool"]
 - !private ["So8NSObjectC", "DispatchQueue"]
+- ["So8NSObjectC", "ScannerViewControllerDelegate"]
 - ["So8NSObjectC", "String"]
 - !private ["So8NSObjectC", "UIColor"]
 - ["So8NSObjectC", "UIInterfaceOrientationMask"]
@@ -447,6 +458,7 @@ depends-member:
 - ["So8NSObjectC", "captureOutput"]
 - ["So8NSObjectC", "captureSession"]
 - !private ["So8NSObjectC", "default"]
+- ["So8NSObjectC", "delegate"]
 - !private ["So8NSObjectC", "dismiss"]
 - ["So8NSObjectC", "failed"]
 - ["So8NSObjectC", "found"]
@@ -460,7 +472,6 @@ depends-member:
 - ["So8NSObjectC", "metadataOutput"]
 - ["So8NSObjectC", "prefersStatusBarHidden"]
 - ["So8NSObjectC", "previewLayer"]
-- !private ["So8NSObjectC", "print"]
 - !private ["So8NSObjectC", "setMetadataObjectsDelegate"]
 - !private ["So8NSObjectC", "startRunning"]
 - !private ["So8NSObjectC", "stopRunning"]
@@ -490,6 +501,7 @@ depends-member:
 - ["So8NSObjectP", "captureOutput"]
 - !private ["So8NSObjectP", "captureSession"]
 - !private ["So8NSObjectP", "default"]
+- !private ["So8NSObjectP", "delegate"]
 - !private ["So8NSObjectP", "dismiss"]
 - !private ["So8NSObjectP", "failed"]
 - !private ["So8NSObjectP", "found"]
@@ -502,7 +514,6 @@ depends-member:
 - !private ["So8NSObjectP", "metadataObjectTypes"]
 - ["So8NSObjectP", "metadataOutput"]
 - !private ["So8NSObjectP", "previewLayer"]
-- !private ["So8NSObjectP", "print"]
 - !private ["So8NSObjectP", "setMetadataObjectsDelegate"]
 - !private ["So8NSObjectP", "startRunning"]
 - !private ["So8NSObjectP", "stopRunning"]
@@ -528,6 +539,7 @@ depends-member:
 - !private ["Sq", "canAddOutput"]
 - !private ["Sq", "frame"]
 - !private ["Sq", "layer"]
+- !private ["Sq", "outputFromScan"]
 - !private ["Sq", "startRunning"]
 - !private ["Sq", "stopRunning"]
 - !private ["Sq", "videoGravity"]
@@ -547,12 +559,14 @@ depends-member:
 - ["6BookIt21ScannerViewControllerC", "AVMetadataObject"]
 - ["6BookIt21ScannerViewControllerC", "Bool"]
 - !private ["6BookIt21ScannerViewControllerC", "DispatchQueue"]
+- ["6BookIt21ScannerViewControllerC", "ScannerViewControllerDelegate"]
 - ["6BookIt21ScannerViewControllerC", "String"]
 - !private ["6BookIt21ScannerViewControllerC", "UIColor"]
 - ["6BookIt21ScannerViewControllerC", "UIInterfaceOrientationMask"]
 - ["6BookIt21ScannerViewControllerC", "captureOutput"]
 - ["6BookIt21ScannerViewControllerC", "captureSession"]
 - ["6BookIt21ScannerViewControllerC", "deinit"]
+- ["6BookIt21ScannerViewControllerC", "delegate"]
 - !private ["6BookIt21ScannerViewControllerC", "dismiss"]
 - ["6BookIt21ScannerViewControllerC", "failed"]
 - ["6BookIt21ScannerViewControllerC", "found"]
@@ -560,12 +574,13 @@ depends-member:
 - ["6BookIt21ScannerViewControllerC", "metadataOutput"]
 - ["6BookIt21ScannerViewControllerC", "prefersStatusBarHidden"]
 - ["6BookIt21ScannerViewControllerC", "previewLayer"]
-- !private ["6BookIt21ScannerViewControllerC", "print"]
 - ["6BookIt21ScannerViewControllerC", "supportedInterfaceOrientations"]
 - !private ["6BookIt21ScannerViewControllerC", "view"]
 - ["6BookIt21ScannerViewControllerC", "viewDidLoad"]
 - ["6BookIt21ScannerViewControllerC", "viewWillAppear"]
 - ["6BookIt21ScannerViewControllerC", "viewWillDisappear"]
+- ["6BookIt29ScannerViewControllerDelegateP", "String"]
+- ["6BookIt29ScannerViewControllerDelegateP", "outputFromScan"]
 - !private ["ST", "first"]
 - !private ["s10SetAlgebraP", "portrait"]
 - !private ["So29UIAccessibilityIdentificationP", "backgroundColor"]
@@ -583,6 +598,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "backgroundColor"]
 - ["So21UIAppearanceContainerP", "captureOutput"]
 - !private ["So21UIAppearanceContainerP", "captureSession"]
+- !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "dismiss"]
 - !private ["So21UIAppearanceContainerP", "failed"]
 - !private ["So21UIAppearanceContainerP", "found"]
@@ -591,7 +607,6 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "layer"]
 - ["So21UIAppearanceContainerP", "metadataOutput"]
 - !private ["So21UIAppearanceContainerP", "previewLayer"]
-- !private ["So21UIAppearanceContainerP", "print"]
 - !private ["So21UIAppearanceContainerP", "view"]
 - !private ["So21UIAppearanceContainerP", "viewDidLoad"]
 - !private ["So21UIAppearanceContainerP", "viewWillAppear"]
@@ -607,6 +622,7 @@ depends-member:
 - ["So18UIContentContainerP", ""]
 - ["So18UIContentContainerP", "captureOutput"]
 - !private ["So18UIContentContainerP", "captureSession"]
+- !private ["So18UIContentContainerP", "delegate"]
 - !private ["So18UIContentContainerP", "dismiss"]
 - !private ["So18UIContentContainerP", "failed"]
 - !private ["So18UIContentContainerP", "found"]
@@ -614,7 +630,6 @@ depends-member:
 - !private ["So18UIContentContainerP", "init"]
 - ["So18UIContentContainerP", "metadataOutput"]
 - !private ["So18UIContentContainerP", "previewLayer"]
-- !private ["So18UIContentContainerP", "print"]
 - !private ["So18UIContentContainerP", "view"]
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So18UIContentContainerP", "viewWillAppear"]
@@ -634,6 +649,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "backgroundColor"]
 - ["So18UIFocusEnvironmentP", "captureOutput"]
 - !private ["So18UIFocusEnvironmentP", "captureSession"]
+- !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "dismiss"]
 - !private ["So18UIFocusEnvironmentP", "failed"]
 - !private ["So18UIFocusEnvironmentP", "found"]
@@ -642,7 +658,6 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "layer"]
 - ["So18UIFocusEnvironmentP", "metadataOutput"]
 - !private ["So18UIFocusEnvironmentP", "previewLayer"]
-- !private ["So18UIFocusEnvironmentP", "print"]
 - !private ["So18UIFocusEnvironmentP", "view"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - !private ["So18UIFocusEnvironmentP", "viewWillAppear"]
@@ -663,6 +678,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "backgroundColor"]
 - ["So30UIPasteConfigurationSupportingP", "captureOutput"]
 - !private ["So30UIPasteConfigurationSupportingP", "captureSession"]
+- !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "dismiss"]
 - !private ["So30UIPasteConfigurationSupportingP", "failed"]
 - !private ["So30UIPasteConfigurationSupportingP", "found"]
@@ -671,7 +687,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "layer"]
 - ["So30UIPasteConfigurationSupportingP", "metadataOutput"]
 - !private ["So30UIPasteConfigurationSupportingP", "previewLayer"]
-- !private ["So30UIPasteConfigurationSupportingP", "print"]
 - !private ["So30UIPasteConfigurationSupportingP", "view"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
 - !private ["So30UIPasteConfigurationSupportingP", "viewWillAppear"]
@@ -686,12 +701,14 @@ depends-member:
 - ["So11UIResponderC", "AVMetadataObject"]
 - ["So11UIResponderC", "Bool"]
 - !private ["So11UIResponderC", "DispatchQueue"]
+- ["So11UIResponderC", "ScannerViewControllerDelegate"]
 - ["So11UIResponderC", "String"]
 - !private ["So11UIResponderC", "UIColor"]
 - ["So11UIResponderC", "UIInterfaceOrientationMask"]
 - !private ["So11UIResponderC", "backgroundColor"]
 - ["So11UIResponderC", "captureOutput"]
 - ["So11UIResponderC", "captureSession"]
+- ["So11UIResponderC", "delegate"]
 - !private ["So11UIResponderC", "dismiss"]
 - ["So11UIResponderC", "failed"]
 - ["So11UIResponderC", "found"]
@@ -701,7 +718,6 @@ depends-member:
 - ["So11UIResponderC", "metadataOutput"]
 - ["So11UIResponderC", "prefersStatusBarHidden"]
 - ["So11UIResponderC", "previewLayer"]
-- !private ["So11UIResponderC", "print"]
 - ["So11UIResponderC", "supportedInterfaceOrientations"]
 - !private ["So11UIResponderC", "view"]
 - ["So11UIResponderC", "viewDidLoad"]
@@ -718,6 +734,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "backgroundColor"]
 - ["So30UIResponderStandardEditActionsP", "captureOutput"]
 - !private ["So30UIResponderStandardEditActionsP", "captureSession"]
+- !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "dismiss"]
 - !private ["So30UIResponderStandardEditActionsP", "failed"]
 - !private ["So30UIResponderStandardEditActionsP", "found"]
@@ -726,7 +743,6 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "layer"]
 - ["So30UIResponderStandardEditActionsP", "metadataOutput"]
 - !private ["So30UIResponderStandardEditActionsP", "previewLayer"]
-- !private ["So30UIResponderStandardEditActionsP", "print"]
 - !private ["So30UIResponderStandardEditActionsP", "view"]
 - !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
 - !private ["So30UIResponderStandardEditActionsP", "viewWillAppear"]
@@ -741,6 +757,7 @@ depends-member:
 - ["So16UIStateRestoringP", ""]
 - ["So16UIStateRestoringP", "captureOutput"]
 - !private ["So16UIStateRestoringP", "captureSession"]
+- !private ["So16UIStateRestoringP", "delegate"]
 - !private ["So16UIStateRestoringP", "dismiss"]
 - !private ["So16UIStateRestoringP", "failed"]
 - !private ["So16UIStateRestoringP", "found"]
@@ -748,7 +765,6 @@ depends-member:
 - !private ["So16UIStateRestoringP", "init"]
 - ["So16UIStateRestoringP", "metadataOutput"]
 - !private ["So16UIStateRestoringP", "previewLayer"]
-- !private ["So16UIStateRestoringP", "print"]
 - !private ["So16UIStateRestoringP", "view"]
 - !private ["So16UIStateRestoringP", "viewDidLoad"]
 - !private ["So16UIStateRestoringP", "viewWillAppear"]
@@ -764,6 +780,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "backgroundColor"]
 - ["So18UITraitEnvironmentP", "captureOutput"]
 - !private ["So18UITraitEnvironmentP", "captureSession"]
+- !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "dismiss"]
 - !private ["So18UITraitEnvironmentP", "failed"]
 - !private ["So18UITraitEnvironmentP", "found"]
@@ -772,7 +789,6 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "layer"]
 - ["So18UITraitEnvironmentP", "metadataOutput"]
 - !private ["So18UITraitEnvironmentP", "previewLayer"]
-- !private ["So18UITraitEnvironmentP", "print"]
 - !private ["So18UITraitEnvironmentP", "view"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "viewWillAppear"]
@@ -788,6 +804,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "backgroundColor"]
 - ["So23UIUserActivityRestoringP", "captureOutput"]
 - !private ["So23UIUserActivityRestoringP", "captureSession"]
+- !private ["So23UIUserActivityRestoringP", "delegate"]
 - !private ["So23UIUserActivityRestoringP", "dismiss"]
 - !private ["So23UIUserActivityRestoringP", "failed"]
 - !private ["So23UIUserActivityRestoringP", "found"]
@@ -796,7 +813,6 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "layer"]
 - ["So23UIUserActivityRestoringP", "metadataOutput"]
 - !private ["So23UIUserActivityRestoringP", "previewLayer"]
-- !private ["So23UIUserActivityRestoringP", "print"]
 - !private ["So23UIUserActivityRestoringP", "view"]
 - !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
 - !private ["So23UIUserActivityRestoringP", "viewWillAppear"]
@@ -813,12 +829,14 @@ depends-member:
 - ["So16UIViewControllerC", "AVMetadataObject"]
 - ["So16UIViewControllerC", "Bool"]
 - !private ["So16UIViewControllerC", "DispatchQueue"]
+- ["So16UIViewControllerC", "ScannerViewControllerDelegate"]
 - ["So16UIViewControllerC", "String"]
 - !private ["So16UIViewControllerC", "UIColor"]
 - ["So16UIViewControllerC", "UIInterfaceOrientationMask"]
 - ["So16UIViewControllerC", ""]
 - ["So16UIViewControllerC", "captureOutput"]
 - ["So16UIViewControllerC", "captureSession"]
+- ["So16UIViewControllerC", "delegate"]
 - !private ["So16UIViewControllerC", "dismiss"]
 - ["So16UIViewControllerC", "failed"]
 - ["So16UIViewControllerC", "found"]
@@ -827,7 +845,6 @@ depends-member:
 - ["So16UIViewControllerC", "metadataOutput"]
 - ["So16UIViewControllerC", "prefersStatusBarHidden"]
 - ["So16UIViewControllerC", "previewLayer"]
-- !private ["So16UIViewControllerC", "print"]
 - ["So16UIViewControllerC", "supportedInterfaceOrientations"]
 - !private ["So16UIViewControllerC", "view"]
 - ["So16UIViewControllerC", "viewDidLoad"]
@@ -861,6 +878,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "captureOutput"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "captureSession"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "failed"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "found"]
@@ -873,7 +891,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "metadataObjectTypes"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "metadataOutput"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "previewLayer"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setMetadataObjectsDelegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "startRunning"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "stopRunning"]
@@ -892,6 +909,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "first"]
 - !private ["s21_ObjectiveCBridgeableP", "frame"]
 - !private ["s21_ObjectiveCBridgeableP", "layer"]
+- !private ["s21_ObjectiveCBridgeableP", "outputFromScan"]
 - !private ["s21_ObjectiveCBridgeableP", "qr"]
 - !private ["s21_ObjectiveCBridgeableP", "resizeAspectFill"]
 - !private ["s21_ObjectiveCBridgeableP", "startRunning"]
@@ -954,6 +972,7 @@ depends-nominal:
 - !private "Sm"
 - !private "SY"
 - "6BookIt21ScannerViewControllerC"
+- "6BookIt29ScannerViewControllerDelegateP"
 - !private "ST"
 - !private "s10SetAlgebraP"
 - !private "So29UIAccessibilityIdentificationP"
@@ -987,6 +1006,8 @@ depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/SwiftRangeSlider.swiftmodule/x86_64.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Modules/Player.swiftmodule/x86_64.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Modules/Cards.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
@@ -995,6 +1016,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
@@ -1009,6 +1031,8 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FirebaseFirestore-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FirebaseDatabase-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers/Player-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers/Cards-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRMutableData.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRSnapshotMetadata.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
@@ -1044,6 +1068,8 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIROptions.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestoreErrors.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-Swift.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers/Player-Swift.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers/Cards-Swift.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRGeoPoint.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
@@ -1057,7 +1083,9 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
@@ -1065,6 +1093,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
@@ -1073,4 +1102,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "fe4f65cdbfdb1a5b5474a5e0c50d5d1f"
+interface-hash: "6864dbf9c08ac43d7725b856d902a90b"

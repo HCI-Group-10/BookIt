@@ -27,7 +27,12 @@ class BookingListTableViewCell: UITableViewCell {
     
     var delegate : BookingListTableViewCellDelegate!
     var controller : UIViewController!
-    
+    var today : Date = Date.init()
+    var todaysDate : String = "" //if presented from RoomSearchViewController, it will be equal
+    //to the day of the date picker, not today's actual date
+    var startTime : String = ""
+    var endTime : String = ""
+    let calendar : Calendar = Calendar.current
     var room : Room?
     {
         didSet
@@ -53,12 +58,40 @@ class BookingListTableViewCell: UITableViewCell {
             let date = Date()
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "MMM d, yyyy"
-            reservation.date = dateFormatter.string(from: date)
+            if todaysDate == ""{
+                
+                dateFormatter.dateFormat = "dd-MMM-YYYY"
+                reservation.date = dateFormatter.string(from: date)
+            }
+            else{
+                reservation.date = todaysDate
+            }
             
-            dateFormatter.dateFormat = "HH:mm"
-            reservation.startTime = dateFormatter.string(from: date)
-            reservation.endTime = dateFormatter.string(from: date)
+            if startTime != "" && endTime != ""{
+                reservation.startTime = startTime
+                reservation.endTime = endTime
+            }
+            else{
+                var hour = self.calendar.component(.hour, from: self.today)
+                var minute = self.calendar.component(.minute, from: self.today)
+                var endTimeString : String = ""
+                if minute < 30{
+                    minute = 30
+                    endTimeString = "\(hour):\(minute)"
+                }
+                else{
+                    
+                    hour = hour + 1
+                    endTimeString = "\(hour):00"
+                }
+                
+                dateFormatter.dateFormat = "HH:mm"
+                reservation.startTime = dateFormatter.string(from: date)
+                reservation.endTime = endTimeString
+                
+            }
+            print(reservation.startTime)
+            print(reservation.endTime)
             
             roomReservationViewController.reservation = reservation
             
@@ -113,6 +146,7 @@ class BookingListTableViewCell: UITableViewCell {
         
        card.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         card.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+//        reserveButton.addTarget(self, action: #selector(reservationButtonPressed), for: .touchUpInside)
         
 //        contentView.addSubview(container)
 //

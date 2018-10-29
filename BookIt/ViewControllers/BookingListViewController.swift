@@ -24,7 +24,9 @@ class BookingListViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        print("STATANDENDTIMES")
+        print(startTime)
+        print(endTime)
         print(isQuickBook)
         
         setUpViews()
@@ -53,15 +55,12 @@ class BookingListViewController: UITableViewController
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-//        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
+
         formatter.dateFormat = "dd-MMM-yyyy"
         // again convert your date to string
         let myStringafd = formatter.string(from: myDate)
         
-//        print("converting")
-//        print(myStringafd)
+
         return myStringafd
     }
     

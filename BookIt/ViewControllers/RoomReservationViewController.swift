@@ -225,7 +225,7 @@ class RoomReservationViewController: UIViewController
     {
         let db = Firestore.firestore()
         guard let room = reservation?.room else { return }
-
+    
 //        var timesArray = room?.times
         
         let startTimeArr = reservation?.startTime?.split(separator: ":")

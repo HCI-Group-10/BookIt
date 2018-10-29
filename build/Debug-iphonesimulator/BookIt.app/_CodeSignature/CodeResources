@@ -4,13 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		lsnR4mquGdQ7kU9dWHExhRlRDaY=
+		</data>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<data>
+		Ya78LEutUMbDYx+0UTj1umtsGsw=
+		</data>
 		<key>Assets.car</key>
 		<data>
-		A527LzEbfCNguzRWUFqHTdIQows=
+		VeDOe0D1mQJ702cjHtE8dlUjxKI=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		FlLoYIuX9KLfyY/w+lwXGiuAYC8=
+		BihzEo4VTze1zlzpoOOB10Rof80=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,11 +26,23 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		FPN9OpOdxDz7tza+KGJ3IbUZ+5E=
+		hTFpRQPaWxUJNrh74BjJ9EwpSbg=
+		</data>
+		<key>Frameworks/Cards.framework/Cards</key>
+		<data>
+		bIFF5Qqi4zHgmXx+0voGdLrzSGs=
+		</data>
+		<key>Frameworks/Cards.framework/Info.plist</key>
+		<data>
+		Q0IBJR+sAtFeipSmtWcnWCToU/k=
+		</data>
+		<key>Frameworks/Cards.framework/_CodeSignature/CodeResources</key>
+		<data>
+		GVliLN200nM+7pZh2kbkf4oQZm0=
 		</data>
 		<key>Frameworks/GRPCClient.framework/GRPCClient</key>
 		<data>
-		mYJNuheVA1k0WuoTuRAkn7UzS7c=
+		02WT9g56/l80glwU9rXMCpralHk=
 		</data>
 		<key>Frameworks/GRPCClient.framework/Info.plist</key>
 		<data>
@@ -42,7 +62,7 @@
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/GoogleUtilities</key>
 		<data>
-		3RjPTLHbxcTqglupLE2A2egold4=
+		RWUDI+Y/jC6YhJyfKusdqGKUMAg=
 		</data>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
 		<data>
@@ -52,13 +72,25 @@
 		<data>
 		kNa31dOe3UBjyyp5YcFZwOCfjBc=
 		</data>
+		<key>Frameworks/Player.framework/Info.plist</key>
+		<data>
+		9B6mZDyxHh4G6VMT3oYBgfMRaiY=
+		</data>
+		<key>Frameworks/Player.framework/Player</key>
+		<data>
+		LNEr/pkATp7hmjbs3Wib46S04dQ=
+		</data>
+		<key>Frameworks/Player.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Yondi/O2Q7I1eSMVxYupQsp4RQo=
+		</data>
 		<key>Frameworks/ProtoRPC.framework/Info.plist</key>
 		<data>
 		XABJMQDK4QEDC6cN059DWPieI7U=
 		</data>
 		<key>Frameworks/ProtoRPC.framework/ProtoRPC</key>
 		<data>
-		fRaIdhUuXlpCE53SGtQmnObSlOg=
+		U8riGwbsdqRL9N/yyf2Yf9/kwuI=
 		</data>
 		<key>Frameworks/ProtoRPC.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -70,7 +102,7 @@
 		</data>
 		<key>Frameworks/Protobuf.framework/Protobuf</key>
 		<data>
-		7dJXemBlQMejUZX/7SWFpWh1bnM=
+		m1JbkXdTXA9XuaMN7QScrrP3li4=
 		</data>
 		<key>Frameworks/Protobuf.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -82,7 +114,7 @@
 		</data>
 		<key>Frameworks/RxLibrary.framework/RxLibrary</key>
 		<data>
-		au5IH0kHxuzsnsGpVtFc4egnF2o=
+		N7gmZthqfVtsqppLVdW3R0Glqno=
 		</data>
 		<key>Frameworks/RxLibrary.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -94,7 +126,7 @@
 		</data>
 		<key>Frameworks/SwiftRangeSlider.framework/SwiftRangeSlider</key>
 		<data>
-		Xq/UTDrrGm/XQSpbohN1OhXRiLw=
+		p72hCuMzewSoDA6/r33vWeG8Q14=
 		</data>
 		<key>Frameworks/SwiftRangeSlider.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -110,7 +142,7 @@
 		</data>
 		<key>Frameworks/grpc.framework/grpc</key>
 		<data>
-		qrWM4dwJBWayaYPrEPKt/ssGli4=
+		+Svzzr5jAWNN/GG3uoZM/yYPXlw=
 		</data>
 		<key>Frameworks/grpcpp.framework/Info.plist</key>
 		<data>
@@ -122,7 +154,7 @@
 		</data>
 		<key>Frameworks/grpcpp.framework/grpcpp</key>
 		<data>
-		wSQbmNTDHqZsSSqQN259s7SgKJ4=
+		053jiMLoFxjmgDV4JH25OLIEjHM=
 		</data>
 		<key>Frameworks/leveldb.framework/Info.plist</key>
 		<data>
@@ -134,7 +166,7 @@
 		</data>
 		<key>Frameworks/leveldb.framework/leveldb</key>
 		<data>
-		D09Sdktja4Ie3IJcPyIza0pN848=
+		0t4dyqZtdDU0Q8VNEpV+NhmOD50=
 		</data>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
 		<data>
@@ -159,6 +191,10 @@
 		<key>Frameworks/libswiftCoreImage.dylib</key>
 		<data>
 		JereWsNtD+Y1L9wfV+9m/K5OOpA=
+		</data>
+		<key>Frameworks/libswiftCoreLocation.dylib</key>
+		<data>
+		EVbybyvTkkmeEl7Z21crL4nyQ0w=
 		</data>
 		<key>Frameworks/libswiftCoreMedia.dylib</key>
 		<data>
@@ -206,15 +242,15 @@
 		</data>
 		<key>Frameworks/nanopb.framework/Info.plist</key>
 		<data>
-		/5cxOirZJCinT8QXywCGipHhHuE=
+		xKbsKYhFHGEnoVrZdsJx3+npjRY=
 		</data>
 		<key>Frameworks/nanopb.framework/_CodeSignature/CodeResources</key>
 		<data>
-		hbcB/3aOsSWw42+Jln9WusyhIXE=
+		uHunkAnE2g0aGMU3Uo76Kn8QdG0=
 		</data>
 		<key>Frameworks/nanopb.framework/nanopb</key>
 		<data>
-		fFWBuql3pHBcAoHYvtLPvXxEH9E=
+		59PPAEbz3RUzJ43aj8uY5EjFsR0=
 		</data>
 		<key>Frameworks/openssl.framework/Info.plist</key>
 		<data>
@@ -226,7 +262,7 @@
 		</data>
 		<key>Frameworks/openssl.framework/openssl</key>
 		<data>
-		/JmXT6iJLiSo698t/7sbOKYBKc8=
+		41ukJaFMc8JqPttwx3sAj2xIXP0=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -234,7 +270,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1g8y/wk6o5X+11R2xF8kmsctsnA=
+		UIs2w2jAQvspCGjW3RKCi9iPnho=
 		</data>
 		<key>LICENSE.txt</key>
 		<data>
@@ -291,18 +327,32 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TJWBb0LatAwVHHVBC8vW+7Lt/8VOgSKVyeBRliK5Qhk=
+			</data>
+		</dict>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Y533JJWYWwRJ+yB7qR7xtsivOe8NlRaVyZMlItmMvl0=
+			</data>
+		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+V3d4yjbcEe4q5Qo2T+y6WOyL+aSb9tayhT2+/z9rus=
+			fOAsFcD06TPr7Kvq06oPQpNJ9cHaSzyY7RcRPQYyQJ0=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0lLn9ojVW8V+1txiNcsem6wmFV7BkA0ExMNgDo5fUxU=
+			dq7pH0FP1h3ntPemKXv9hVhhqMPH6MEiHMhj9hhnMS8=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -316,14 +366,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HV0rBV+8RhahiXX8RIPQXLXY2TfevK3h8SDmYWk5qzA=
+			XwpA9PWlq0Mk/UbYcjONsqgc/iJjBPP+j8UjtzBIEFM=
+			</data>
+		</dict>
+		<key>Frameworks/Cards.framework/Cards</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FLDjCPM5dRCeLrLGjmPYI6NE6840sK28ijt7O7W5Rys=
+			</data>
+		</dict>
+		<key>Frameworks/Cards.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Yf2fnoaGnCfkhkUuWuUJFdUfSvUh3W/W0qm51Wb22OI=
+			</data>
+		</dict>
+		<key>Frameworks/Cards.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N87TNzEJ07gIKOOJZ0VtLwQv5veEp+AL7T+3fBesL4U=
 			</data>
 		</dict>
 		<key>Frameworks/GRPCClient.framework/GRPCClient</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KuiVsF8VkJXqptUfX4b4qVp566IsMXmeV34mNKdO4ao=
+			mo2FfcKMUj2A2ZHcrBPxGjDbRuxc2QxflQwxcpzBoyk=
 			</data>
 		</dict>
 		<key>Frameworks/GRPCClient.framework/Info.plist</key>
@@ -358,7 +429,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cDFYENxYuE8ylbyeD1R+O1RbPIEWCwrUq4lhwEXzpIo=
+			AtbJICniWsdIqDbZVq1vm83qbQRWk6actQQzM0KN7Vo=
 			</data>
 		</dict>
 		<key>Frameworks/GoogleUtilities.framework/Info.plist</key>
@@ -375,6 +446,27 @@
 			9MBynci2Hx4E8vkxkzuqb6uKqz/XJPTNavLDieR1Av0=
 			</data>
 		</dict>
+		<key>Frameworks/Player.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GPVnHHK9IBAAdILtd2v9GVVx2n0u+mmpcUmAdzfH/U8=
+			</data>
+		</dict>
+		<key>Frameworks/Player.framework/Player</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GeRKwElNxqc5CAdtJFSrnAqVugkyGMMPBkmnVB94eWo=
+			</data>
+		</dict>
+		<key>Frameworks/Player.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ytSzeeNbSCx/79VNQk16HTrZTZo9wupicZzNXxyErsg=
+			</data>
+		</dict>
 		<key>Frameworks/ProtoRPC.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -386,7 +478,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8990ir6fl8TSdCJgTctR7qIXsBwBmFHeYAvapeJyA2U=
+			njKtZqmhyd/FARrOKLJOVfpnfR5/xvclxtpv9AxVU+c=
 			</data>
 		</dict>
 		<key>Frameworks/ProtoRPC.framework/_CodeSignature/CodeResources</key>
@@ -407,7 +499,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			x24kHHjA8bv231yb1PNV01XPmiwz0njHsJ8VK259pO8=
+			X6wQcfA330IR4fOk+rXat+APDDvtITrO3+dNOAnGW74=
 			</data>
 		</dict>
 		<key>Frameworks/Protobuf.framework/_CodeSignature/CodeResources</key>
@@ -428,7 +520,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b17MpkjAJhaDvQgtEDd0KW8p0RFcn4/aiuSYwsImLak=
+			56vAG8FYIjyh3KHdJ1yj0WC1iJc0wf25xwLpa9rG0SQ=
 			</data>
 		</dict>
 		<key>Frameworks/RxLibrary.framework/_CodeSignature/CodeResources</key>
@@ -449,7 +541,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2dkgBRnpeI7cGCQ4e9yLsYn/dTB2JHE1pAi7vVHTRgg=
+			S//pxOtlgxwNqInfMBa4hLWv35/K01FkvVoOm8TaaW0=
 			</data>
 		</dict>
 		<key>Frameworks/SwiftRangeSlider.framework/_CodeSignature/CodeResources</key>
@@ -477,7 +569,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SvhCcutCIAQX4g6AxQ5DcjXyXr4aj7PS8jViJnm3rp4=
+			8mjO8qe5nwpwMITo/pEZQcVHJYvYsZJfFPbq4uP8qI4=
 			</data>
 		</dict>
 		<key>Frameworks/grpcpp.framework/Info.plist</key>
@@ -498,7 +590,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RcKXImhIEU0SciZHOJpEdOHbX/BDPPqwsgfCdL/r8hI=
+			VTMnRi1A2ExxwoItswd6Xbzc/76DEKO1LLXuJtcUZbQ=
 			</data>
 		</dict>
 		<key>Frameworks/leveldb.framework/Info.plist</key>
@@ -519,7 +611,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r2jh+QbX7x2GJRoN4riyVWfhCLi7UfTc/H4PE+rOk9A=
+			rb34YnEvcS+SUqav9OoD1+85kXLyosPAx46g8GpJmMk=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftAVFoundation.dylib</key>
@@ -562,6 +654,13 @@
 			<key>hash2</key>
 			<data>
 			M1b4RDTvT6ablxikruWLNaBD+cP3GVXtZ6+wE91/Tj0=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreLocation.dylib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BkzbRAirw4d+/9nfjKHnogQvkAxnxfkeMHH3GZZ9UWA=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreMedia.dylib</key>
@@ -645,21 +744,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SFrOoZ4IKnN15a5m0sKXmKYD8P+WSVQr8UtmCuyPrjg=
+			aBQMfaeWKPhRRX2nosnsNOk+6KFYcLcU3zDyH2u+HC8=
 			</data>
 		</dict>
 		<key>Frameworks/nanopb.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nhdjI4Wr4yZn4GpTa93iiZURA5WXrOCKRv43HRb84QM=
+			AVSlJkz8GX1NvSJMJxzUkO+wfXDtIOoZ33CNpF9suYM=
 			</data>
 		</dict>
 		<key>Frameworks/nanopb.framework/nanopb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jSDDffQW+yYP7YB9TETU4FzJOOBZq4tEXpJ3MRfmMnA=
+			wuWBSkqq0jPLT04xZha3xel6tEsdz5/FZcZsk4WDgIU=
 			</data>
 		</dict>
 		<key>Frameworks/openssl.framework/Info.plist</key>
@@ -680,7 +779,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NMK+Tpw/Eveui1s9xJKO2L9qCR8CI4B4ekr8XDWraJI=
+			k+FAsOBkhllQny0XrcEtZK42r3lqEgDytjyUT0Xw3nU=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>

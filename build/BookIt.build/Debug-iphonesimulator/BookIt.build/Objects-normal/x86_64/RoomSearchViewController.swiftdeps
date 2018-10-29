@@ -77,11 +77,6 @@ depends-member:
 - !private ["SK", "removeAll"]
 - !private ["SK", "subscript"]
 - !private ["Sz", "init"]
-- !private ["6BookIt32BookingListTableViewCellDelegateP", "endTime"]
-- !private ["6BookIt32BookingListTableViewCellDelegateP", "init"]
-- !private ["6BookIt32BookingListTableViewCellDelegateP", "roomData"]
-- !private ["6BookIt32BookingListTableViewCellDelegateP", "startTime"]
-- !private ["6BookIt32BookingListTableViewCellDelegateP", "todaysDate"]
 - !private ["6BookIt25BookingListViewControllerC", "deinit"]
 - !private ["6BookIt25BookingListViewControllerC", "endTime"]
 - !private ["6BookIt25BookingListViewControllerC", "init"]
@@ -3206,7 +3201,6 @@ depends-nominal:
 - !private "So22UILayoutConstraintAxisV"
 - "SK"
 - !private "Sz"
-- !private "6BookIt32BookingListTableViewCellDelegateP"
 - !private "6BookIt25BookingListViewControllerC"
 - !private "Sb"
 - !private "So7CALayerC"
@@ -3354,6 +3348,8 @@ depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/SwiftRangeSlider.swiftmodule/x86_64.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Modules/Player.swiftmodule/x86_64.swiftmodule"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Modules/Cards.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
@@ -3362,6 +3358,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
@@ -3376,6 +3373,8 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FirebaseFirestore-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FirebaseDatabase-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers/Player-umbrella.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers/Cards-umbrella.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRMutableData.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRSnapshotMetadata.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
@@ -3411,6 +3410,8 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers/FIROptions.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRFirestoreErrors.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Headers/SwiftRangeSlider-Swift.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers/Player-Swift.h"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers/Cards-Swift.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Headers/FIRGeoPoint.h"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
@@ -3424,7 +3425,9 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseDatabase/FirebaseDatabase.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Modules/module.modulemap"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
@@ -3432,6 +3435,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"

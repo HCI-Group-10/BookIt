@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
+options: "c313063259d0700499a15aa263ea7a24"
+build_time: [1540838055, 584192000]
+inputs:
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Player/Sources/Player.swift": [1540838049, 0]

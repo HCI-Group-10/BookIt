@@ -164,7 +164,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import AVFoundation;
+@import Cards;
 @import CoreGraphics;
+@import CoreLocation;
 @import Foundation;
 @import ObjectiveC;
 @import SwiftRangeSlider;
@@ -207,6 +209,7 @@ SWIFT_CLASS("_TtC6BookIt11AppDelegate")
 SWIFT_CLASS("_TtC6BookIt18BaseViewController")
 @interface BaseViewController : UITabBarController
 - (void)viewDidLoad;
+- (void)reservationUpdated;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -228,8 +231,15 @@ SWIFT_CLASS("_TtC6BookIt24BookingListTableViewCell")
 @interface BookingListTableViewCell : UITableViewCell
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)reservationUpdated;
 - (void)reservationButtonPressed;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+@end
+
+@class Card;
+
+@interface BookingListTableViewCell (SWIFT_EXTENSION(BookIt)) <CardDelegate>
+- (void)cardWillShowDetailViewWithCard:(Card * _Nonnull)card;
 @end
 
 @class UITableView;
@@ -248,8 +258,6 @@ SWIFT_CLASS("_TtC6BookIt25BookingListViewController")
 @end
 
 
-
-
 SWIFT_CLASS("_TtC6BookIt4Room")
 @interface Room : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -260,6 +268,7 @@ SWIFT_CLASS("_TtC6BookIt4Room")
 SWIFT_CLASS("_TtC6BookIt29RoomReservationViewController")
 @interface RoomReservationViewController : UIViewController
 - (void)viewDidLoad;
+- (void)cancelButtonPressed;
 - (void)reserveButtonPressed;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -274,6 +283,8 @@ SWIFT_CLASS("_TtC6BookIt22RoomScanViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 
 SWIFT_CLASS("_TtC6BookIt24RoomSearchViewController")
@@ -321,12 +332,26 @@ SWIFT_CLASS("_TtC6BookIt15TimeRangeSlider")
 
 
 
+
+
 SWIFT_CLASS("_TtC6BookIt22UserPageViewController")
 @interface UserPageViewController : UIViewController
 - (void)viewDidLoad;
+- (void)reservationUpdated;
 - (void)dismissViews;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class CLLocationManager;
+@class CLRegion;
+
+SWIFT_CLASS("_TtC6BookIt14ViewController")
+@interface ViewController : UIViewController <CLLocationManagerDelegate>
+- (void)viewDidLoad;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didEnterRegion:(CLRegion * _Nonnull)region;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

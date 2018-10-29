@@ -26,6 +26,33 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Cards-Swift.h",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Headers/Cards-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Cards-umbrella.h",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Target Support Files/Cards/Cards-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Cards/Cards.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Pods.build/Debug-iphonesimulator/Cards.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/FirebaseCore/FirebaseCore.framework/Headers",
       'contents': [
         {
@@ -476,6 +503,33 @@
           'type': 'file',
           'name': "GULUserDefaults.h",
           'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/GoogleUtilities/GoogleUtilities/UserDefaults/Private/GULUserDefaults.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Player-Swift.h",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Headers/Player-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Player-umbrella.h",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/Target Support Files/Player/Player-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/Player/Player.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Pods.build/Debug-iphonesimulator/Player.build/module.modulemap"
         }
       ]
     },

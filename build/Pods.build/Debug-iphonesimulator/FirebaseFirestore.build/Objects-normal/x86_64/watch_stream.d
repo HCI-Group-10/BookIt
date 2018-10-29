@@ -34,56 +34,58 @@ dependencies: \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/meta/type_traits.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/memory/memory.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/types/bad_optional_access.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_stream.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_completion.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_call.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/status.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/include/firebase/firestore/firestore_errors.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/byte_buffer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/byte_buffer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/port_platform.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/port_platform.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/byte_buffer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/grpc_types.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/client_context.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/client_context.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/compression_types.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/port_platform.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/propagation_bits.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/config.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/core_codegen_interface.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/byte_buffer_reader.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/grpc_types.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/gpr_types.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/slice.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/gpr_slice.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/status.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/slice_buffer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/slice.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/sync.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/sync.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/sync_generic.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/atm.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/atm_gcc_atomic.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/sync_posix.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status_code_enum.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/create_auth_context.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/security/auth_context.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/string_ref.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/metadata_map.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/slice.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/time.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/string_ref.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_stream.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_completion.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/byte_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/byte_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/port_platform.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/byte_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/slice_buffer.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/slice.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/sync.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/grpc.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/status.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/connectivity_state.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/propagation_bits.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/time.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/support/log.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/log.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/byte_buffer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/config.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/core_codegen_interface.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-Core/grpc.framework/Headers/impl/codegen/byte_buffer_reader.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/status_code_enum.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/serialization_traits.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/slice.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/string_ref.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/serialization_traits.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/config.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/slice.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/status.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_stream_observer.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/client_context.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/client_context.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/create_auth_context.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/security/auth_context.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/metadata_map.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/time.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/generic/generic_stub.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/support/async_stream.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/async_stream.h \
@@ -101,6 +103,7 @@ dependencies: \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_streaming_reader.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/statusor.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/statusor_internals.h \
+  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/remote/grpc_unary_call.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/channel.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/call.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/gRPC-C++/grpcpp.framework/Headers/impl/codegen/grpc_library.h \

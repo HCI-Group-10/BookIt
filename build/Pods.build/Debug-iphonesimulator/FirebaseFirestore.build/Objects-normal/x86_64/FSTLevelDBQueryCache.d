@@ -88,5 +88,4 @@ dependencies: \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/Source/Local/FSTLocalSerializer.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/Source/Local/FSTQueryData.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/local/leveldb_key.h \
-  /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/core/src/firebase/firestore/util/ordered_code.h \
   /Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseFirestore/Firestore/third_party/abseil-cpp/absl/strings/match.h
