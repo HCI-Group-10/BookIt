@@ -1,15 +1,15 @@
 version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
 options: "0c78cf25b8aade053ce2863d27e0cca2"
-build_time: [1540842145, 190809000]
+build_time: [1540843752, 449407000]
 inputs:
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/RoomReservationViewController.swift": [1540840904, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/UserPageViewController.swift": [1540838049, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/Classes/Reservation.swift": [1540836478, 0]
-  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/Views/BookingListTableViewCell/BookingListTableViewCell.swift": [1540842138, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/Views/BookingListTableViewCell/BookingListTableViewCell.swift": [1540843748, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/BaseViewController.swift": [1540838049, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/ScannerViewController.swift": [1540838049, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/RoomScanViewController.swift": [1540838049, 0]
-  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/BookingListViewController.swift": [1540840826, 0]
+  "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/BookingListViewController.swift": [1540843686, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/ViewControllers/geofence.swift": [1540838703, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/Classes/Room.swift": [1540838049, 0]
   "/Users/andreigurau/Desktop/Xcodeapps/BookIt/BookIt/Utilities/Util.swift": [1540838049, 0]

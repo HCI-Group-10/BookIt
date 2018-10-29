@@ -141,8 +141,13 @@ class BookingListViewController: UITableViewController
         cell.selectionStyle = .none
         cell.controller = self
         let roomInfo = roomData[indexPath.row]
-        cell.room = roomInfo
         
+        cell.startTime = self.startTime
+        cell.endTime = self.endTime
+        print("cellstartandendtimes")
+        print(cell.startTime)
+        print(cell.endTime)
+        cell.room = roomInfo
         return cell
     }
 

@@ -67,9 +67,9 @@ class BookingListTableViewCell: UITableViewCell {
                 reservation.date = todaysDate
             }
             
-            if startTime != "" && endTime != ""{
-                reservation.startTime = startTime
-                reservation.endTime = endTime
+            if self.startTime != "" && self.endTime != ""{
+                reservation.startTime = self.startTime
+                reservation.endTime = self.endTime
             }
             else{
                 var hour = self.calendar.component(.hour, from: self.today)
@@ -90,6 +90,7 @@ class BookingListTableViewCell: UITableViewCell {
                 reservation.endTime = endTimeString
                 
             }
+            
             print(reservation.startTime)
             print(reservation.endTime)
             
