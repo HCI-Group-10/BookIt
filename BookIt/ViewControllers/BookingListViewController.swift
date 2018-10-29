@@ -16,7 +16,10 @@ class BookingListViewController: UITableViewController
     var isQuickBook : Bool = false
     var today : Date = Date.init()
     let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
-    var todaysDate : String = ""
+    var todaysDate : String = "" //if presented from RoomSearchViewController, it will be equal
+                                 //to the day of the date picker, not today's actual date
+    var startTime : String = ""
+    var endTime : String = ""
     
     override func viewDidLoad()
     {
@@ -64,6 +67,7 @@ class BookingListViewController: UITableViewController
     
     func doQuickBookSearch()
     {
+        self.todaysDate = getDate(myDate: today)
         let hour = self.calendar.component(.hour, from: self.today)
         let minute = self.calendar.component(.minute, from: self.today)
         let currTimeIndex = (hour * 2) + (minute / 30)
@@ -102,7 +106,7 @@ class BookingListViewController: UITableViewController
     
     func loadData()
     {
-        self.todaysDate = getDate(myDate: today)
+        
         
         // make a request to server
         if isQuickBook
@@ -136,7 +140,6 @@ class BookingListViewController: UITableViewController
         }
         
         cell.selectionStyle = .none
-        cell.delegate = self
         cell.controller = self
         let roomInfo = roomData[indexPath.row]
         cell.room = roomInfo
@@ -160,30 +163,4 @@ class BookingListViewController: UITableViewController
     }
     */
 
-}
-
-extension BookingListViewController: BookingListTableViewCellDelegate
-{
-    func reserveButtonPressed(room: Room?)
-    {
-        if let room = room, let nav = navigationController
-        {
-            let reservation = Reservation()
-            reservation.room = room
-            let date = Date()
-            let dateFormatter = DateFormatter()
-            
-            dateFormatter.dateFormat = "MMM d, yyyy"
-            reservation.date = dateFormatter.string(from: date)
-            
-            dateFormatter.dateFormat = "HH:mm"
-            reservation.startTime = dateFormatter.string(from: date)
-            reservation.endTime = dateFormatter.string(from: date)
-            
-            let roomReservationVC = RoomReservationViewController()
-            roomReservationVC.reservation = reservation
-            
-            nav.pushViewController(roomReservationVC, animated: true)
-        }
-    }
 }

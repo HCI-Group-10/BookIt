@@ -22,6 +22,7 @@ class RoomScanViewController: UIViewController
     {
         scannerViewController = ScannerViewController()
         scannerViewController.view.frame = view.frame
+        scannerViewController.delegate = self
         
         addChildViewController(scannerViewController)
         view.addSubview(scannerViewController.view)
@@ -38,16 +39,16 @@ class RoomScanViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension RoomScanViewController : ScannerViewControllerDelegate
+{
+    func outputFromScan(result: String)
+    {
+        let label = UILabel(frame: CGRect(x: 100, y: 200, width: 300, height: 200))
+        label.font = label.font.withSize(34)
+        label.text = result
+        label.textColor = .red
+        view.addSubview(label)
     }
-    */
-
 }

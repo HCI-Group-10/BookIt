@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class RoomReservationViewController: UIViewController
 {
@@ -135,7 +137,7 @@ class RoomReservationViewController: UIViewController
         reserveButton.setTitleColor(.bookItBlueLight, for: .normal)
         reserveButton.setTitle("Confirm Reservation", for: .normal)
         reserveButton.titleLabel?.numberOfLines = 0
-        
+        reserveButton.addTarget(self, action: #selector(reserveButtonPressed), for: .touchUpInside)
         view.addSubview(reserveButton)
         
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
@@ -155,7 +157,7 @@ class RoomReservationViewController: UIViewController
         cancelButton.setTitleColor(.red, for: .normal)
         cancelButton.setTitle("Cancel Reservation", for: .normal)
         cancelButton.titleLabel?.numberOfLines = 0
-
+        cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
         view.addSubview(cancelButton)
 
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
@@ -208,6 +210,83 @@ class RoomReservationViewController: UIViewController
         
         cancelButton.isHidden = !fromUserPage
         reserveButton.isHidden = fromUserPage
+    }
+    
+    @objc func cancelButtonPressed()
+    {
+        // remove from database
+        
+        // remove reservation from shared instance
+        User.sharedInstance()?.reservation = nil
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reservation_update"), object: nil)
+    }
+    
+    @objc func reserveButtonPressed()
+    {
+        let db = Firestore.firestore()
+        guard let room = reservation?.room else { return }
+
+//        var timesArray = room?.times
+        
+        let startTimeArr = reservation?.startTime?.split(separator: ":")
+        let endTimeArr = reservation?.endTime?.split(separator: ":")
+        
+        var startTimeIndex = Int(startTimeArr![0])! * 2
+        if Int(startTimeArr![1])! >= 30{
+            startTimeIndex = startTimeIndex + 1
+        }
+        
+        var endTimeIndex = Int(endTimeArr![0])! * 2
+        if Int(endTimeArr![1])! >= 30{
+            endTimeIndex = endTimeIndex + 1
+        }
+        let user = User.sharedInstance()
+//        var indexInTimes = 0
+        for i in 0..<(room.times?.count ?? 0){
+            let dictionary = room.times?[i] as! NSMutableDictionary
+            guard var timeSlots = dictionary["timeSlots"] as? [String] else { return }
+            
+            guard let date: Timestamp = dictionary["date"] as? Timestamp else { return }
+            let myDate: Date = date.dateValue()
+            let dateString = self.getDate(myDate: myDate)
+            if(dateString == reservation?.date)
+            {
+//                indexInTimes = i
+                for j in startTimeIndex..<endTimeIndex
+                {
+                    print(j)
+                    timeSlots[j] =  (user?.email)!
+                }
+//                dictionary["timeSlots"]![i]["times"] = reservations
+                print(timeSlots)
+                dictionary["timeSlots"] = timeSlots
+                room.times?[i] = dictionary
+            }
+        }
+        
+//        print(room?.times)
+        db.collection("Rooms").document(room.room!).updateData([ "times": room.times ])
+        
+        User.sharedInstance()?.reservation = reservation
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reservation_update"), object: nil)
+    }
+    
+    func getDate(myDate: Date) -> String
+    {
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        // convert your string to date
+        //then again set the date format whhich type of output you need
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
+        
+        //        print("converting")
+        //        print(myStringafd)
+        return myStringafd
     }
     
     /*

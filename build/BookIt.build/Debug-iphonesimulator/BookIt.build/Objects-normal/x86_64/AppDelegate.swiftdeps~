@@ -83,6 +83,7 @@ depends-member:
 - ["s7CVarArgP", "applicationWillEnterForeground"]
 - ["s7CVarArgP", "applicationWillResignActive"]
 - ["s7CVarArgP", "applicationWillTerminate"]
+- !private ["s7CVarArgP", "areTimestampsInSnapshotsEnabled"]
 - !private ["s7CVarArgP", "bounds"]
 - !private ["s7CVarArgP", "configure"]
 - !private ["s7CVarArgP", "defaultFont"]
@@ -92,6 +93,7 @@ depends-member:
 - !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "makeKeyAndVisible"]
 - !private ["s7CVarArgP", "rootViewController"]
+- !private ["s7CVarArgP", "settings"]
 - ["s7CVarArgP", "window"]
 - !private ["s28CustomDebugStringConvertibleP", "BaseViewController"]
 - !private ["s28CustomDebugStringConvertibleP", "FirebaseApp"]
@@ -114,6 +116,7 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "applicationWillEnterForeground"]
 - ["s28CustomDebugStringConvertibleP", "applicationWillResignActive"]
 - ["s28CustomDebugStringConvertibleP", "applicationWillTerminate"]
+- !private ["s28CustomDebugStringConvertibleP", "areTimestampsInSnapshotsEnabled"]
 - !private ["s28CustomDebugStringConvertibleP", "bounds"]
 - !private ["s28CustomDebugStringConvertibleP", "configure"]
 - !private ["s28CustomDebugStringConvertibleP", "defaultFont"]
@@ -123,6 +126,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "makeKeyAndVisible"]
 - !private ["s28CustomDebugStringConvertibleP", "rootViewController"]
+- !private ["s28CustomDebugStringConvertibleP", "settings"]
 - ["s28CustomDebugStringConvertibleP", "window"]
 - !private ["s23CustomStringConvertibleP", "BaseViewController"]
 - !private ["s23CustomStringConvertibleP", "FirebaseApp"]
@@ -145,6 +149,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", "applicationWillEnterForeground"]
 - ["s23CustomStringConvertibleP", "applicationWillResignActive"]
 - ["s23CustomStringConvertibleP", "applicationWillTerminate"]
+- !private ["s23CustomStringConvertibleP", "areTimestampsInSnapshotsEnabled"]
 - !private ["s23CustomStringConvertibleP", "bounds"]
 - !private ["s23CustomStringConvertibleP", "configure"]
 - !private ["s23CustomStringConvertibleP", "defaultFont"]
@@ -154,6 +159,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "makeKeyAndVisible"]
 - !private ["s23CustomStringConvertibleP", "rootViewController"]
+- !private ["s23CustomStringConvertibleP", "settings"]
 - ["s23CustomStringConvertibleP", "window"]
 - !private ["SQ", "BaseViewController"]
 - !private ["SQ", "FirebaseApp"]
@@ -176,6 +182,7 @@ depends-member:
 - ["SQ", "applicationWillEnterForeground"]
 - ["SQ", "applicationWillResignActive"]
 - ["SQ", "applicationWillTerminate"]
+- !private ["SQ", "areTimestampsInSnapshotsEnabled"]
 - !private ["SQ", "bounds"]
 - !private ["SQ", "configure"]
 - !private ["SQ", "defaultFont"]
@@ -185,9 +192,12 @@ depends-member:
 - !private ["SQ", "main"]
 - !private ["SQ", "makeKeyAndVisible"]
 - !private ["SQ", "rootViewController"]
+- !private ["SQ", "settings"]
 - ["SQ", "window"]
 - !private ["So6FIRAppC", "configure"]
 - !private ["So12FIRFirestoreC", "firestore"]
+- !private ["So12FIRFirestoreC", "settings"]
+- !private ["So20FIRFirestoreSettingsC", "areTimestampsInSnapshotsEnabled"]
 - !private ["6BookIt5FontsC", "openSans"]
 - !private ["SH", "BaseViewController"]
 - !private ["SH", "FirebaseApp"]
@@ -210,6 +220,7 @@ depends-member:
 - ["SH", "applicationWillEnterForeground"]
 - ["SH", "applicationWillResignActive"]
 - ["SH", "applicationWillTerminate"]
+- !private ["SH", "areTimestampsInSnapshotsEnabled"]
 - !private ["SH", "bounds"]
 - !private ["SH", "configure"]
 - !private ["SH", "defaultFont"]
@@ -219,12 +230,14 @@ depends-member:
 - !private ["SH", "main"]
 - !private ["SH", "makeKeyAndVisible"]
 - !private ["SH", "rootViewController"]
+- !private ["SH", "settings"]
 - ["SH", "window"]
 - !private ["So8NSCodingP", "appearance"]
 - !private ["So8NSCodingP", "defaultFont"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "makeKeyAndVisible"]
 - !private ["So8NSCodingP", "rootViewController"]
+- !private ["So9NSCopyingP", "areTimestampsInSnapshotsEnabled"]
 - !private ["So26NSExtensionRequestHandlingP", "init"]
 - !private ["So8NSObjectC", "BaseViewController"]
 - ["So8NSObjectC", "Bool"]
@@ -249,6 +262,7 @@ depends-member:
 - ["So8NSObjectC", "applicationWillEnterForeground"]
 - ["So8NSObjectC", "applicationWillResignActive"]
 - ["So8NSObjectC", "applicationWillTerminate"]
+- !private ["So8NSObjectC", "areTimestampsInSnapshotsEnabled"]
 - !private ["So8NSObjectC", "bounds"]
 - !private ["So8NSObjectC", "configure"]
 - !private ["So8NSObjectC", "defaultFont"]
@@ -258,6 +272,7 @@ depends-member:
 - !private ["So8NSObjectC", "main"]
 - !private ["So8NSObjectC", "makeKeyAndVisible"]
 - !private ["So8NSObjectC", "rootViewController"]
+- !private ["So8NSObjectC", "settings"]
 - ["So8NSObjectC", "window"]
 - !private ["So8NSObjectP", "BaseViewController"]
 - !private ["So8NSObjectP", "FirebaseApp"]
@@ -280,6 +295,7 @@ depends-member:
 - ["So8NSObjectP", "applicationWillEnterForeground"]
 - ["So8NSObjectP", "applicationWillResignActive"]
 - ["So8NSObjectP", "applicationWillTerminate"]
+- !private ["So8NSObjectP", "areTimestampsInSnapshotsEnabled"]
 - !private ["So8NSObjectP", "bounds"]
 - !private ["So8NSObjectP", "configure"]
 - !private ["So8NSObjectP", "defaultFont"]
@@ -289,6 +305,7 @@ depends-member:
 - !private ["So8NSObjectP", "main"]
 - !private ["So8NSObjectP", "makeKeyAndVisible"]
 - !private ["So8NSObjectP", "rootViewController"]
+- !private ["So8NSObjectP", "settings"]
 - ["So8NSObjectP", "window"]
 - !private ["So29UIAccessibilityIdentificationP", "appearance"]
 - !private ["So29UIAccessibilityIdentificationP", "defaultFont"]
@@ -514,6 +531,7 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillEnterForeground"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillResignActive"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "applicationWillTerminate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "areTimestampsInSnapshotsEnabled"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "configure"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "defaultFont"]
@@ -523,6 +541,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "makeKeyAndVisible"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "rootViewController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "settings"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "window"]
 depends-nominal:
 - "6BookIt11AppDelegateC"
@@ -534,9 +553,11 @@ depends-nominal:
 - "SQ"
 - !private "So6FIRAppC"
 - !private "So12FIRFirestoreC"
+- !private "So20FIRFirestoreSettingsC"
 - !private "6BookIt5FontsC"
 - "SH"
 - !private "So8NSCodingP"
+- !private "So9NSCopyingP"
 - !private "So26NSExtensionRequestHandlingP"
 - "So8NSObjectC"
 - "So8NSObjectP"

@@ -260,6 +260,22 @@ class RoomSearchViewController: UIViewController
                 // reload tableview in BookingListViewController
                 let bookListViewController = BookingListViewController()
                 bookListViewController.roomData = self.roomData
+                bookListViewController.todaysDate = pickedDate
+                if lowerBound % 2 == 0{
+                    bookListViewController.startTime = "\(lowerBound / 2):00"
+                }
+                else{
+                    bookListViewController.startTime = "\(lowerBound / 2):30"
+                }
+                if upperBound % 2 == 0{
+                    bookListViewController.endTime = "\(upperBound / 2):00"
+                }
+                else{
+                    bookListViewController.endTime = "\(upperBound / 2):30"
+                }
+                
+                
+
                 
                 self.navigationController?.pushViewController(bookListViewController, animated: true)
             }

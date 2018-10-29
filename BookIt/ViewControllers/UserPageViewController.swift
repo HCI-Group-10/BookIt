@@ -26,6 +26,12 @@ class UserPageViewController: UIViewController
     //reservation views
     var reservationInfoLabel : UILabel?
     var reservation : Reservation?
+    {
+        didSet {
+//            loadData()
+        }
+    }
+    var roomReservationViewController : RoomReservationViewController?
     var reservationContainer : UIView?
     var emptyReservationLabel : UILabel?
     var cancelReservationButton : UIButton?
@@ -49,30 +55,31 @@ class UserPageViewController: UIViewController
 
         setUpViews()
         loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(reservationUpdated), name: NSNotification.Name.init("reservation_update"), object: nil)
     }
+    
+    @objc func reservationUpdated()
+    {
+        card.detailVC.dismissVC()
+//        card.dismiss()
+        loadData()
+    }
+    
     
     func loadData()
     {
-        let room = Room(dict: [
-            "room" : "Carver",
-            "roomNumber" : "L113",
-            "location" : "Marston",
-            "capacity" : 4
-            ])
-        let reservation = Reservation()
-        reservation.room = room
+        let reservation = User.sharedInstance()?.reservation
         let date = Date()
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, yyyy"
-        reservation.date = dateFormatter.string(from: date)
+        reservation?.date = dateFormatter.string(from: date)
         
         dateFormatter.dateFormat = "HH:mm"
-        reservation.startTime = dateFormatter.string(from: date)
-        reservation.endTime = dateFormatter.string(from: date)
+        reservation?.startTime = dateFormatter.string(from: date)
+        reservation?.endTime = dateFormatter.string(from: date)
         
         self.reservation = reservation
-        
         if let user = User.sharedInstance()
         {
             self.userFirstNameTextField?.text = user.firstName
@@ -104,18 +111,8 @@ class UserPageViewController: UIViewController
             }
             
             //assign vc to present
-            let roomReservationViewController = RoomReservationViewController()
-            let reservation = Reservation()
-            reservation.room = room
-            let date = Date()
-            let dateFormatter = DateFormatter()
-            
-            dateFormatter.dateFormat = "MMM d, yyyy"
-            reservation.date = dateFormatter.string(from: date)
-            
-            dateFormatter.dateFormat = "HH:mm"
-            reservation.startTime = dateFormatter.string(from: date)
-            reservation.endTime = dateFormatter.string(from: date)
+            roomReservationViewController = RoomReservationViewController()
+            guard let roomReservationViewController = roomReservationViewController else { return }
             roomReservationViewController.fromUserPage = true
             roomReservationViewController.reservation = reservation
             card.shouldPresent(roomReservationViewController, from: self, fullscreen: true)

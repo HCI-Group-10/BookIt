@@ -1,14 +1,17 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "Util"
 - "Titles"
 - "Fonts"
 - "Assets"
 - "getImageWithColorPosition"
 provides-nominal:
+- "6BookIt4UtilC"
 - "6BookIt6TitlesC"
 - "6BookIt5FontsC"
 - "6BookIt6AssetsC"
 provides-member:
+- ["6BookIt4UtilC", ""]
 - ["6BookIt6TitlesC", ""]
 - ["6BookIt5FontsC", ""]
 - ["6BookIt6AssetsC", ""]
@@ -59,6 +62,8 @@ depends-top-level:
 - "String"
 - "StringLiteralType"
 - "Titles"
+- !private "UIAlertAction"
+- !private "UIAlertController"
 - !private "UIApplication"
 - !private "UIBlurEffect"
 - "UIColor"
@@ -72,8 +77,10 @@ depends-top-level:
 - "UINavigationBar"
 - !private "UIRectFill"
 - "UITabBar"
+- "UIViewController"
 - !private "UIVisualEffectView"
 - !private "UnicodeScalarType"
+- "Util"
 - !private "assert"
 - "getImageWithColorPosition"
 depends-member:
@@ -135,6 +142,7 @@ depends-member:
 - !private ["s7CVarArgP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["s7CVarArgP", "UIImage"]
 - !private ["s7CVarArgP", "UIVisualEffectView"]
+- !private ["s7CVarArgP", "addAction"]
 - !private ["s7CVarArgP", "addSubview"]
 - !private ["s7CVarArgP", "assert"]
 - !private ["s7CVarArgP", "autoresizingMask"]
@@ -152,6 +160,7 @@ depends-member:
 - !private ["s7CVarArgP", "isTranslucent"]
 - !private ["s7CVarArgP", "isUserInteractionEnabled"]
 - !private ["s7CVarArgP", "layer"]
+- !private ["s7CVarArgP", "present"]
 - !private ["s7CVarArgP", "remainderReportingOverflow"]
 - !private ["s7CVarArgP", "scale"]
 - !private ["s7CVarArgP", "setBackgroundImage"]
@@ -183,6 +192,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["s28CustomDebugStringConvertibleP", "UIImage"]
 - !private ["s28CustomDebugStringConvertibleP", "UIVisualEffectView"]
+- !private ["s28CustomDebugStringConvertibleP", "addAction"]
 - !private ["s28CustomDebugStringConvertibleP", "addSubview"]
 - !private ["s28CustomDebugStringConvertibleP", "assert"]
 - !private ["s28CustomDebugStringConvertibleP", "autoresizingMask"]
@@ -202,6 +212,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "isUserInteractionEnabled"]
 - !private ["s28CustomDebugStringConvertibleP", "layer"]
 - !private ["s28CustomDebugStringConvertibleP", "origin"]
+- !private ["s28CustomDebugStringConvertibleP", "present"]
 - !private ["s28CustomDebugStringConvertibleP", "scale"]
 - !private ["s28CustomDebugStringConvertibleP", "setBackgroundImage"]
 - !private ["s28CustomDebugStringConvertibleP", "setFill"]
@@ -245,6 +256,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["s23CustomStringConvertibleP", "UIImage"]
 - !private ["s23CustomStringConvertibleP", "UIVisualEffectView"]
+- !private ["s23CustomStringConvertibleP", "addAction"]
 - !private ["s23CustomStringConvertibleP", "addSubview"]
 - !private ["s23CustomStringConvertibleP", "assert"]
 - !private ["s23CustomStringConvertibleP", "autoresizingMask"]
@@ -262,6 +274,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "isTranslucent"]
 - !private ["s23CustomStringConvertibleP", "isUserInteractionEnabled"]
 - !private ["s23CustomStringConvertibleP", "layer"]
+- !private ["s23CustomStringConvertibleP", "present"]
 - !private ["s23CustomStringConvertibleP", "remainderReportingOverflow"]
 - !private ["s23CustomStringConvertibleP", "scale"]
 - !private ["s23CustomStringConvertibleP", "setBackgroundImage"]
@@ -308,7 +321,9 @@ depends-member:
 - !private ["SQ", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["SQ", "UIImage"]
 - !private ["SQ", "UIVisualEffectView"]
+- !private ["SQ", "addAction"]
 - !private ["SQ", "addSubview"]
+- !private ["SQ", "alert"]
 - !private ["SQ", "assert"]
 - !private ["SQ", "autoresizingMask"]
 - !private ["SQ", "backgroundImage"]
@@ -334,6 +349,7 @@ depends-member:
 - !private ["SQ", "light"]
 - !private ["SQ", "normal"]
 - !private ["SQ", "origin"]
+- !private ["SQ", "present"]
 - !private ["SQ", "remainderReportingOverflow"]
 - !private ["SQ", "scale"]
 - !private ["SQ", "scaleBy"]
@@ -389,7 +405,9 @@ depends-member:
 - !private ["SH", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["SH", "UIImage"]
 - !private ["SH", "UIVisualEffectView"]
+- !private ["SH", "addAction"]
 - !private ["SH", "addSubview"]
+- !private ["SH", "alert"]
 - !private ["SH", "assert"]
 - !private ["SH", "autoresizingMask"]
 - !private ["SH", "backgroundImage"]
@@ -411,6 +429,7 @@ depends-member:
 - !private ["SH", "layer"]
 - !private ["SH", "light"]
 - !private ["SH", "normal"]
+- !private ["SH", "present"]
 - !private ["SH", "remainderReportingOverflow"]
 - !private ["SH", "scale"]
 - !private ["SH", "scaleBy"]
@@ -446,6 +465,7 @@ depends-member:
 - !private ["So8NSCodingP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["So8NSCodingP", "UIImage"]
 - !private ["So8NSCodingP", "UIVisualEffectView"]
+- !private ["So8NSCodingP", "addAction"]
 - !private ["So8NSCodingP", "addSubview"]
 - !private ["So8NSCodingP", "assert"]
 - !private ["So8NSCodingP", "autoresizingMask"]
@@ -461,6 +481,7 @@ depends-member:
 - !private ["So8NSCodingP", "isTranslucent"]
 - !private ["So8NSCodingP", "isUserInteractionEnabled"]
 - !private ["So8NSCodingP", "layer"]
+- !private ["So8NSCodingP", "present"]
 - !private ["So8NSCodingP", "scale"]
 - !private ["So8NSCodingP", "setBackgroundImage"]
 - !private ["So8NSCodingP", "setFill"]
@@ -476,6 +497,9 @@ depends-member:
 - !private ["So9NSCopyingP", "init"]
 - !private ["So9NSCopyingP", "setFill"]
 - !private ["So9NSCopyingP", "string"]
+- !private ["So26NSExtensionRequestHandlingP", "addAction"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "present"]
 - !private ["So21NSItemProviderReadingP", "CGFloat"]
 - !private ["So21NSItemProviderReadingP", "CGRect"]
 - !private ["So21NSItemProviderReadingP", "UIColor"]
@@ -517,6 +541,7 @@ depends-member:
 - !private ["So8NSObjectC", "UIGraphicsGetImageFromCurrentImageContext"]
 - ["So8NSObjectC", "UIImage"]
 - !private ["So8NSObjectC", "UIVisualEffectView"]
+- !private ["So8NSObjectC", "addAction"]
 - !private ["So8NSObjectC", "addSubview"]
 - !private ["So8NSObjectC", "assert"]
 - !private ["So8NSObjectC", "autoresizingMask"]
@@ -538,6 +563,7 @@ depends-member:
 - !private ["So8NSObjectC", "isTranslucent"]
 - !private ["So8NSObjectC", "isUserInteractionEnabled"]
 - !private ["So8NSObjectC", "layer"]
+- !private ["So8NSObjectC", "present"]
 - !private ["So8NSObjectC", "scale"]
 - !private ["So8NSObjectC", "setBackgroundImage"]
 - !private ["So8NSObjectC", "setFill"]
@@ -560,6 +586,7 @@ depends-member:
 - !private ["So8NSObjectP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["So8NSObjectP", "UIImage"]
 - !private ["So8NSObjectP", "UIVisualEffectView"]
+- !private ["So8NSObjectP", "addAction"]
 - !private ["So8NSObjectP", "addSubview"]
 - !private ["So8NSObjectP", "assert"]
 - !private ["So8NSObjectP", "autoresizingMask"]
@@ -575,6 +602,7 @@ depends-member:
 - !private ["So8NSObjectP", "isTranslucent"]
 - !private ["So8NSObjectP", "isUserInteractionEnabled"]
 - !private ["So8NSObjectP", "layer"]
+- !private ["So8NSObjectP", "present"]
 - !private ["So8NSObjectP", "scale"]
 - !private ["So8NSObjectP", "setBackgroundImage"]
 - !private ["So8NSObjectP", "setFill"]
@@ -610,6 +638,7 @@ depends-member:
 - !private ["Sm", "getTimeFrom30MinIntervalValue"]
 - ["Sm", "init"]
 - ["Sm", "init"]
+- !private ["SY", "alert"]
 - !private ["SY", "default"]
 - !private ["SY", "flexibleHeight"]
 - !private ["SY", "flexibleWidth"]
@@ -640,6 +669,8 @@ depends-member:
 - !private ["Sy", "getTimeFrom30MinIntervalValue"]
 - ["Sy", "init"]
 - ["Sy", "init"]
+- !private ["So22UIAlertControllerStyleV", "alert"]
+- !private ["So18UIAlertActionStyleV", "default"]
 - !private ["So17UIBlurEffectStyleV", "light"]
 - !private ["s16TextOutputStreamP", "DateFormatter"]
 - !private ["s16TextOutputStreamP", "getTimeFrom30MinIntervalValue"]
@@ -679,6 +710,9 @@ depends-member:
 - !private ["So29UIAccessibilityIdentificationP", "scale"]
 - !private ["So29UIAccessibilityIdentificationP", "setBackgroundImage"]
 - !private ["So29UIAccessibilityIdentificationP", "size"]
+- !private ["So13UIAlertActionC", "init"]
+- !private ["So17UIAlertControllerC", "addAction"]
+- !private ["So17UIAlertControllerC", "init"]
 - !private ["So12UIAppearanceP", "UIApplication"]
 - !private ["So12UIAppearanceP", "UIBlurEffect"]
 - !private ["So12UIAppearanceP", "UIFont"]
@@ -700,6 +734,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "UIFont"]
 - !private ["So21UIAppearanceContainerP", "UIImage"]
 - !private ["So21UIAppearanceContainerP", "UIVisualEffectView"]
+- !private ["So21UIAppearanceContainerP", "addAction"]
 - !private ["So21UIAppearanceContainerP", "addSubview"]
 - !private ["So21UIAppearanceContainerP", "autoresizingMask"]
 - !private ["So21UIAppearanceContainerP", "backgroundImage"]
@@ -710,6 +745,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "isTranslucent"]
 - !private ["So21UIAppearanceContainerP", "isUserInteractionEnabled"]
 - !private ["So21UIAppearanceContainerP", "layer"]
+- !private ["So21UIAppearanceContainerP", "present"]
 - !private ["So21UIAppearanceContainerP", "setBackgroundImage"]
 - !private ["So13UIApplicationC", "shared"]
 - !private ["So13UIApplicationC", "statusBarFrame"]
@@ -734,6 +770,9 @@ depends-member:
 - !private ["So7UIColorC", "clear"]
 - ["So7UIColorC", "init"]
 - !private ["So7UIColorC", "setFill"]
+- !private ["So18UIContentContainerP", "addAction"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "present"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "UIFont"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "font"]
 - !private ["So17UICoordinateSpaceP", "UIApplication"]
@@ -773,6 +812,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "UIFont"]
 - !private ["So18UIFocusEnvironmentP", "UIImage"]
 - !private ["So18UIFocusEnvironmentP", "UIVisualEffectView"]
+- !private ["So18UIFocusEnvironmentP", "addAction"]
 - !private ["So18UIFocusEnvironmentP", "addSubview"]
 - !private ["So18UIFocusEnvironmentP", "autoresizingMask"]
 - !private ["So18UIFocusEnvironmentP", "backgroundImage"]
@@ -783,6 +823,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "isTranslucent"]
 - !private ["So18UIFocusEnvironmentP", "isUserInteractionEnabled"]
 - !private ["So18UIFocusEnvironmentP", "layer"]
+- !private ["So18UIFocusEnvironmentP", "present"]
 - !private ["So18UIFocusEnvironmentP", "setBackgroundImage"]
 - !private ["So11UIFocusItemP", "UIApplication"]
 - !private ["So11UIFocusItemP", "UIBlurEffect"]
@@ -857,6 +898,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "UIFont"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIVisualEffectView"]
+- !private ["So30UIPasteConfigurationSupportingP", "addAction"]
 - !private ["So30UIPasteConfigurationSupportingP", "addSubview"]
 - !private ["So30UIPasteConfigurationSupportingP", "autoresizingMask"]
 - !private ["So30UIPasteConfigurationSupportingP", "backgroundImage"]
@@ -867,6 +909,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "isTranslucent"]
 - !private ["So30UIPasteConfigurationSupportingP", "isUserInteractionEnabled"]
 - !private ["So30UIPasteConfigurationSupportingP", "layer"]
+- !private ["So30UIPasteConfigurationSupportingP", "present"]
 - !private ["So30UIPasteConfigurationSupportingP", "setBackgroundImage"]
 - !private ["So30UIPasteConfigurationSupportingP", "shared"]
 - !private ["So30UIPasteConfigurationSupportingP", "statusBarFrame"]
@@ -876,6 +919,7 @@ depends-member:
 - ["So11UIResponderC", "UIFont"]
 - !private ["So11UIResponderC", "UIImage"]
 - !private ["So11UIResponderC", "UIVisualEffectView"]
+- !private ["So11UIResponderC", "addAction"]
 - !private ["So11UIResponderC", "addSubview"]
 - !private ["So11UIResponderC", "autoresizingMask"]
 - !private ["So11UIResponderC", "backgroundImage"]
@@ -888,6 +932,7 @@ depends-member:
 - !private ["So11UIResponderC", "isTranslucent"]
 - !private ["So11UIResponderC", "isUserInteractionEnabled"]
 - !private ["So11UIResponderC", "layer"]
+- !private ["So11UIResponderC", "present"]
 - !private ["So11UIResponderC", "setBackgroundImage"]
 - !private ["So11UIResponderC", "shared"]
 - !private ["So11UIResponderC", "statusBarFrame"]
@@ -897,6 +942,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "UIFont"]
 - !private ["So30UIResponderStandardEditActionsP", "UIImage"]
 - !private ["So30UIResponderStandardEditActionsP", "UIVisualEffectView"]
+- !private ["So30UIResponderStandardEditActionsP", "addAction"]
 - !private ["So30UIResponderStandardEditActionsP", "addSubview"]
 - !private ["So30UIResponderStandardEditActionsP", "autoresizingMask"]
 - !private ["So30UIResponderStandardEditActionsP", "backgroundImage"]
@@ -907,16 +953,22 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "isTranslucent"]
 - !private ["So30UIResponderStandardEditActionsP", "isUserInteractionEnabled"]
 - !private ["So30UIResponderStandardEditActionsP", "layer"]
+- !private ["So30UIResponderStandardEditActionsP", "present"]
 - !private ["So30UIResponderStandardEditActionsP", "setBackgroundImage"]
 - !private ["So30UIResponderStandardEditActionsP", "shared"]
 - !private ["So30UIResponderStandardEditActionsP", "statusBarFrame"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "UIBlurEffect"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "UIImage"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "UIVisualEffectView"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "addAction"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "addSubview"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "backgroundImage"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "bounds"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "init"]
 - !private ["So35UISpringLoadedInteractionSupportingP", "isTranslucent"]
+- !private ["So16UIStateRestoringP", "addAction"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "present"]
 - !private ["So8UITabBarC", "UIBlurEffect"]
 - !private ["So8UITabBarC", "UIImage"]
 - !private ["So8UITabBarC", "UIVisualEffectView"]
@@ -930,6 +982,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "UIFont"]
 - !private ["So18UITraitEnvironmentP", "UIImage"]
 - !private ["So18UITraitEnvironmentP", "UIVisualEffectView"]
+- !private ["So18UITraitEnvironmentP", "addAction"]
 - !private ["So18UITraitEnvironmentP", "addSubview"]
 - !private ["So18UITraitEnvironmentP", "autoresizingMask"]
 - !private ["So18UITraitEnvironmentP", "backgroundImage"]
@@ -940,12 +993,14 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "isTranslucent"]
 - !private ["So18UITraitEnvironmentP", "isUserInteractionEnabled"]
 - !private ["So18UITraitEnvironmentP", "layer"]
+- !private ["So18UITraitEnvironmentP", "present"]
 - !private ["So18UITraitEnvironmentP", "setBackgroundImage"]
 - !private ["So23UIUserActivityRestoringP", "UIApplication"]
 - !private ["So23UIUserActivityRestoringP", "UIBlurEffect"]
 - !private ["So23UIUserActivityRestoringP", "UIFont"]
 - !private ["So23UIUserActivityRestoringP", "UIImage"]
 - !private ["So23UIUserActivityRestoringP", "UIVisualEffectView"]
+- !private ["So23UIUserActivityRestoringP", "addAction"]
 - !private ["So23UIUserActivityRestoringP", "addSubview"]
 - !private ["So23UIUserActivityRestoringP", "autoresizingMask"]
 - !private ["So23UIUserActivityRestoringP", "backgroundImage"]
@@ -956,6 +1011,7 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "isTranslucent"]
 - !private ["So23UIUserActivityRestoringP", "isUserInteractionEnabled"]
 - !private ["So23UIUserActivityRestoringP", "layer"]
+- !private ["So23UIUserActivityRestoringP", "present"]
 - !private ["So23UIUserActivityRestoringP", "setBackgroundImage"]
 - !private ["So23UIUserActivityRestoringP", "shared"]
 - !private ["So23UIUserActivityRestoringP", "statusBarFrame"]
@@ -979,12 +1035,21 @@ depends-member:
 - !private ["So6UIViewC", "layer"]
 - !private ["So6UIViewC", "setBackgroundImage"]
 - ["So6UIViewC", "updateToStandardFont"]
+- !private ["So16UIViewControllerC", "addAction"]
+- !private ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "present"]
 - !private ["So14UIVisualEffectC", "init"]
 - !private ["So18UIVisualEffectViewC", "autoresizingMask"]
 - !private ["So18UIVisualEffectViewC", "frame"]
 - !private ["So18UIVisualEffectViewC", "init"]
 - !private ["So18UIVisualEffectViewC", "isUserInteractionEnabled"]
 - !private ["So18UIVisualEffectViewC", "layer"]
+- ["6BookIt4UtilC", "String"]
+- !private ["6BookIt4UtilC", "UIAlertAction"]
+- !private ["6BookIt4UtilC", "UIAlertController"]
+- ["6BookIt4UtilC", "UIViewController"]
+- ["6BookIt4UtilC", "init"]
+- ["6BookIt4UtilC", "presentAlert"]
 - !private ["s18_BitwiseOperationsP", "remainderReportingOverflow"]
 - !private ["14CoreFoundation9_CFObjectP", "clip"]
 - !private ["14CoreFoundation9_CFObjectP", "fill"]
@@ -1058,6 +1123,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIGraphicsGetImageFromCurrentImageContext"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIVisualEffectView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addAction"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addSubview"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "assert"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "autoresizingMask"]
@@ -1073,6 +1139,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isTranslucent"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isUserInteractionEnabled"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "layer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "present"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "scale"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setBackgroundImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "setFill"]
@@ -1137,6 +1204,7 @@ depends-nominal:
 - "s10MirrorPathP"
 - !private "So8NSCodingP"
 - !private "So9NSCopyingP"
+- !private "So26NSExtensionRequestHandlingP"
 - !private "So21NSItemProviderReadingP"
 - !private "So21NSItemProviderWritingP"
 - "So8NSObjectC"
@@ -1154,11 +1222,15 @@ depends-nominal:
 - !private "Sx"
 - "SS"
 - "Sy"
+- !private "So22UIAlertControllerStyleV"
+- !private "So18UIAlertActionStyleV"
 - !private "So17UIBlurEffectStyleV"
 - "s16TextOutputStreamP"
 - "s20TextOutputStreamableP"
 - "6BookIt6TitlesC"
 - !private "So29UIAccessibilityIdentificationP"
+- !private "So13UIAlertActionC"
+- !private "So17UIAlertControllerC"
 - !private "So12UIAppearanceP"
 - !private "So21UIAppearanceContainerP"
 - !private "So13UIApplicationC"
@@ -1166,6 +1238,7 @@ depends-nominal:
 - !private "So16UIBarPositioningP"
 - !private "So12UIBlurEffectC"
 - "So7UIColorC"
+- !private "So18UIContentContainerP"
 - !private "So30UIContentSizeCategoryAdjustingP"
 - !private "So17UICoordinateSpaceP"
 - !private "So13UIDynamicItemP"
@@ -1181,12 +1254,15 @@ depends-nominal:
 - "So11UIResponderC"
 - !private "So30UIResponderStandardEditActionsP"
 - !private "So35UISpringLoadedInteractionSupportingP"
+- !private "So16UIStateRestoringP"
 - "So8UITabBarC"
 - !private "So18UITraitEnvironmentP"
 - !private "So23UIUserActivityRestoringP"
 - "So6UIViewC"
+- !private "So16UIViewControllerC"
 - !private "So14UIVisualEffectC"
 - !private "So18UIVisualEffectViewC"
+- "6BookIt4UtilC"
 - !private "s18_BitwiseOperationsP"
 - !private "14CoreFoundation9_CFObjectP"
 - !private "s15_CVarArgAlignedP"
@@ -1209,13 +1285,17 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/build/Debug-iphonesimulator/SwiftRangeSlider/SwiftRangeSlider.framework/Modules/SwiftRangeSlider.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
@@ -1277,13 +1357,17 @@ depends-external:
 - "/Users/andreigurau/Desktop/Xcodeapps/BookIt/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "c700ceb26e1b795677e6d85ef2c53c35"
+interface-hash: "867318dd1881a288ea590d9f9a1bedca"

@@ -32,7 +32,6 @@
 		285803462170F60100E73AA0 /* RoomReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285803452170F60000E73AA0 /* RoomReservationViewController.swift */; };
 		285803482170FAAD00E73AA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285803472170FAAD00E73AA0 /* User.swift */; };
 		2858034A217108B100E73AA0 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28580349217108B100E73AA0 /* Reservation.swift */; };
-		28717A7E2186470F007BF211 /* RoomContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28717A7D2186470F007BF211 /* RoomContentViewController.swift */; };
 		28D1300821861F3D006D9449 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D1300721861F3D006D9449 /* GoogleService-Info.plist */; };
 		28D1300A218624E6006D9449 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D13009218624E6006D9449 /* ScannerViewController.swift */; };
 		34918A740A6572ACF6A3F291 /* Pods_BookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F910400445A40A50493D6 /* Pods_BookIt.framework */; };
@@ -67,7 +66,6 @@
 		285803452170F60000E73AA0 /* RoomReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomReservationViewController.swift; sourceTree = "<group>"; };
 		285803472170FAAD00E73AA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28580349217108B100E73AA0 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
-		28717A7D2186470F007BF211 /* RoomContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomContentViewController.swift; sourceTree = "<group>"; };
 		28D1300721861F3D006D9449 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28D13009218624E6006D9449 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		6AE5D1A7C923FFB1942CEB9A /* Pods-BookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookIt/Pods-BookIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				280E57E92167F7560080770D /* RoomSearchViewController.swift */,
 				285803452170F60000E73AA0 /* RoomReservationViewController.swift */,
 				28D13009218624E6006D9449 /* ScannerViewController.swift */,
-				28717A7D2186470F007BF211 /* RoomContentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -373,7 +370,6 @@
 				280E57D42167F23E0080770D /* AppDelegate.swift in Sources */,
 				280E57EA2167F7560080770D /* RoomSearchViewController.swift in Sources */,
 				285803482170FAAD00E73AA0 /* User.swift in Sources */,
-				28717A7E2186470F007BF211 /* RoomContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -121,12 +121,12 @@ import UIKit
     
     //Private Vars
     fileprivate var tap = UITapGestureRecognizer()
-    fileprivate var detailVC = DetailViewController()
+    public var detailVC = DetailViewController()
     weak var superVC: UIViewController?
     var originalFrame = CGRect.zero
     public var backgroundIV = UIImageView()
     public var insets = CGFloat()
-    public var isPresenting = false
+    var isPresenting = false
     
     //MARK: - View Life Cycle
     

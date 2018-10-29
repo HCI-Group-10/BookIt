@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal class DetailViewController: UIViewController {
+open class DetailViewController: UIViewController {
     
     var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight ))
     weak var detailView: UIView?
@@ -23,14 +23,14 @@ internal class DetailViewController: UIViewController {
     fileprivate var scrollPosition = CGFloat()
     fileprivate var scrollViewOriginalYPosition = CGFloat()
     
-    override var prefersStatusBarHidden: Bool {
+    override open var prefersStatusBarHidden: Bool {
         if isFullscreen { return true }
         else { return false }
     }
     
     //MARK: - View Lifecycle
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         if #available(iOS 11.0, *) {
@@ -66,12 +66,12 @@ internal class DetailViewController: UIViewController {
     }
     
 
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         scrollView.addSubview(card.backgroundIV)
         self.delegate?.cardWillShowDetailView?(card: self.card)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         
         //originalFrame = scrollView.frame
         
@@ -102,14 +102,14 @@ internal class DetailViewController: UIViewController {
         self.scrollView.contentOffset.y = 0 // Jie - Sometimes backgroundIV is pushed down. This make sure it is pinned to top of scrollView
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         self.delegate?.cardWillCloseDetailView?(card: self.card)
         detailView?.alpha = 0
         snap.removeFromSuperview()
         xButton.removeFromSuperview()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
         self.delegate?.cardDidCloseDetailView?(card: self.card)
     }
     
@@ -153,7 +153,8 @@ internal class DetailViewController: UIViewController {
     
     //MARK: - Actions
     
-    @objc func dismissVC(){
+    @objc open func dismissVC()
+    {
         scrollView.contentOffset.y = 0
         dismiss(animated: true, completion: nil)
     }

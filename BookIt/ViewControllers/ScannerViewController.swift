@@ -8,9 +8,15 @@ import Foundation
 import AVFoundation
 import UIKit
 
+protocol ScannerViewControllerDelegate
+{
+    func outputFromScan(result: String)
+}
+
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var delegate: ScannerViewControllerDelegate!
     
     override func viewDidLoad()
     {
@@ -91,7 +97,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func found(code: String) {
-        print(code)
+        delegate.outputFromScan(result: code)
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -23,6 +23,8 @@ class BookingListTableViewCell: UITableViewCell {
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
     
     var card : CardHighlight!
+    var roomReservationViewController : RoomReservationViewController?
+    
     var delegate : BookingListTableViewCellDelegate!
     var controller : UIViewController!
     
@@ -44,7 +46,8 @@ class BookingListTableViewCell: UITableViewCell {
             }
             
             //assign vc to present
-            let roomReservationViewController = RoomReservationViewController()
+            roomReservationViewController = RoomReservationViewController()
+            guard let roomReservationViewController = roomReservationViewController else { return }
             let reservation = Reservation()
             reservation.room = room
             let date = Date()
@@ -58,6 +61,7 @@ class BookingListTableViewCell: UITableViewCell {
             reservation.endTime = dateFormatter.string(from: date)
             
             roomReservationViewController.reservation = reservation
+            
             card.shouldPresent(roomReservationViewController, from: controller, fullscreen: true)
             
             card.titleLbl.font = Fonts.openSansBold
@@ -77,7 +81,6 @@ class BookingListTableViewCell: UITableViewCell {
     private let timeLabel : UILabel = { return UILabel() }()
     
     private let reserveButton : UIButton = { return UIButton() }()
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
@@ -190,7 +193,15 @@ class BookingListTableViewCell: UITableViewCell {
 //        timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
 //
 //        container.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
+        NotificationCenter.default.addObserver(self, selector: #selector(reservationUpdated), name: NSNotification.Name.init("reservation_update"), object: nil)
     }
+    
+    @objc func reservationUpdated()
+    {
+//        card.dismiss()
+        card.detailVC.dismissVC()
+    }
+    
     
     @objc func reservationButtonPressed()
     {
