@@ -23,15 +23,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Book It" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-ki-zsk">
-                                <rect key="frame" x="68" y="283" width="238" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book It" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-ki-zsk">
+                                <rect key="frame" x="87.5" y="290" width="200.5" height="87.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="64"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_alt" translatesAutoresizingMaskIntoConstraints="NO" id="kkC-ER-NrV">
+                                <rect key="frame" x="124" y="156" width="126" height="126"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wgQ-ki-zsk" firstAttribute="top" secondItem="kkC-ER-NrV" secondAttribute="bottom" constant="8" id="DwM-Ll-G5Q"/>
+                            <constraint firstItem="wgQ-ki-zsk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ihv-R6-VZb"/>
+                            <constraint firstItem="kkC-ER-NrV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NI9-Wc-BAK"/>
+                            <constraint firstItem="wgQ-ki-zsk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="io1-h6-NWF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -40,4 +48,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_alt" width="126.33333587646484" height="126"/>
+    </resources>
 </document>

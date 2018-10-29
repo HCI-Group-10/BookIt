@@ -47,6 +47,7 @@ class Room : NSObject
         {
             self.capacity = capacity
         }
+        
         if let times = dict[Room.timeKey] as? NSArray
         {
             self.times = times

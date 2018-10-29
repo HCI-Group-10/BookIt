@@ -9,14 +9,14 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class BookingListViewController: UITableViewController {
+
+class BookingListViewController: UITableViewController
+{
     var roomData : [Room] = []
     var isQuickBook : Bool = false
     var today : Date = Date.init()
     let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
     var todaysDate : String = ""
-    
-    
     
     override func viewDidLoad()
     {
@@ -32,8 +32,8 @@ class BookingListViewController: UITableViewController {
     {
         view.backgroundColor = .white
         
-        tableView.estimatedRowHeight = BookingListTableViewCell.DEFAULT_CELL_HEIGHT
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = BookingListTableViewCell.CELL_SIZE.height
+        tableView.rowHeight = BookingListTableViewCell.CELL_SIZE.height
         tableView.separatorStyle = .none
         tableView.register(BookingListTableViewCell.self, forCellReuseIdentifier: BookingListTableViewCell.identifier)
     }
@@ -137,6 +137,7 @@ class BookingListViewController: UITableViewController {
         
         cell.selectionStyle = .none
         cell.delegate = self
+        cell.controller = self
         let roomInfo = roomData[indexPath.row]
         cell.room = roomInfo
         

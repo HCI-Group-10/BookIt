@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cards
 
 class UserPageViewController: UIViewController
 {
@@ -40,6 +41,7 @@ class UserPageViewController: UIViewController
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
     
+    var card : CardHighlight!
     
     override func viewDidLoad()
     {
@@ -52,10 +54,10 @@ class UserPageViewController: UIViewController
     func loadData()
     {
         let room = Room(dict: [
-            "room" : "Babbage",
+            "room" : "Carver",
             "roomNumber" : "L113",
             "location" : "Marston",
-            "capacity" : "4"
+            "capacity" : 4
             ])
         let reservation = Reservation()
         reservation.room = room
@@ -80,38 +82,77 @@ class UserPageViewController: UIViewController
         
         if let reservation = self.reservation
         {
+            card.isHidden = false
             emptyReservationLabel?.isHidden = true
             reservationContainer?.isHidden = false
             cancelReservationButton?.isHidden = false
             
-            if let date = reservation.date
+            if let room = reservation.room
             {
-                //format date
-                dateLabel?.text = date
+                //                locationLabel.text = "Location: \(location)"
+                //                capacityLabel.text = "Capacity: \(capacity)"
+                //                timeLabel.text = "Until 11:30a"
+                guard let roomText = room.room else { return }
+                guard let roomNum  = room.roomNumber else { return }
+                guard let location = room.location else { return }
+                guard let capacity = room.capacity else { return }
+                
+                card.backgroundImage = UIImage(named: roomText)
+                card.title = "\(roomText) \(roomNum)"
+                card.itemTitle = "Location: \(location)"
+                card.itemSubtitle = "Capacity: \(capacity)"
             }
             
-            if let startTime = reservation.startTime
-            {
-                //format time
-                startTimeLabel?.text = startTime
-            }
+            //assign vc to present
+            let roomReservationViewController = RoomReservationViewController()
+            let reservation = Reservation()
+            reservation.room = room
+            let date = Date()
+            let dateFormatter = DateFormatter()
             
+            dateFormatter.dateFormat = "MMM d, yyyy"
+            reservation.date = dateFormatter.string(from: date)
             
-            if let endTime = reservation.endTime
-            {
-                //format time
-                endTimeLabel?.text = endTime
-            }
+            dateFormatter.dateFormat = "HH:mm"
+            reservation.startTime = dateFormatter.string(from: date)
+            reservation.endTime = dateFormatter.string(from: date)
+            roomReservationViewController.fromUserPage = true
+            roomReservationViewController.reservation = reservation
+            card.shouldPresent(roomReservationViewController, from: self, fullscreen: true)
             
-            if let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
-            {
-                roomLabel?.text = "\(roomName)"
-                roomLocationLabel?.text = "Location: \(roomLocation) \(roomNum)"
-                roomCapacityLabel?.text = "Capacity: \(roomCapacity)"
-            }
+            card.titleLbl.font = Fonts.openSansBold
+            card.itemTitleLbl.font = Fonts.openSans
+            card.itemSubtitleLbl.font = Fonts.openSansLight
+//
+//            if let date = reservation.date
+//            {
+//                //format date
+//                dateLabel?.text = date
+//            }
+//
+//            if let startTime = reservation.startTime
+//            {
+//                //format time
+//                startTimeLabel?.text = startTime
+//            }
+//
+//
+//            if let endTime = reservation.endTime
+//            {
+//                //format time
+//                endTimeLabel?.text = endTime
+//            }
+//
+//            if let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
+//            {
+//                roomLabel?.text = "\(roomName)"
+//                roomLocationLabel?.text = "Location: \(roomLocation) \(roomNum)"
+//                roomCapacityLabel?.text = "Capacity: \(roomCapacity)"
+//            }
         }
         else
         {
+            card.isHidden = true
             emptyReservationLabel?.isHidden = false
             reservationContainer?.isHidden = true
             cancelReservationButton?.isHidden = true
@@ -168,7 +209,6 @@ class UserPageViewController: UIViewController
         userFirstNameTextField.leadingAnchor.constraint(equalTo: userFirstNameLabel.trailingAnchor, constant: 16).isActive = true
         userFirstNameTextField.topAnchor.constraint(equalTo: userInfoLabel.bottomAnchor, constant: 16).isActive = true
         userFirstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        
         
         userLastNameLabel = UILabel()
         userLastNameLabel?.font = Fonts.openSansLight
@@ -247,151 +287,167 @@ class UserPageViewController: UIViewController
         emptyReservationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         emptyReservationLabel.topAnchor.constraint(equalTo:reservationInfoLabel.bottomAnchor, constant: 16).isActive = true
         
-        reservationContainer = UIView()
-        guard let container = reservationContainer else { return }
-        view.addSubview(container)
+        card = CardHighlight(frame: CGRect(x: view.frame.origin.x, y: view.frame.origin.y, width: BookingListTableViewCell.CONTENT_SIZE.width, height: BookingListTableViewCell.CONTENT_SIZE.height))
         
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.layer.cornerRadius = 4.0
-        container.backgroundColor = .bookItBlueLight
-        container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        card.backgroundColor = .bookItBlueLight
+        card.textColor = UIColor.white
+        card.hasParallax = true
+//        card.delegate = self
         
-        container.topAnchor.constraint(equalTo: reservationInfoLabel.bottomAnchor, constant: 16).isActive = true
+        view.addSubview(card)
         
-        container.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -8).isActive = true
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.widthAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.width).isActive = true
+        card.heightAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.height).isActive = true
+        card.topAnchor.constraint(equalTo: reservationInfoLabel.bottomAnchor, constant: 16).isActive = true
+        card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        let dateTemplateLabel = UILabel()
-        dateTemplateLabel.font = Fonts.openSansLight
-        dateTemplateLabel.textColor = UIColor.white
-        dateTemplateLabel.text = "Date"
-        
-        dateLabel = UILabel()
-        guard let dateLabel = dateLabel else { return }
-        dateLabel.font = Fonts.openSans
-        dateLabel.textColor = UIColor.white
-        dateLabel.textAlignment = .right
-        
-        container.addSubview(dateTemplateLabel)
-        container.addSubview(dateLabel)
-        
-        let startTemplateLabel = UILabel()
-        startTemplateLabel.font = Fonts.openSansLight
-        startTemplateLabel.textColor = UIColor.white
-        startTemplateLabel.text = "Start Time"
-        
-        startTimeLabel = UILabel()
-        guard let startLabel = startTimeLabel else { return }
-        startLabel.font = Fonts.openSans
-        startLabel.textColor = UIColor.white
-        startLabel.textAlignment = .right
-        
-        container.addSubview(startTemplateLabel)
-        container.addSubview(startLabel)
-        
-        let endTemplateLabel = UILabel()
-        endTemplateLabel.font = Fonts.openSansLight
-        endTemplateLabel.textColor = UIColor.white
-        endTemplateLabel.text = "End Time"
-        
-        endTimeLabel = UILabel()
-        guard let endLabel = endTimeLabel else { return }
-        endLabel.font = Fonts.openSans
-        endLabel.textColor = UIColor.white
-        endLabel.textAlignment = .right
-        
-        container.addSubview(endTemplateLabel)
-        container.addSubview(endLabel)
-        
-        roomLabel = UILabel()
-        guard let roomLabel = roomLabel else { return }
-        roomLabel.font = Fonts.openSans
-        roomLabel.textColor = .white
-        roomLabel.numberOfLines = 0
-        
-        roomLocationLabel = UILabel()
-        guard let locationLabel = roomLocationLabel else { return }
-        locationLabel.font = Fonts.openSansLight.withSize(16)
-        locationLabel.textColor = .white
-        locationLabel.numberOfLines = 0
-        
-        roomCapacityLabel = UILabel()
-        guard let capacityLabel = roomCapacityLabel else { return }
-        capacityLabel.font = Fonts.openSansLight.withSize(16)
-        capacityLabel.textColor = .white
-        capacityLabel.numberOfLines = 0
-        
-        container.addSubview(roomLabel)
-        container.addSubview(locationLabel)
-        container.addSubview(capacityLabel)
-        
-        cancelReservationButton = UIButton()
-        guard let cancelButton = cancelReservationButton else { return }
-        cancelButton.backgroundColor = .clear
-        cancelButton.layer.cornerRadius = 4.0
-        cancelButton.layer.borderColor = UIColor.red.cgColor
-        cancelButton.layer.borderWidth = 1.0
-        
-        cancelButton.setTitleColor(.red, for: .normal)
-        cancelButton.setTitle("Cancel Reservation", for: .normal)
-        cancelButton.titleLabel?.numberOfLines = 0
-        
-        view.addSubview(cancelButton)
-        
-        roomLabel.translatesAutoresizingMaskIntoConstraints = false
-        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        roomLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
-        
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        cancelButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 16).isActive = true
-        cancelButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
-        cancelButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
-        cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        locationLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
-        
-        capacityLabel.translatesAutoresizingMaskIntoConstraints = false
-        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        capacityLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
-        
-        dateTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        dateTemplateLabel.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -8).isActive = true
-        dateTemplateLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
-        
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        dateLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
-        
-        startTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
-        startTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        startTemplateLabel.trailingAnchor.constraint(equalTo: startLabel.leadingAnchor, constant: -8).isActive = true
-        startTemplateLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
-        
-        startLabel.translatesAutoresizingMaskIntoConstraints = false
-        startLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        startLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
-        
-        endTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
-        endTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        endTemplateLabel.trailingAnchor.constraint(equalTo: endLabel.leadingAnchor, constant: -8).isActive = true
-        endTemplateLabel.topAnchor.constraint(equalTo: startLabel.bottomAnchor, constant: 16).isActive = true
-        endTemplateLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive
-            = true
-        
-        endLabel.translatesAutoresizingMaskIntoConstraints = false
-        endLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        endLabel.topAnchor.constraint(equalTo: startLabel.bottomAnchor, constant: 16).isActive = true
-        endLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive
-            = true
-        
-        container.heightAnchor.constraint(greaterThanOrEqualToConstant: UserPageViewController.DEFAULT_VIEW_HEIGHT).isActive = true
+//
+//        reservationContainer = UIView()
+//        guard let container = reservationContainer else { return }
+//        view.addSubview(container)
+//
+//        container.translatesAutoresizingMaskIntoConstraints = false
+//        container.layer.cornerRadius = 4.0
+//        container.backgroundColor = .bookItBlueLight
+//        container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+//        container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+//
+//        container.topAnchor.constraint(equalTo: reservationInfoLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        container.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -8).isActive = true
+//
+//        let dateTemplateLabel = UILabel()
+//        dateTemplateLabel.font = Fonts.openSansLight
+//        dateTemplateLabel.textColor = UIColor.white
+//        dateTemplateLabel.text = "Date"
+//
+//        dateLabel = UILabel()
+//        guard let dateLabel = dateLabel else { return }
+//        dateLabel.font = Fonts.openSans
+//        dateLabel.textColor = UIColor.white
+//        dateLabel.textAlignment = .right
+//
+//        container.addSubview(dateTemplateLabel)
+//        container.addSubview(dateLabel)
+//
+//        let startTemplateLabel = UILabel()
+//        startTemplateLabel.font = Fonts.openSansLight
+//        startTemplateLabel.textColor = UIColor.white
+//        startTemplateLabel.text = "Start Time"
+//
+//        startTimeLabel = UILabel()
+//        guard let startLabel = startTimeLabel else { return }
+//        startLabel.font = Fonts.openSans
+//        startLabel.textColor = UIColor.white
+//        startLabel.textAlignment = .right
+//
+//        container.addSubview(startTemplateLabel)
+//        container.addSubview(startLabel)
+//
+//        let endTemplateLabel = UILabel()
+//        endTemplateLabel.font = Fonts.openSansLight
+//        endTemplateLabel.textColor = UIColor.white
+//        endTemplateLabel.text = "End Time"
+//
+//        endTimeLabel = UILabel()
+//        guard let endLabel = endTimeLabel else { return }
+//        endLabel.font = Fonts.openSans
+//        endLabel.textColor = UIColor.white
+//        endLabel.textAlignment = .right
+//
+//        container.addSubview(endTemplateLabel)
+//        container.addSubview(endLabel)
+//
+//        roomLabel = UILabel()
+//        guard let roomLabel = roomLabel else { return }
+//        roomLabel.font = Fonts.openSans
+//        roomLabel.textColor = .white
+//        roomLabel.numberOfLines = 0
+//
+//        roomLocationLabel = UILabel()
+//        guard let locationLabel = roomLocationLabel else { return }
+//        locationLabel.font = Fonts.openSansLight.withSize(16)
+//        locationLabel.textColor = .white
+//        locationLabel.numberOfLines = 0
+//
+//        roomCapacityLabel = UILabel()
+//        guard let capacityLabel = roomCapacityLabel else { return }
+//        capacityLabel.font = Fonts.openSansLight.withSize(16)
+//        capacityLabel.textColor = .white
+//        capacityLabel.numberOfLines = 0
+//
+//        container.addSubview(roomLabel)
+//        container.addSubview(locationLabel)
+//        container.addSubview(capacityLabel)
+//
+//        cancelReservationButton = UIButton()
+//        guard let cancelButton = cancelReservationButton else { return }
+//        cancelButton.backgroundColor = .clear
+//        cancelButton.layer.cornerRadius = 4.0
+//        cancelButton.layer.borderColor = UIColor.red.cgColor
+//        cancelButton.layer.borderWidth = 1.0
+//
+//        cancelButton.setTitleColor(.red, for: .normal)
+//        cancelButton.setTitle("Cancel Reservation", for: .normal)
+//        cancelButton.titleLabel?.numberOfLines = 0
+//
+//        view.addSubview(cancelButton)
+//
+//        roomLabel.translatesAutoresizingMaskIntoConstraints = false
+//        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        roomLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
+//
+//        cancelButton.translatesAutoresizingMaskIntoConstraints = false
+//
+//        cancelButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 16).isActive = true
+//        cancelButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
+//        cancelButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
+//        cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//
+//        locationLabel.translatesAutoresizingMaskIntoConstraints = false
+//        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        locationLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
+//
+//        capacityLabel.translatesAutoresizingMaskIntoConstraints = false
+//        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        capacityLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
+//
+//        dateTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        dateTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        dateTemplateLabel.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -8).isActive = true
+//        dateTemplateLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        dateLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        dateLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        startTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        startTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        startTemplateLabel.trailingAnchor.constraint(equalTo: startLabel.leadingAnchor, constant: -8).isActive = true
+//        startTemplateLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        startLabel.translatesAutoresizingMaskIntoConstraints = false
+//        startLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        startLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
+//
+//        endTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        endTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
+//        endTemplateLabel.trailingAnchor.constraint(equalTo: endLabel.leadingAnchor, constant: -8).isActive = true
+//        endTemplateLabel.topAnchor.constraint(equalTo: startLabel.bottomAnchor, constant: 16).isActive = true
+//        endTemplateLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive
+//            = true
+//
+//        endLabel.translatesAutoresizingMaskIntoConstraints = false
+//        endLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
+//        endLabel.topAnchor.constraint(equalTo: startLabel.bottomAnchor, constant: 16).isActive = true
+//        endLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16).isActive
+//            = true
+//
+//        container.heightAnchor.constraint(greaterThanOrEqualToConstant: UserPageViewController.DEFAULT_VIEW_HEIGHT).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool)

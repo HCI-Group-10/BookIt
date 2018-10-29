@@ -15,6 +15,15 @@ class RoomReservationViewController: UIViewController
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
     
+    var cancelReservationButton : UIButton?
+    var reservationButton : UIButton?
+    var fromUserPage = false
+    {
+        didSet {
+            cancelReservationButton?.isHidden = !fromUserPage
+            reservationButton?.isHidden = fromUserPage
+        }
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -32,7 +41,7 @@ class RoomReservationViewController: UIViewController
         
         container.translatesAutoresizingMaskIntoConstraints = false
         container.layer.cornerRadius = 4.0
-        container.backgroundColor = .bookItBlueLight
+        container.backgroundColor = .white
         container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
@@ -44,12 +53,12 @@ class RoomReservationViewController: UIViewController
         
         let userTemplateLabel = UILabel()
         userTemplateLabel.font = Fonts.openSansLight
-        userTemplateLabel.textColor = UIColor.white
+        userTemplateLabel.textColor = UIColor.bookItBlueDark
         userTemplateLabel.text = "Name"
         
         let userNameLabel = UILabel()
         userNameLabel.font = Fonts.openSans
-        userNameLabel.textColor = UIColor.white
+        userNameLabel.textColor = UIColor.bookItBlueDark
         
         if let first = user?.firstName, let last = user?.lastName
         {
@@ -61,12 +70,12 @@ class RoomReservationViewController: UIViewController
     
         let dateTemplateLabel = UILabel()
         dateTemplateLabel.font = Fonts.openSansLight
-        dateTemplateLabel.textColor = UIColor.white
+        dateTemplateLabel.textColor = UIColor.bookItBlueDark
         dateTemplateLabel.text = "Date"
         
         let dateLabel = UILabel()
         dateLabel.font = Fonts.openSans
-        dateLabel.textColor = UIColor.white
+        dateLabel.textColor = UIColor.bookItBlueDark
         dateLabel.textAlignment = .right
         
         if let date = reservation?.date
@@ -80,12 +89,12 @@ class RoomReservationViewController: UIViewController
         
         let startTemplateLabel = UILabel()
         startTemplateLabel.font = Fonts.openSansLight
-        startTemplateLabel.textColor = UIColor.white
+        startTemplateLabel.textColor = UIColor.bookItBlueDark
         startTemplateLabel.text = "Start Time"
         
         let startLabel = UILabel()
         startLabel.font = Fonts.openSans
-        startLabel.textColor = UIColor.white
+        startLabel.textColor = UIColor.bookItBlueDark
         startLabel.textAlignment = .right
         
         if let startTime = reservation?.startTime
@@ -99,12 +108,12 @@ class RoomReservationViewController: UIViewController
         
         let endTemplateLabel = UILabel()
         endTemplateLabel.font = Fonts.openSansLight
-        endTemplateLabel.textColor = UIColor.white
+        endTemplateLabel.textColor = UIColor.bookItBlueDark
         endTemplateLabel.text = "End Time"
         
         let endLabel = UILabel()
         endLabel.font = Fonts.openSans
-        endLabel.textColor = UIColor.white
+        endLabel.textColor = UIColor.bookItBlueDark
         endLabel.textAlignment = .right
         
         if let endTime = reservation?.endTime
@@ -116,33 +125,8 @@ class RoomReservationViewController: UIViewController
         container.addSubview(endTemplateLabel)
         container.addSubview(endLabel)
         
-        let roomLabel = UILabel()
-        roomLabel.font = Fonts.openSans
-        roomLabel.textColor = .white
-        roomLabel.numberOfLines = 0
-        
-        let locationLabel = UILabel()
-        locationLabel.font = Fonts.openSansLight.withSize(16)
-        locationLabel.textColor = .white
-        locationLabel.numberOfLines = 0
-        
-        let capacityLabel = UILabel()
-        capacityLabel.font = Fonts.openSansLight.withSize(16)
-        capacityLabel.textColor = .white
-        capacityLabel.numberOfLines = 0
-        
-        if let reservation = reservation, let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
-        {
-            roomLabel.text = "\(roomName)"
-            locationLabel.text = "Location: \(roomLocation) \(roomNum)"
-            capacityLabel.text = "Capacity: \(roomCapacity)"
-        }
-        
-        container.addSubview(roomLabel)
-        container.addSubview(locationLabel)
-        container.addSubview(capacityLabel)
-        
-        let reserveButton = UIButton()
+        reservationButton = UIButton()
+        guard let reserveButton = reservationButton else { return }
         reserveButton.backgroundColor = .clear
         reserveButton.layer.cornerRadius = 4.0
         reserveButton.layer.borderColor = UIColor.bookItBlueLight.cgColor
@@ -154,11 +138,6 @@ class RoomReservationViewController: UIViewController
         
         view.addSubview(reserveButton)
         
-        roomLabel.translatesAutoresizingMaskIntoConstraints = false
-        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        roomLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
-        
         reserveButton.translatesAutoresizingMaskIntoConstraints = false
         
         reserveButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 16).isActive = true
@@ -166,24 +145,33 @@ class RoomReservationViewController: UIViewController
         reserveButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
         reserveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        locationLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
-        
-        capacityLabel.translatesAutoresizingMaskIntoConstraints = false
-        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
-        capacityLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
+        cancelReservationButton = UIButton()
+        guard let cancelButton = cancelReservationButton else { return }
+        cancelButton.backgroundColor = .clear
+        cancelButton.layer.cornerRadius = 4.0
+        cancelButton.layer.borderColor = UIColor.red.cgColor
+        cancelButton.layer.borderWidth = 1.0
 
+        cancelButton.setTitleColor(.red, for: .normal)
+        cancelButton.setTitle("Cancel Reservation", for: .normal)
+        cancelButton.titleLabel?.numberOfLines = 0
+
+        view.addSubview(cancelButton)
+
+        cancelButton.translatesAutoresizingMaskIntoConstraints = false
+        cancelButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 16).isActive = true
+        cancelButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
+        cancelButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
+        cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         userTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
         userTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
         userTemplateLabel.trailingAnchor.constraint(equalTo: userNameLabel.leadingAnchor, constant: -8).isActive = true
-        userTemplateLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
+        userTemplateLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
         
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         userNameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8).isActive = true
-        userNameLabel.topAnchor.constraint(equalTo: capacityLabel.bottomAnchor, constant: 16).isActive = true
+        userNameLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16).isActive = true
         
         dateTemplateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateTemplateLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8).isActive = true
@@ -217,6 +205,9 @@ class RoomReservationViewController: UIViewController
             = true
 
         container.heightAnchor.constraint(greaterThanOrEqualToConstant: RoomReservationViewController.DEFAULT_VIEW_HEIGHT).isActive = true
+        
+        cancelButton.isHidden = !fromUserPage
+        reserveButton.isHidden = fromUserPage
     }
     
     /*
