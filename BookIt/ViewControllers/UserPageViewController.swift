@@ -73,11 +73,11 @@ class UserPageViewController: UIViewController
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, yyyy"
-        reservation?.date = dateFormatter.string(from: date)
+//        reservation?.date = dateFormatter.string(from: date)
         
         dateFormatter.dateFormat = "HH:mm"
-        reservation?.startTime = dateFormatter.string(from: date)
-        reservation?.endTime = dateFormatter.string(from: date)
+//        reservation?.startTime = dateFormatter.string(from: date)
+//        reservation?.endTime = dateFormatter.string(from: date)
         
         self.reservation = reservation
         if let user = User.sharedInstance()
@@ -120,32 +120,32 @@ class UserPageViewController: UIViewController
             card.titleLbl.font = Fonts.openSansBold
             card.itemTitleLbl.font = Fonts.openSans
             card.itemSubtitleLbl.font = Fonts.openSansLight
-//
-//            if let date = reservation.date
-//            {
-//                //format date
-//                dateLabel?.text = date
-//            }
-//
-//            if let startTime = reservation.startTime
-//            {
-//                //format time
-//                startTimeLabel?.text = startTime
-//            }
-//
-//
-//            if let endTime = reservation.endTime
-//            {
-//                //format time
-//                endTimeLabel?.text = endTime
-//            }
-//
-//            if let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
-//            {
-//                roomLabel?.text = "\(roomName)"
-//                roomLocationLabel?.text = "Location: \(roomLocation) \(roomNum)"
-//                roomCapacityLabel?.text = "Capacity: \(roomCapacity)"
-//            }
+
+            if let date = reservation.date
+            {
+                //format date
+                dateLabel?.text = date
+            }
+
+            if let startTime = reservation.startTime
+            {
+                //format time
+                startTimeLabel?.text = startTime
+            }
+
+
+            if let endTime = reservation.endTime
+            {
+                //format time
+                endTimeLabel?.text = endTime
+            }
+
+            if let room = reservation.room, let roomName = room.room, let roomNum = room.roomNumber, let roomLocation = room.location, let roomCapacity = room.capacity
+            {
+                roomLabel?.text = "\(roomName)"
+                roomLocationLabel?.text = "Location: \(roomLocation) \(roomNum)"
+                roomCapacityLabel?.text = "Capacity: \(roomCapacity)"
+            }
         }
         else
         {
