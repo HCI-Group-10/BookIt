@@ -66,6 +66,7 @@ class BookingListViewController: UITableViewController {
     
     func doQuickBookSearch()
     {
+        self.todaysDate = getDate(myDate: today)
         let hour = self.calendar.component(.hour, from: self.today)
         let minute = self.calendar.component(.minute, from: self.today)
         let currTimeIndex = (hour * 2) + (minute / 30)
@@ -104,7 +105,7 @@ class BookingListViewController: UITableViewController {
     
     func loadData()
     {
-        self.todaysDate = getDate(myDate: today)
+        
         
         // make a request to server
         if isQuickBook
@@ -170,39 +171,47 @@ extension BookingListViewController: BookingListTableViewCellDelegate
     {
         if let room = room, let nav = navigationController
         {
+            
             let reservation = Reservation()
             
             reservation.room = room
             let date = Date()
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "dd-MMM-YYYY"
-            reservation.date = dateFormatter.string(from: date)
+            if todaysDate == ""{
+                
+                dateFormatter.dateFormat = "dd-MMM-YYYY"
+                reservation.date = dateFormatter.string(from: date)
+            }
+            else{
+                reservation.date = todaysDate
+            }
+            
             if startTime != "" && endTime != ""{
                 reservation.startTime = startTime
                 reservation.endTime = endTime
             }
             else{
-            var hour = self.calendar.component(.hour, from: self.today)
-            var minute = self.calendar.component(.minute, from: self.today)
-            var endTimeString : String = ""
-            if minute < 30{
-                minute = 30
-                endTimeString = "\(hour):\(minute)"
-            }
-            else{
+                var hour = self.calendar.component(.hour, from: self.today)
+                var minute = self.calendar.component(.minute, from: self.today)
+                var endTimeString : String = ""
+                if minute < 30{
+                    minute = 30
+                    endTimeString = "\(hour):\(minute)"
+                }
+                else{
+                    
+                    hour = hour + 1
+                    endTimeString = "\(hour):00"
+                }
                 
-                hour = hour + 1
-                endTimeString = "\(hour):00"
-            }
-            
-            dateFormatter.dateFormat = "HH:mm"
-            reservation.startTime = dateFormatter.string(from: date)
-            reservation.endTime = endTimeString
+                dateFormatter.dateFormat = "HH:mm"
+                reservation.startTime = dateFormatter.string(from: date)
+                reservation.endTime = endTimeString
             
             }
-            print(reservation.startTime)
-            print(reservation.endTime)
+//            print(reservation.startTime)
+//            print(reservation.endTime)
             let roomReservationVC = RoomReservationViewController()
             roomReservationVC.reservation = reservation
             
