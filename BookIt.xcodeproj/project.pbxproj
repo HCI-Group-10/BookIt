@@ -33,6 +33,7 @@
 		285803482170FAAD00E73AA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285803472170FAAD00E73AA0 /* User.swift */; };
 		2858034A217108B100E73AA0 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28580349217108B100E73AA0 /* Reservation.swift */; };
 		34918A740A6572ACF6A3F291 /* Pods_BookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F910400445A40A50493D6 /* Pods_BookIt.framework */; };
+		E4E4819D2186D0EF00A8D8BF /* geofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E4819C2186D0EF00A8D8BF /* geofence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		28580349217108B100E73AA0 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		6AE5D1A7C923FFB1942CEB9A /* Pods-BookIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookIt/Pods-BookIt.debug.xcconfig"; sourceTree = "<group>"; };
 		715B264EC0D9F674356B68CD /* Pods-BookIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookIt/Pods-BookIt.release.xcconfig"; sourceTree = "<group>"; };
+		E4E4819C2186D0EF00A8D8BF /* geofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geofence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				280E57EB2167FC550080770D /* RoomScanViewController.swift */,
 				280E57E92167F7560080770D /* RoomSearchViewController.swift */,
 				285803452170F60000E73AA0 /* RoomReservationViewController.swift */,
+				E4E4819C2186D0EF00A8D8BF /* geofence.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				280E57D62167F23E0080770D /* BaseViewController.swift in Sources */,
 				280E57EC2167FC550080770D /* RoomScanViewController.swift in Sources */,
 				280E57E62167F4CD0080770D /* BookingListViewController.swift in Sources */,
+				E4E4819D2186D0EF00A8D8BF /* geofence.swift in Sources */,
 				28580323216E5E8C00E73AA0 /* Room.swift in Sources */,
 				280E57F32169A1130080770D /* Util.swift in Sources */,
 				280E57D42167F23E0080770D /* AppDelegate.swift in Sources */,
