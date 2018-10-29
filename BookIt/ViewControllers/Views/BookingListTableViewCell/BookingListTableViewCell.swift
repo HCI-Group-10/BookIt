@@ -91,8 +91,8 @@ class BookingListTableViewCell: UITableViewCell {
                 
             }
             
-            print(reservation.startTime)
-            print(reservation.endTime)
+//            print(reservation.startTime)
+//            print(reservation.endTime)
             
             roomReservationViewController.reservation = reservation
             

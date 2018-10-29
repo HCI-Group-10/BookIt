@@ -24,7 +24,7 @@ class BookingListViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("STATANDENDTIMES")
+//        print("STATANDENDTIMES")
         print(startTime)
         print(endTime)
         print(isQuickBook)
@@ -144,9 +144,9 @@ class BookingListViewController: UITableViewController
         
         cell.startTime = self.startTime
         cell.endTime = self.endTime
-        print("cellstartandendtimes")
-        print(cell.startTime)
-        print(cell.endTime)
+//        print("cellstartandendtimes")
+//        print(cell.startTime)
+//        print(cell.endTime)
         cell.room = roomInfo
         return cell
     }
