@@ -14,7 +14,8 @@ class BookingListViewController: UITableViewController {
     var isQuickBook : Bool = false
     var today : Date = Date.init()
     let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
-    var todaysDate : String = ""
+    var todaysDate : String = "" //if presented from RoomSearchViewController, it will be equal
+                                 //to the day of the date picker, not today's actual date
     var startTime : String = ""
     var endTime : String = ""
     
