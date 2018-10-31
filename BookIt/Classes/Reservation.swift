@@ -11,7 +11,7 @@ import Foundation
 class Reservation
 {
     var room : Room?
-    var date : String? // TODO: change to Firebase Timestamp
+    var date : String?
     
     var startTime : String?
     var endTime : String?

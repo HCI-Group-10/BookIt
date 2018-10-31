@@ -12,7 +12,51 @@ import FirebaseFirestore
 
 class RoomReservationViewController: UIViewController
 {
+    var userNameLabel : UILabel?
+    var dateLabel : UILabel?
+    var startLabel : UILabel?
+    var endLabel : UILabel?
+    
     var reservation : Reservation?
+    {
+        didSet {
+            let user = User.sharedInstance()
+            if let first = user?.firstName, let last = user?.lastName
+            {
+                if userNameLabel == nil {
+                    userNameLabel = UILabel()
+                }
+                userNameLabel?.text = "\(first) \(last)"
+            }
+            
+            if let date = reservation?.date
+            {
+                if dateLabel == nil {
+                    dateLabel = UILabel()
+                }
+                //format date
+                dateLabel?.text = date
+            }
+            if let startTime = reservation?.startTime
+            {
+                if startLabel == nil {
+                    startLabel = UILabel()
+                }
+                //format time
+                startLabel?.text = startTime
+            }
+            
+            if let endTime = reservation?.endTime
+            {
+                if endLabel == nil {
+                    endLabel = UILabel()
+                }
+                //format time
+                endLabel?.text = endTime
+            }
+            
+        }
+    }
     static let DEFAULT_VIEW_HEIGHT : CGFloat = 64.0
     let DEFAULT_BUTTON_WIDTH : CGFloat = 248.0
     let DEFAULT_BUTTON_HEIGHT : CGFloat = 48.0
@@ -51,21 +95,18 @@ class RoomReservationViewController: UIViewController
         
         container.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -8).isActive = true
         
-        let user = User.sharedInstance()
-        
         let userTemplateLabel = UILabel()
         userTemplateLabel.font = Fonts.openSansLight
         userTemplateLabel.textColor = UIColor.bookItBlueDark
         userTemplateLabel.text = "Name"
         
-        let userNameLabel = UILabel()
+        if userNameLabel == nil {
+            userNameLabel = UILabel()
+        }
+        
+        guard let userNameLabel = userNameLabel else { return }
         userNameLabel.font = Fonts.openSans
         userNameLabel.textColor = UIColor.bookItBlueDark
-        
-        if let first = user?.firstName, let last = user?.lastName
-        {
-            userNameLabel.text = "\(first) \(last)"
-        }
         
         container.addSubview(userTemplateLabel)
         container.addSubview(userNameLabel)
@@ -75,16 +116,13 @@ class RoomReservationViewController: UIViewController
         dateTemplateLabel.textColor = UIColor.bookItBlueDark
         dateTemplateLabel.text = "Date"
         
-        let dateLabel = UILabel()
+        if dateLabel == nil {
+            dateLabel = UILabel()
+        }
+        guard let dateLabel = dateLabel else { return }
         dateLabel.font = Fonts.openSans
         dateLabel.textColor = UIColor.bookItBlueDark
         dateLabel.textAlignment = .right
-        
-        if let date = reservation?.date
-        {
-            //format date
-            dateLabel.text = date
-        }
         
         container.addSubview(dateTemplateLabel)
         container.addSubview(dateLabel)
@@ -94,16 +132,13 @@ class RoomReservationViewController: UIViewController
         startTemplateLabel.textColor = UIColor.bookItBlueDark
         startTemplateLabel.text = "Start Time"
         
-        let startLabel = UILabel()
+        if startLabel == nil {
+            startLabel = UILabel()
+        }
+        guard let startLabel = startLabel else { return }
         startLabel.font = Fonts.openSans
         startLabel.textColor = UIColor.bookItBlueDark
         startLabel.textAlignment = .right
-        
-        if let startTime = reservation?.startTime
-        {
-            //format time
-            startLabel.text = startTime
-        }
         
         container.addSubview(startTemplateLabel)
         container.addSubview(startLabel)
@@ -113,16 +148,13 @@ class RoomReservationViewController: UIViewController
         endTemplateLabel.textColor = UIColor.bookItBlueDark
         endTemplateLabel.text = "End Time"
         
-        let endLabel = UILabel()
+        if endLabel == nil {
+            endLabel = UILabel()
+        }
+        guard let endLabel = endLabel else { return }
         endLabel.font = Fonts.openSans
         endLabel.textColor = UIColor.bookItBlueDark
         endLabel.textAlignment = .right
-        
-        if let endTime = reservation?.endTime
-        {
-            //format time
-            endLabel.text = endTime
-        }
         
         container.addSubview(endTemplateLabel)
         container.addSubview(endLabel)
@@ -220,20 +252,9 @@ class RoomReservationViewController: UIViewController
         let db = Firestore.firestore()
         let reservation = User.sharedInstance()?.reservation
         let room = reservation?.room
-        let startTimeArr = reservation?.startTime?.split(separator: ":")
-        let endTimeArr = reservation?.endTime?.split(separator: ":")
+        let startTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.startTime)
+        let endTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.endTime)
         
-        var startTimeIndex = Int(startTimeArr![0])! * 2
-        if Int(startTimeArr![1])! >= 30{
-            startTimeIndex = startTimeIndex + 1
-        }
-        
-        var endTimeIndex = Int(endTimeArr![0])! * 2
-        if Int(endTimeArr![1])! >= 30{
-            endTimeIndex = endTimeIndex + 1
-        }
-//        let user = User.sharedInstance()
-        //        var indexInTimes = 0
         for i in 0..<(room!.times?.count ?? 0){
             let dictionary = room!.times?[i] as! NSMutableDictionary
             guard var timeSlots = dictionary["timeSlots"] as? [String] else { return }
@@ -255,11 +276,12 @@ class RoomReservationViewController: UIViewController
                 room!.times?[i] = dictionary
             }
         }
+        db.collection("Rooms").document(room!.room!).updateData(["times": room!.times ])
         
-        //        print(room?.times)
-        db.collection("Rooms").document(room!.room!).updateData([ "times": room!.times ])
-        
-        
+        if let email = User.sharedInstance()?.email
+        {
+            db.collection("Reservation").document(email).setData([:])
+        }
         
         User.sharedInstance()?.reservation = nil
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reservation_update"), object: nil)
@@ -272,18 +294,9 @@ class RoomReservationViewController: UIViewController
     
 //        var timesArray = room?.times
         
-        let startTimeArr = reservation?.startTime?.split(separator: ":")
-        let endTimeArr = reservation?.endTime?.split(separator: ":")
+        let startTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.startTime)
+        let endTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.endTime)
         
-        var startTimeIndex = Int(startTimeArr![0])! * 2
-        if Int(startTimeArr![1])! >= 30{
-            startTimeIndex = startTimeIndex + 1
-        }
-        
-        var endTimeIndex = Int(endTimeArr![0])! * 2
-        if Int(endTimeArr![1])! >= 30{
-            endTimeIndex = endTimeIndex + 1
-        }
         let user = User.sharedInstance()
 //        var indexInTimes = 0
         for i in 0..<(room.times?.count ?? 0){
@@ -307,9 +320,19 @@ class RoomReservationViewController: UIViewController
                 room.times?[i] = dictionary
             }
         }
+        guard let roomName = room.room else { return }
         
 //        print(room?.times)
-        db.collection("Rooms").document(room.room!).updateData([ "times": room.times ])
+        db.collection("Rooms").document(roomName).updateData(["times": room.times])
+        guard let email = user?.email else { return }
+        guard let reservationDate = reservation?.date else { return }
+        var reservationDict = [String : Any]()
+        reservationDict["date"] = reservationDate
+        reservationDict["room"] = roomName
+        reservationDict["start"] = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.startTime)
+        reservationDict["end"] = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.endTime)
+        
+        db.collection("Reservation").document(email).updateData(reservationDict)
         
         User.sharedInstance()?.reservation = reservation
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reservation_update"), object: nil)
@@ -319,17 +342,11 @@ class RoomReservationViewController: UIViewController
     {
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
         //then again set the date format whhich type of output you need
         formatter.dateFormat = "dd-MMM-yyyy"
+        
         // again convert your date to string
         let myStringafd = formatter.string(from: myDate)
-        
-        //        print("converting")
-        //        print(myStringafd)
         return myStringafd
     }
     

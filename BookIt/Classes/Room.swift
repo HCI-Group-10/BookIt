@@ -51,27 +51,21 @@ class Room : NSObject
         if let times = dict[Room.timeKey] as? NSMutableArray
         {
             self.times = times
-//            print("assigned times")
-//            print((self.times?[0] as! NSDictionary)["date"])
-//            let timestamp: Timestamp = (self.times?[0] as! NSDictionary)["date"] as! Timestamp
-//            let myDate: Date = timestamp.dateValue()
-            
-            
-//            let formatter = DateFormatter()
-//            // initially set the format based on your datepicker date / server String
-//            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//            
-//            let myString = formatter.string(from: Date()) // string purpose I add here
-//            // convert your string to date
-//            let yourDate = formatter.date(from: myString)
-//            //then again set the date format whhich type of output you need
-//            formatter.dateFormat = "dd-MMM-yyyy"
-//            // again convert your date to string
-//            let myStringafd = formatter.string(from: myDate)
-//            
-//            print(myStringafd)
         }
     }
     
-    
+    static func getRoom(named: String, completion: @escaping (Room?) -> Void)
+    {
+        let db = Firestore.firestore()
+        var room : Room? = nil
+        db.collection("Rooms").document(named).getDocument { (document, error) in
+            if let document = document, document.exists {
+                room = Room(dict: document.data() as NSDictionary? ?? NSDictionary())
+                completion(room)
+            }
+            else {
+                print("Room doesn't exist")
+            }
+        }
+    }
 }

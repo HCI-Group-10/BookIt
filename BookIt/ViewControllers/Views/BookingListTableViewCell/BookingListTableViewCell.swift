@@ -30,20 +30,21 @@ class BookingListTableViewCell: UITableViewCell {
     var today : Date = Date.init()
     var todaysDate : String = "" //if presented from RoomSearchViewController, it will be equal
     //to the day of the date picker, not today's actual date
-    var startTime : String = ""
-    var endTime : String = ""
+    var startInd : Int = 0
+    var endInd : Int = 0
     let calendar : Calendar = Calendar.current
     var room : Room?
     {
         didSet
         {
 //            roomLabel.text = room?.room
-            if let roomText = room?.room, let roomNum = room?.roomNumber, let location = room?.location, let capacity = room?.capacity
+            if let roomText = room?.room, let location = room?.location, let capacity = room?.capacity
             {
+                
 //                locationLabel.text = "Location: \(location)"
 //                capacityLabel.text = "Capacity: \(capacity)"
 //                timeLabel.text = "Until 11:30a"
-                
+                let roomNum = room?.roomNumber ?? ""
                 card.backgroundImage = UIImage(named: roomText)
                 card.title = "\(roomText) \(roomNum)"
                 card.itemTitle = "Location: \(location)"
@@ -58,7 +59,7 @@ class BookingListTableViewCell: UITableViewCell {
             let date = Date()
             let dateFormatter = DateFormatter()
             
-            if todaysDate == ""{
+            if todaysDate == "" {
                 
                 dateFormatter.dateFormat = "dd-MMM-YYYY"
                 reservation.date = dateFormatter.string(from: date)
@@ -67,32 +68,8 @@ class BookingListTableViewCell: UITableViewCell {
                 reservation.date = todaysDate
             }
             
-            if self.startTime != "" && self.endTime != ""{
-                reservation.startTime = self.startTime
-                reservation.endTime = self.endTime
-            }
-            else{
-                var hour = self.calendar.component(.hour, from: self.today)
-                var minute = self.calendar.component(.minute, from: self.today)
-                var endTimeString : String = ""
-                if minute < 30{
-                    minute = 30
-                    endTimeString = "\(hour):\(minute)"
-                }
-                else{
-                    
-                    hour = hour + 1
-                    endTimeString = "\(hour):00"
-                }
-                
-                dateFormatter.dateFormat = "HH:mm"
-                reservation.startTime = dateFormatter.string(from: date)
-                reservation.endTime = endTimeString
-                
-            }
-            
-//            print(reservation.startTime)
-//            print(reservation.endTime)
+            reservation.startTime = String.getTimeFormattedFrom30MinIntervalValue(val: startInd)
+            reservation.endTime = String.getTimeFormattedFrom30MinIntervalValue(val: endInd)
             
             roomReservationViewController.reservation = reservation
             
@@ -147,93 +124,12 @@ class BookingListTableViewCell: UITableViewCell {
         
        card.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         card.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-//        reserveButton.addTarget(self, action: #selector(reservationButtonPressed), for: .touchUpInside)
         
-//        contentView.addSubview(container)
-//
-//        container.translatesAutoresizingMaskIntoConstraints = false
-//        container.assignUIStyle()
-//        container.backgroundColor = .bookItBlueLight
-//        container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-//        container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-//        container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-//        container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
-//
-//        roomLabel.font = Fonts.openSans
-//        roomLabel.textColor = .white
-//        roomLabel.numberOfLines = 0
-//
-//        locationLabel.font = Fonts.openSansLight.withSize(16)
-//        locationLabel.textColor = .white
-//        locationLabel.numberOfLines = 0
-//
-//        capacityLabel.font = Fonts.openSansLight.withSize(16)
-//        capacityLabel.textColor = .white
-//        capacityLabel.numberOfLines = 0
-//
-//        reserveButton.backgroundColor = .clear
-//        reserveButton.assignUIStyle()
-//        reserveButton.layer.borderColor = UIColor.white.cgColor
-//        reserveButton.layer.borderWidth = 1.0
-//
-//        reserveButton.setTitleColor(.white, for: .normal)
-//        reserveButton.setTitle("Reserve Room", for: .normal)
-//        reserveButton.titleLabel?.numberOfLines = 0
-//        reserveButton.addTarget(self, action: #selector(reservationButtonPressed), for: .touchUpInside)
-//
-//        let timeImageView = UIImageView(image: UIImage(named: "clock"))
-//        timeLabel.font = Fonts.openSansLight.withSize(10)
-//        timeLabel.textColor = .white
-//        timeLabel.numberOfLines = 0
-//
-//        container.addSubview(roomLabel)
-//        container.addSubview(locationLabel)
-//        container.addSubview(capacityLabel)
-//        container.addSubview(reserveButton)
-//        container.addSubview(timeLabel)
-//        container.addSubview(timeImageView)
-//
-//        roomLabel.translatesAutoresizingMaskIntoConstraints = false
-//        roomLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
-//        roomLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
-//        roomLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: UIView.padding).isActive = true
-//
-//        reserveButton.translatesAutoresizingMaskIntoConstraints = false
-//        reserveButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -UIView.padding).isActive = true
-//        reserveButton.topAnchor.constraint(equalTo: container.topAnchor, constant: UIView.padding).isActive = true
-//        reserveButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
-//        reserveButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
-//        reserveButton.bottomAnchor.constraint(greaterThanOrEqualTo: timeImageView.topAnchor, constant: 8)
-//
-//        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-//        locationLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
-//        locationLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
-//        locationLabel.topAnchor.constraint(equalTo: roomLabel.bottomAnchor).isActive = true
-//
-//        capacityLabel.translatesAutoresizingMaskIntoConstraints = false
-//        capacityLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: UIView.padding).isActive = true
-//        capacityLabel.trailingAnchor.constraint(equalTo: reserveButton.leadingAnchor, constant: -UIView.padding).isActive = true
-//        capacityLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
-//        capacityLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
-//
-//        timeImageView.translatesAutoresizingMaskIntoConstraints = false
-//        timeImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -UIView.padding).isActive = true
-//        timeImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
-//
-//        timeImageView.widthAnchor.constraint(equalToConstant: 16).isActive = true
-//        timeImageView.heightAnchor.constraint(equalToConstant: 16).isActive = true
-//
-//        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-//        timeLabel.trailingAnchor.constraint(equalTo: timeImageView.leadingAnchor, constant: -8).isActive = true
-//        timeLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -UIView.padding).isActive = true
-//
-//        container.heightAnchor.constraint(greaterThanOrEqualToConstant: BookingListTableViewCell.DEFAULT_CELL_HEIGHT).isActive = true
         NotificationCenter.default.addObserver(self, selector: #selector(reservationUpdated), name: NSNotification.Name.init("reservation_update"), object: nil)
     }
     
     @objc func reservationUpdated()
     {
-//        card.dismiss()
         card.detailVC.dismissVC()
     }
     

@@ -18,15 +18,14 @@ class BookingListViewController: UITableViewController
     let calendar : Calendar = Calendar.current // or e.g. Calendar(identifier: .persian)
     var todaysDate : String = "" //if presented from RoomSearchViewController, it will be equal
                                  //to the day of the date picker, not today's actual date
-    var startTime : String = ""
-    var endTime : String = ""
+    var startInd : Int = 0
+    var endInd : Int = 0
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
 //        print("STATANDENDTIMES")
-        print(startTime)
-        print(endTime)
+        
         print(isQuickBook)
         
         setUpViews()
@@ -70,7 +69,8 @@ class BookingListViewController: UITableViewController
         let hour = self.calendar.component(.hour, from: self.today)
         let minute = self.calendar.component(.minute, from: self.today)
         let currTimeIndex = (hour * 2) + (minute / 30)
-        
+        startInd = currTimeIndex
+        endInd = startInd + 1
         let db = Firestore.firestore()
         db.collection("Rooms").getDocuments() { (querySnapshot, err) in
             
@@ -105,8 +105,6 @@ class BookingListViewController: UITableViewController
     
     func loadData()
     {
-        
-        
         // make a request to server
         if isQuickBook
         {
@@ -117,8 +115,6 @@ class BookingListViewController: UITableViewController
             print(roomData)
             self.tableView.reloadData()
         }
-        
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int
@@ -142,11 +138,8 @@ class BookingListViewController: UITableViewController
         cell.controller = self
         let roomInfo = roomData[indexPath.row]
         
-        cell.startTime = self.startTime
-        cell.endTime = self.endTime
-//        print("cellstartandendtimes")
-//        print(cell.startTime)
-//        print(cell.endTime)
+        cell.startInd = startInd
+        cell.endInd = endInd
         cell.room = roomInfo
         return cell
     }

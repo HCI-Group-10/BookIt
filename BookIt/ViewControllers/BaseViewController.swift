@@ -83,10 +83,11 @@ class BaseViewController: UITabBarController
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.selectedIndex = (self.viewControllers?.count ?? 1) - 1
-            if let viewController = self.viewControllers?[self.selectedIndex]
+            if let navController = self.viewControllers?[self.selectedIndex] as? BookItNavigationController, let viewController = navController.viewControllers[0] as? UserPageViewController
             {
                 if User.sharedInstance()?.reservation != nil
                 {
+                    viewController.handleReservation()
                     Util.presentAlert(title: "Success!", message: "Your reservation has been made.", viewController: viewController)
                 }
                 else

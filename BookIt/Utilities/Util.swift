@@ -183,6 +183,28 @@ extension UILabel
     }
 }
 
+extension Int
+{
+    static func thirtyMinuteIntervalFromFormattedTime(timeStr: String?) -> Int
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        
+        if let timeStr = timeStr, let date = dateFormatter.date(from: timeStr)
+        {
+            dateFormatter.dateFormat = "HH:mm"
+            let formattedDateArr = dateFormatter.string(from: date).split(separator: ":")
+            
+            if let start = Int(formattedDateArr[0]), let end = Int(formattedDateArr[1])
+            {
+                return (start * 2) + (end >= 30 ? 1 : 0)
+            }
+        }
+        
+        return 0
+    }
+}
+
 extension String
 {
     static func getTimeFrom30MinIntervalValue(val: Int) -> Date?
