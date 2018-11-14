@@ -292,13 +292,11 @@ class RoomReservationViewController: UIViewController
         let db = Firestore.firestore()
         guard let room = reservation?.room else { return }
     
-//        var timesArray = room?.times
-        
         let startTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.startTime)
         let endTimeIndex = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: reservation?.endTime)
         
         let user = User.sharedInstance()
-//        var indexInTimes = 0
+
         for i in 0..<(room.times?.count ?? 0){
             let dictionary = room.times?[i] as! NSMutableDictionary
             guard var timeSlots = dictionary["timeSlots"] as? [String] else { return }
@@ -308,13 +306,12 @@ class RoomReservationViewController: UIViewController
             let dateString = self.getDate(myDate: myDate)
             if(dateString == reservation?.date)
             {
-//                indexInTimes = i
                 for j in startTimeIndex..<endTimeIndex
                 {
                     print(j)
                     timeSlots[j] =  (user?.email)!
                 }
-//                dictionary["timeSlots"]![i]["times"] = reservations
+
                 print(timeSlots)
                 dictionary["timeSlots"] = timeSlots
                 room.times?[i] = dictionary

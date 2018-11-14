@@ -38,11 +38,14 @@ class BookItNavigationController : UINavigationController
 class BaseViewController: UITabBarController
 {
     var userPageViewController : UserPageViewController?
+    var geofence : Geofence?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         User.createUser(firstName: "Steven", lastName: "Hurtado", email: "shurt@gmail.com")
         setUpTabBarController()
+        setUpGeofence()
     }
     
     func setUpTabBarController()
@@ -85,9 +88,11 @@ class BaseViewController: UITabBarController
             self.selectedIndex = (self.viewControllers?.count ?? 1) - 1
             if let navController = self.viewControllers?[self.selectedIndex] as? BookItNavigationController, let viewController = navController.viewControllers[0] as? UserPageViewController
             {
-                if User.sharedInstance()?.reservation != nil
+                if let reservation = User.sharedInstance()?.reservation
                 {
                     viewController.handleReservation()
+                    self.geofence?.monitorReservation(reservation: reservation)
+                    
                     Util.presentAlert(title: "Success!", message: "Your reservation has been made.", viewController: viewController)
                 }
                 else
@@ -135,9 +140,30 @@ class BaseViewController: UITabBarController
         UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, for: .selected)
     }
     
+    func setUpGeofence()
+    {
+        geofence = Geofence()
+        geofence?.delegate = self
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension BaseViewController : GeofenceDelegate
+{
+    func enteredRegion()
+    {
+        guard let selectedViewController = selectedViewController else { return }
+        Util.presentAlert(title: "Entered", message: "You entered the geofence.", viewController: selectedViewController)
+    }
+    
+    func exitedRegion()
+    {
+        guard let selectedViewController = selectedViewController else { return }
+        Util.presentAlert(title: "Warning", message: "You're no longer in the reservation area. Are you still using your room?", viewController: selectedViewController)
     }
 }
