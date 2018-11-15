@@ -63,13 +63,36 @@ class RoomReservationViewController: UIViewController
     
     var cancelReservationButton : UIButton?
     var reservationButton : UIButton?
+    var switchReservationButton : UIButton?
     var fromUserPage = false
     {
         didSet {
             cancelReservationButton?.isHidden = !fromUserPage
             reservationButton?.isHidden = fromUserPage
+            switchReservationButton?.isHidden = true
         }
     }
+    
+    var fromScan = false
+    {
+        didSet
+        {
+            cancelReservationButton?.isHidden = true
+            reservationButton?.isHidden = false
+            switchReservationButton?.isHidden = true
+        }
+    }
+    
+    var isBooked = false
+    {
+        didSet
+        {
+            switchReservationButton?.isHidden = isBooked
+            reservationButton?.isHidden = !isBooked
+            cancelReservationButton?.isHidden = true
+        }
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -178,6 +201,26 @@ class RoomReservationViewController: UIViewController
         reserveButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
         reserveButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
         reserveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        switchReservationButton = UIButton()
+        guard let switchButton = switchReservationButton else { return }
+        switchButton.backgroundColor = .clear
+        switchButton.layer.cornerRadius = 4.0
+        switchButton.layer.borderColor = UIColor.bookItBlueLight.cgColor
+        switchButton.layer.borderWidth = 1.0
+        
+        switchButton.setTitleColor(.bookItBlueLight, for: .normal)
+        switchButton.setTitle("Request To Swap", for: .normal)
+        switchButton.titleLabel?.numberOfLines = 0
+        switchButton.addTarget(self, action: #selector(reserveButtonPressed), for: .touchUpInside)
+        view.addSubview(switchButton)
+        
+        switchButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        switchButton.topAnchor.constraint(equalTo: container.bottomAnchor, constant: 16).isActive = true
+        switchButton.heightAnchor.constraint(equalToConstant: DEFAULT_BUTTON_HEIGHT).isActive = true
+        switchButton.widthAnchor.constraint(equalToConstant: DEFAULT_BUTTON_WIDTH).isActive = true
+        switchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         cancelReservationButton = UIButton()
         guard let cancelButton = cancelReservationButton else { return }

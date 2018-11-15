@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import Cards
 
 class ScanOverlayView : UIView
 {
@@ -91,6 +93,11 @@ class RoomScanViewController: UIViewController
 {
     var scannerViewController : ScannerViewController!
     var overlayView : ScanOverlayView?
+    var card : CardHighlight?
+    var roomReservationViewController : RoomReservationViewController?
+    var reservation : Reservation?
+    
+    var hiddenView : UIVisualEffectView?
     let OFFSET : CGFloat = 32.0
     
     override func viewDidLoad()
@@ -124,16 +131,78 @@ class RoomScanViewController: UIViewController
             overlayView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             overlayView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -OFFSET).isActive = true
         }
+        
+        hiddenView = UIVisualEffectView(frame: view.frame)
+        guard let hiddenView = hiddenView else { return }
+        hiddenView.effect = UIBlurEffect(style: .regular)
+        hiddenView.isHidden = true
+        view.addSubview(hiddenView)
+        
+        card = CardHighlight(frame: CGRect(x: view.frame.origin.x, y: view.frame.origin.y, width: BookingListTableViewCell.CONTENT_SIZE.width, height: BookingListTableViewCell.CONTENT_SIZE.height))
+        guard let card = card else { return }
+        card.backgroundColor = .bookItBlueLight
+        card.textColor = UIColor.white
+        card.hasParallax = true
+        //        card.delegate = self
+        
+        hiddenView.addSubview(card)
+        
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.widthAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.width).isActive = true
+        card.heightAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.height).isActive = true
+        
+        card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        card.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title =  Titles.roomScanViewControllerTitle
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func handleReservation(booked: Bool)
+    {
+        if let reservation = self.reservation
+        {
+            hiddenView?.isHidden = false
+            guard let card = card else { return }
+            if let room = reservation.room
+            {
+                guard let roomText = room.room else { return }
+                let roomNum  = room.roomNumber ?? ""
+                guard let location = room.location else { return }
+                guard let capacity = room.capacity else { return }
+                
+                card.backgroundImage = UIImage(named: roomText)
+                card.title = "\(roomText) \(roomNum)"
+                card.itemTitle = "Location: \(location)"
+                card.itemSubtitle = "Capacity: \(capacity)"
+            }
+            
+            //assign vc to present
+            if roomReservationViewController == nil {
+                roomReservationViewController = RoomReservationViewController()
+            }
+            
+            guard let roomReservationViewController = roomReservationViewController else { return }
+            roomReservationViewController.fromUserPage = false
+            roomReservationViewController.fromScan = true
+            roomReservationViewController.isBooked = booked
+            roomReservationViewController.reservation = reservation
+            card.shouldPresent(roomReservationViewController, from: self, fullscreen: true)
+        }
+        else
+        {
+            hiddenView?.isHidden = true
+        }
     }
 }
 
@@ -142,9 +211,49 @@ extension RoomScanViewController : ScannerViewControllerDelegate
     func outputFromScan(result: String)
     {
         // result should be room, make request for current reservation using that room
+        let db = Firestore.firestore()
+        let user = User.sharedInstance()
+        if user?.reservation != nil
+        {
+            Util.presentAlert(title: "Sorry", message: "You cannot check the status of a room if you currently have a reservation.", viewController: self)
+            return
+        }
         
-        // if open, show card with book now
-        
-        // if taken, show card with request switch
+        var bookingEmail : String?
+        db.collection("Reservation").getDocuments { (query, error) in
+            if error == nil, let query = query
+            {
+                for document in query.documents
+                {
+                    let data = document.data()
+                    if let room = data[Room.roomKey] as? String, room == result
+                    {
+                        bookingEmail = document.documentID
+                    }
+                }
+                
+                //self.reservation has no value yet,
+                //make request to firebase to assign reservation values
+                // get room based on the (result: String) passed to this method
+                //the date, start and end strings of reservation should be based on the current reservation, but we can just make it be based off of the current time tbh
+                
+                //the following code should be in the completion handler from a firebase request for the room info
+                
+                self.hiddenView?.isHidden = false
+                if let email = bookingEmail // if taken, show card with request switch
+                {
+                    //then after our reservation is set,
+                    self.handleReservation(booked: true)
+                }
+                else // if open, show card with book now
+                {
+                    self.handleReservation(booked: false)
+                }
+            }
+            else
+            {
+                print(error?.localizedDescription ?? "")
+            }
+        }
     }
 }

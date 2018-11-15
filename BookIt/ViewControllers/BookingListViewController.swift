@@ -79,7 +79,6 @@ class BookingListViewController: UITableViewController
             } else {
                 guard let querySnapshot = querySnapshot else { return }
                 for document in querySnapshot.documents {
-                    
                     let room = Room(dict: document.data() as NSDictionary)
                     //                    print("printing")
                     

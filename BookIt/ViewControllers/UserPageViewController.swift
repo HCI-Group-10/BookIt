@@ -60,7 +60,6 @@ class UserPageViewController: UIViewController
         loadData()
     }
     
-    
     func loadData()
     {
         let user = User.sharedInstance()
