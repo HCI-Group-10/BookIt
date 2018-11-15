@@ -332,6 +332,15 @@ class RoomReservationViewController: UIViewController
     
     @objc func reserveButtonPressed()
     {
+        if let currReservation = User.sharedInstance()?.reservation{
+            let alert = UIAlertController(title: "Error", message: "You already have a reservation!", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true)
+        }
+        
         let db = Firestore.firestore()
         guard let room = reservation?.room else { return }
     

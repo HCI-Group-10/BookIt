@@ -167,7 +167,20 @@ class RoomScanViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func getDate(myDate: Date) -> String{
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let myString = formatter.string(from: Date()) // string purpose I add here
+        
+        formatter.dateFormat = "dd-MMM-yyyy"
+        // again convert your date to string
+        let myStringafd = formatter.string(from: myDate)
+        
+        
+        return myStringafd
+    }
     func handleReservation(booked: Bool)
     {
         if let reservation = self.reservation
@@ -239,10 +252,59 @@ extension RoomScanViewController : ScannerViewControllerDelegate
                 
                 //the following code should be in the completion handler from a firebase request for the room info
                 
+                //make sure room exists in DB
+                var reservation = Reservation()
+                var reservationDict = [String : Any]()
+                let roomRef = db.collection("Rooms").document(result)
+                roomRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        reservation.room = Room(dict: document.data() as! NSDictionary)
+                    } else {
+                        print("Document does not exist")
+                        return
+                    }
+                }
+                
+                
+                
                 self.hiddenView?.isHidden = false
                 if let email = bookingEmail // if taken, show card with request switch
                 {
                     //then after our reservation is set,
+                    let today : Date = Date.init()
+                    let calendar : Calendar = Calendar.current
+                    let hour = calendar.component(.hour, from: today)
+                    let minute = calendar.component(.minute, from: today)
+                    var timeString = ""
+                    if hour < 10{
+                        timeString += "0\(hour)"
+                    }
+                    else{
+                        timeString += "\(hour)"
+                    }
+                    if minute < 30{
+                        timeString += ":00"
+                    }
+                    else{
+                        timeString += ":30"
+                    }
+                    
+                    // set up reservationDict to be uploaded to DB
+                    // start and end in reservationDict is equal to indices for the array, not sure if that's what we wanted
+                    reservationDict["date"] = self.getDate(myDate: today)
+                    reservationDict["room"] = result
+                    reservationDict["start"] = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: timeString)
+                    reservationDict["end"] = reservationDict["start"] as! Int + 1
+                    
+                    db.collection("Reservation").document(email).updateData(reservationDict)
+                    
+                    //update reservation for sharedInstance
+                    //start and end time are formatted as HH:MM, again not sure if that's what we wanted
+                    reservation.date = self.getDate(myDate: today)
+                    reservation.startTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["start"] as! Int)
+                    reservation.endTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["end"] as! Int)
+                    
+                    User.sharedInstance()?.reservation = reservation
                     self.handleReservation(booked: true)
                 }
                 else // if open, show card with book now
