@@ -158,7 +158,7 @@ extension BaseViewController : GeofenceDelegate
     func enteredRegion()
     {
         guard let selectedViewController = selectedViewController else { return }
-        Util.presentAlert(title: "Entered", message: "You entered the geofence.", viewController: selectedViewController)
+        Util.presentAlert(title: "Hey!", message: "We have detected that you're in the geofence region. We will use location based services to monitor your location with respect to rooms that you reserve. If you leave a library during your reservation, we'll warn you about your reservation being canceled. We'll also use this tech to notify you about people who are interested in swapping rooms with you. Happy studying!", viewController: selectedViewController)
     }
     
     func exitedRegion()

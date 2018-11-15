@@ -60,7 +60,7 @@ class Geofence: NSObject, CLLocationManagerDelegate
             {
                 print(geofence.contains(coor))
             }
-            
+            delegate.enteredRegion()
             locationManager.startMonitoring(for: geofence)
         }
     }
