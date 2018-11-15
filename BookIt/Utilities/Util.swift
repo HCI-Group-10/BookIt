@@ -12,10 +12,20 @@ import UserNotifications
 
 class Util
 {
-    static func presentAlert(title: String, message: String, viewController: UIViewController)
+    static func presentAlert(title: String, message: String, viewController: UIViewController, withAction: UIAlertAction? = nil)
     {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        if withAction == nil
+        {
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+        }
+        else
+        {
+            ac.addAction(withAction!)
+            ac.addAction(UIAlertAction(title: "No thanks", style: .default))
+        }
+        
         viewController.present(ac, animated: true)
     }   
 }

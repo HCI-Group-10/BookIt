@@ -15,4 +15,5 @@ class Reservation
     
     var startTime : String?
     var endTime : String?
+    var user : User?
 }

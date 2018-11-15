@@ -9,9 +9,16 @@
 import UIKit
 import Cards
 
+protocol UserPageDelegate
+{
+    func requestFocus()
+}
+
 class UserPageViewController: UIViewController
 {
     //user
+    var delegate : UserPageDelegate!
+    
     var userInfoLabel : UILabel?
     var userFirstNameLabel : UILabel?
     var userFirstNameTextField : UITextField?
@@ -282,5 +289,16 @@ extension UserPageViewController : UserReservationDelegate
     {
         self.reservation = reservation
         handleReservation()
+    }
+    
+    func reservationSwapRequested(email: String)
+    {
+        delegate.requestFocus()
+        Util.presentAlert(title: "Hey!", message: "Someone's requesting to book your room. Want to give it to them?", viewController: self , withAction: UIAlertAction(title: "Sure", style: .default, handler: { (alert) in
+            // TODO: Andrei, the room swap
+            // first copy this user's reservation, except the name info
+            // cancel this user's reservation
+            // use new info and create new reservation
+        }))
     }
 }

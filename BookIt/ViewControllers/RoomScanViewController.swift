@@ -145,8 +145,8 @@ class RoomScanViewController: UIViewController
         card.hasParallax = true
         //        card.delegate = self
         
-        hiddenView.addSubview(card)
-        
+        hiddenView.contentView.addSubview(card)
+        hiddenView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideHiddenView)))
         card.translatesAutoresizingMaskIntoConstraints = false
         card.widthAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.width).isActive = true
         card.heightAnchor.constraint(equalToConstant: BookingListTableViewCell.CONTENT_SIZE.height).isActive = true
@@ -154,6 +154,11 @@ class RoomScanViewController: UIViewController
         card.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         card.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    @objc func hideHiddenView()
+    {
+        hiddenView?.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -185,7 +190,6 @@ class RoomScanViewController: UIViewController
     {
         if let reservation = self.reservation
         {
-            hiddenView?.isHidden = false
             guard let card = card else { return }
             if let room = reservation.room
             {
@@ -206,15 +210,11 @@ class RoomScanViewController: UIViewController
             }
             
             guard let roomReservationViewController = roomReservationViewController else { return }
-            roomReservationViewController.fromUserPage = false
+            
+            roomReservationViewController.reservation = reservation
             roomReservationViewController.fromScan = true
             roomReservationViewController.isBooked = booked
-            roomReservationViewController.reservation = reservation
             card.shouldPresent(roomReservationViewController, from: self, fullscreen: true)
-        }
-        else
-        {
-            hiddenView?.isHidden = true
         }
     }
 }
@@ -236,12 +236,24 @@ extension RoomScanViewController : ScannerViewControllerDelegate
         db.collection("Reservation").getDocuments { (query, error) in
             if error == nil, let query = query
             {
+                self.reservation = Reservation()
+                
                 for document in query.documents
                 {
                     let data = document.data()
                     if let room = data[Room.roomKey] as? String, room == result
                     {
                         bookingEmail = document.documentID
+                        self.reservation?.date = data["date"] as? String
+                        self.reservation?.startTime = String.getTimeFormattedFrom30MinIntervalValue(val: data["start"] as! Int)
+                        self.reservation?.endTime = String.getTimeFormattedFrom30MinIntervalValue(val: data["end"] as! Int)
+                        
+                        self.reservation?.user = User()
+                        self.reservation?.user?.firstName = data["firstName"] as? String
+                        self.reservation?.user?.lastName = data["lastName"] as? String
+                        self.reservation?.user?.email = bookingEmail
+                        
+                        break
                     }
                 }
                 
@@ -253,63 +265,60 @@ extension RoomScanViewController : ScannerViewControllerDelegate
                 //the following code should be in the completion handler from a firebase request for the room info
                 
                 //make sure room exists in DB
-                var reservation = Reservation()
-                var reservationDict = [String : Any]()
                 let roomRef = db.collection("Rooms").document(result)
                 roomRef.getDocument { (document, error) in
                     if let document = document, document.exists {
-                        reservation.room = Room(dict: document.data() as! NSDictionary)
+                        self.reservation?.room = Room(dict: document.data() as! NSDictionary)
+                        
+                        
+                        if let email = bookingEmail // if taken, show card with request switch
+                        {
+                            //then after our reservation is set,
+                            //                    let today : Date = Date.init()
+                            //                    let calendar : Calendar = Calendar.current
+                            //                    let hour = calendar.component(.hour, from: today)
+                            //                    let minute = calendar.component(.minute, from: today)
+                            //                    var timeString = ""
+                            //                    if hour < 10{
+                            //                        timeString += "0\(hour)"
+                            //                    }
+                            //                    else{
+                            //                        timeString += "\(hour)"
+                            //                    }
+                            //                    if minute < 30{
+                            //                        timeString += ":00"
+                            //                    }
+                            //                    else{
+                            //                        timeString += ":30"
+                            //                    }
+                            //
+                            //                    // set up reservationDict to be uploaded to DB
+                            //                    // start and end in reservationDict is equal to indices for the array, not sure if that's what we wanted
+                            //                    reservationDict["date"] = self.getDate(myDate: today)
+                            //                    reservationDict["room"] = result
+                            //                    reservationDict["start"] = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: timeString)
+                            //                    reservationDict["end"] = reservationDict["start"] as! Int + 1
+                            //
+                            //                    db.collection("Reservation").document(email).updateData(reservationDict)
+                            //
+                            //                    //update reservation for sharedInstance
+                            //                    //start and end time are formatted as HH:MM, again not sure if that's what we wanted
+                            //                    self.reservation?.date = self.getDate(myDate: today)
+                            //                    self.reservation?.startTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["start"] as! Int)
+                            //                    reservation?.endTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["end"] as! Int)
+                            //
+                            //                    User.sharedInstance()?.reservation = self.reservation
+                            self.handleReservation(booked: true)
+                        }
+                        else // if open, show card with book now
+                        {
+                            self.handleReservation(booked: false)
+                        }
+                        self.hiddenView?.isHidden = false
                     } else {
                         print("Document does not exist")
                         return
                     }
-                }
-                
-                
-                
-                self.hiddenView?.isHidden = false
-                if let email = bookingEmail // if taken, show card with request switch
-                {
-                    //then after our reservation is set,
-                    let today : Date = Date.init()
-                    let calendar : Calendar = Calendar.current
-                    let hour = calendar.component(.hour, from: today)
-                    let minute = calendar.component(.minute, from: today)
-                    var timeString = ""
-                    if hour < 10{
-                        timeString += "0\(hour)"
-                    }
-                    else{
-                        timeString += "\(hour)"
-                    }
-                    if minute < 30{
-                        timeString += ":00"
-                    }
-                    else{
-                        timeString += ":30"
-                    }
-                    
-                    // set up reservationDict to be uploaded to DB
-                    // start and end in reservationDict is equal to indices for the array, not sure if that's what we wanted
-                    reservationDict["date"] = self.getDate(myDate: today)
-                    reservationDict["room"] = result
-                    reservationDict["start"] = Int.thirtyMinuteIntervalFromFormattedTime(timeStr: timeString)
-                    reservationDict["end"] = reservationDict["start"] as! Int + 1
-                    
-                    db.collection("Reservation").document(email).updateData(reservationDict)
-                    
-                    //update reservation for sharedInstance
-                    //start and end time are formatted as HH:MM, again not sure if that's what we wanted
-                    reservation.date = self.getDate(myDate: today)
-                    reservation.startTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["start"] as! Int)
-                    reservation.endTime = String.getTimeFormattedFrom30MinIntervalValue(val: reservationDict["end"] as! Int)
-                    
-                    User.sharedInstance()?.reservation = reservation
-                    self.handleReservation(booked: true)
-                }
-                else // if open, show card with book now
-                {
-                    self.handleReservation(booked: false)
                 }
             }
             else

@@ -20,7 +20,16 @@ class RoomReservationViewController: UIViewController
     var reservation : Reservation?
     {
         didSet {
-            let user = User.sharedInstance()
+            var user : User?
+            if reservation?.user != nil
+            {
+                user = reservation?.user
+            }
+            else
+            {
+                 user = User.sharedInstance()
+            }
+            
             if let first = user?.firstName, let last = user?.lastName
             {
                 if userNameLabel == nil {
@@ -87,8 +96,8 @@ class RoomReservationViewController: UIViewController
     {
         didSet
         {
-            switchReservationButton?.isHidden = isBooked
-            reservationButton?.isHidden = !isBooked
+            switchReservationButton?.isHidden = !isBooked
+            reservationButton?.isHidden = isBooked
             cancelReservationButton?.isHidden = true
         }
     }
@@ -212,7 +221,7 @@ class RoomReservationViewController: UIViewController
         switchButton.setTitleColor(.bookItBlueLight, for: .normal)
         switchButton.setTitle("Request To Swap", for: .normal)
         switchButton.titleLabel?.numberOfLines = 0
-        switchButton.addTarget(self, action: #selector(reserveButtonPressed), for: .touchUpInside)
+        switchButton.addTarget(self, action: #selector(reservationSwapPressed), for: .touchUpInside)
         view.addSubview(switchButton)
         
         switchButton.translatesAutoresizingMaskIntoConstraints = false
@@ -283,8 +292,9 @@ class RoomReservationViewController: UIViewController
 
         container.heightAnchor.constraint(greaterThanOrEqualToConstant: RoomReservationViewController.DEFAULT_VIEW_HEIGHT).isActive = true
         
-        cancelButton.isHidden = !fromUserPage
-        reserveButton.isHidden = fromUserPage
+        cancelButton.isHidden = !fromUserPage || isBooked
+        reserveButton.isHidden = fromUserPage || isBooked
+        switchButton.isHidden = !isBooked
     }
     
     @objc func cancelButtonPressed()
@@ -328,6 +338,22 @@ class RoomReservationViewController: UIViewController
         
         User.sharedInstance()?.reservation = nil
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reservation_update"), object: nil)
+    }
+    
+    @objc func reservationSwapPressed()
+    {
+        // TODO: Andrei
+        // in this context, self.reservation is the room we want to swap with
+        
+        // a request to firebase needs to be made, except we are just updating ONE field on the document
+        // everything is the same except we'll assign a field called:
+        // "requestedBy", and then just update that field on the document
+        
+        // example: db.Collections("Reservation").document(
+        //self.reservation.user.email).updateData(["requestedBy" : User.sharedInstance().email])
+        //
+        
+        
     }
     
     @objc func reserveButtonPressed()

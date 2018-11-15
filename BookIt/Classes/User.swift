@@ -12,6 +12,7 @@ import FirebaseFirestore
 protocol UserReservationDelegate
 {
     func reservationReceived(reservation: Reservation?)
+    func reservationSwapRequested(email: String)
 }
 
 class User
@@ -19,7 +20,7 @@ class User
     private static var activeUser : User?
     var reservation : Reservation?
     var delegate : UserReservationDelegate!
-    
+    var listener : ListenerRegistration?
     var firstName : String?
     var lastName : String?
     var email : String?
@@ -27,7 +28,22 @@ class User
     func getReservation() -> Reservation?
     {
         guard let email = email else { return self.reservation }
+        
         let db = Firestore.firestore()
+        
+        self.listener = db.collection("Reservation").document(email).addSnapshotListener { (document, error) in
+            if error == nil
+            {
+                let data = document?.data()
+                if let requestedBy = data?["requestedBy"] as? String
+                {
+                    if requestedBy != ""
+                    {
+                        self.delegate.reservationSwapRequested(email: requestedBy)
+                    }
+                }
+            }
+        }
         db.collection("Reservation").document(email).getDocument { (document, error) in
             if let document = document, document.exists {
                 guard let dict = document.data() else { return }

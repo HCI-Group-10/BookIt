@@ -167,3 +167,10 @@ extension BaseViewController : GeofenceDelegate
         Util.presentAlert(title: "Warning", message: "You're no longer in the reservation area. Are you still using your room?", viewController: selectedViewController)
     }
 }
+
+extension BaseViewController : UserPageDelegate
+{
+    func requestFocus() {
+        self.selectedIndex = (self.viewControllers?.count ?? 1) - 1
+    }
+}
