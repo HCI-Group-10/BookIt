@@ -353,6 +353,24 @@ class RoomReservationViewController: UIViewController
         //self.reservation.user.email).updateData(["requestedBy" : User.sharedInstance().email])
         //
         
+        // Untested, but honestly it was basically what you wrote 
+        let reversation = User.sharedInstance()?.reservation
+        let db = Firestore.firestore()
+        let ref = db.collection("Reservation").document(self.reservation!.user!.email!)
+        
+        // Set the "capital" field of the city 'DC'
+        ref.updateData([
+            "requestedBy": User.sharedInstance()?.email
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+
+        
+        
         
     }
     

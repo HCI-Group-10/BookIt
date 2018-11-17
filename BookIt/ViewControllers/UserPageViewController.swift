@@ -8,6 +8,8 @@
 
 import UIKit
 import Cards
+import Firebase
+import FirebaseFirestore
 
 protocol UserPageDelegate
 {
@@ -299,6 +301,39 @@ extension UserPageViewController : UserReservationDelegate
             // first copy this user's reservation, except the name info
             // cancel this user's reservation
             // use new info and create new reservation
+            
+            // Untested, so it might not work
+            
+            // remove reservation from DB
+            let reversation = User.sharedInstance()?.reservation
+            let db = Firestore.firestore()
+            db.collection("Reservation").document((self.reservation?.user?.email)!).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                    // remove reservation shared instance
+                    User.sharedInstance()?.reservation = nil
+                    
+                    var reservationDict = [String : Any]()
+                    reservationDict["date"] = self.reservation?.date
+                    reservationDict["room"] = self.reservation?.room
+                    reservationDict["start"] = self.reservation?.startTime
+                    reservationDict["end"] = self.reservation?.endTime
+                    // update with new reservation in DB
+                    db.collection("Reservation").document(email).updateData(reservationDict)
+                    { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
         }))
     }
 }
